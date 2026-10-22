@@ -1549,3 +1549,9 @@ dialog p {
 
 /* Space after the footer on every page. */
 body{margin-bottom:200px}
+
+/* Match the homepage's 45px gap between the final content and footer. */
+main > .section:last-child{padding-bottom:0}
+main > .section:last-child > .detail-cta:last-child{margin-bottom:0}
+.legal-page{padding-bottom:0}
+.legal-content > :last-child{margin-bottom:0}
