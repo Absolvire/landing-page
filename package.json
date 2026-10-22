@@ -1,0 +1,11 @@
+{
+  "name": "absolvire-landing-page",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "python3 -m http.server 4174 --bind 127.0.0.1",
+    "start": "python3 -m http.server 4174 --bind 127.0.0.1",
+    "build": "python3 scripts/build.py",
+    "check:seo": "python3 scripts/check_seo.py"
+  }
+}
