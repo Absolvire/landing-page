@@ -754,6 +754,7 @@ dialog p {
     height: 82px;
     padding: 16px 22px;
     position: relative;
+    z-index: 30;
   }
   .brand img {
     width: 134px;
@@ -770,7 +771,7 @@ dialog p {
     font-size: 12px;
     border-radius: 3px;
   }
-  nav {
+  #nav {
     display: none;
     position: absolute;
     top: 81px;
@@ -782,7 +783,7 @@ dialog p {
     border-bottom: 1px solid var(--line);
     align-items: stretch;
   }
-  nav.open {
+  #nav.open {
     display: flex;
     flex-direction: column;
     gap: 20px;
