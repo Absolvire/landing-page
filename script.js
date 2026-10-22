@@ -166,7 +166,7 @@ if (scarfImage) {
 
 function updatePromotionYear() {
  const currentYear = new Intl.DateTimeFormat('ro-RO', {year:'numeric', timeZone:'Europe/Bucharest'}).format(new Date());
- document.querySelectorAll('.promotion-year').forEach(node => { node.textContent = currentYear; });
+ document.querySelectorAll('.promotion-year').forEach(node => { node.textContent = String(Number(currentYear) + 1); });
 }
 updatePromotionYear();
 if(document.querySelector('.promotion-year')) {

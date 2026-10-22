@@ -34,7 +34,7 @@ La publicare: serviți dist/ la https://www.absolvire.ro/, configurați redirec�
 
 ## Vizualizator de eșarfe
 
-21 de variante fotografice originale stocate în assets/scarves/; proveniența și paleta sunt în docs/scarf-colors.json. Selectorul păstrează ultima imagine validă la eroare și ignoră încărcările vechi la clickuri rapide. Selectorul este doar o previzualizare; culoarea nu se transmite în formular. Inscripția PROMOȚIA afișează automat anul curent în fusul Europe/Bucharest. Fișierul decorativ din 2024 nu este folosit, astfel încât previzualizarea nu afișează o promoție învechită.
+21 de variante fotografice originale stocate în assets/scarves/; proveniența și paleta sunt în docs/scarf-colors.json. Selectorul păstrează ultima imagine validă la eroare și ignoră încărcările vechi la clickuri rapide. Selectorul este doar o previzualizare; culoarea nu se transmite în formular. Inscripția PROMOȚIA afișează automat anul curent + 1, calculat în fusul Europe/Bucharest. Fișierul decorativ din 2024 nu este folosit, astfel încât previzualizarea nu afișează o promoție învechită.
 
 ## Deploy automat pe GitHub Pages
 

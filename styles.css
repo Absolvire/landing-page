@@ -110,7 +110,7 @@ em {
   width: 7px;
   background: var(--red);
 }
-header {
+body > header {
   height: 100px;
   margin: auto;
   max-width: 1440px;
@@ -706,7 +706,7 @@ dialog p {
     padding-left: 32px;
     padding-right: 32px;
   }
-  header {
+  body > header {
     padding: 20px 32px;
   }
   nav {
@@ -748,7 +748,7 @@ dialog p {
     padding-left: 22px;
     padding-right: 22px;
   }
-  header {
+  body > header {
     height: 82px;
     padding: 16px 22px;
     position: relative;
@@ -1528,3 +1528,24 @@ dialog p {
 
 /* The seven original green/purple nameplates from the supplied reference. */
 .partner-source-logo{width:100%;aspect-ratio:396/77;background-image:url('assets/partners/reference.png');background-repeat:no-repeat;background-size:395.959596% 2067.532468%;filter:grayscale(1)}
+
+.footer-bottom{align-items:center}
+.footer-bottom>span{order:1;margin-right:0}
+.footer-bottom>a{order:3}
+.footer-credit{order:2;display:flex;align-items:center;justify-content:center;gap:10px;margin:0 auto}
+.footer-credit>span{font-size:10px;color:var(--muted)}
+.footer-credit>a{display:flex;align-items:center;min-height:36px;color:var(--ink)}
+.ppw-wordmark{font-family:Manrope,sans-serif;font-size:14px;font-weight:800;line-height:1.02;letter-spacing:-.6px}
+.ppw-credit-dot{display:inline-block;width:7px;height:7px;margin-left:3px;background:#a8cc51;font-size:0;line-height:0;overflow:hidden;vertical-align:baseline}
+@media(max-width:760px){.footer-bottom{justify-content:center}.footer-bottom>span{text-align:center}.footer-credit{width:100%;margin:0;order:4}}
+
+.legal-page{padding-top:45px;padding-bottom:90px}.legal-header{max-width:850px;margin:48px 0}.legal-header h1{font-size:clamp(38px,6vw,72px);line-height:1.05;margin:20px 0}.legal-header>p:last-child{color:var(--muted)}.legal-content{max-width:850px;overflow-wrap:anywhere}.legal-content h2{font-size:clamp(23px,3vw,32px);margin:42px 0 20px;line-height:1.2;letter-spacing:-.03em}.legal-content p{font-size:16px;line-height:1.8;margin-bottom:18px}.legal-page .breadcrumbs{font-size:12px;color:var(--muted)}
+
+/* Secondary footer badges leave the centered creator credit prominent. */
+.consumer-links{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:10px;margin-top:14px}
+.consumer-links a{display:flex;align-items:center;max-width:100%;min-height:36px}
+.consumer-links img{display:block;width:140px;max-width:100%;height:auto}
+@media(max-width:760px){.consumer-links{justify-content:flex-end;margin-top:16px}.consumer-links img{width:125px}}
+
+/* Space after the footer on every page. */
+body{margin-bottom:200px}

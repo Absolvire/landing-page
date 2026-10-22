@@ -26,7 +26,9 @@ def check():
   assert [a['content'] for t,a in p.tags if t=='meta' and a.get('property')=='og:url']==canonical,f
   schema=re.findall(r'<script type="application/ld\+json">(.*?)</script>',s,re.S);assert len(schema)==1,f
   graph=json.loads(schema[0])['@graph'];types={x['@type'] for x in graph};assert {'Organization','WebSite','WebPage'}<=types
-  if slug:assert {'BreadcrumbList','Service'}<=types
+  if slug:assert 'BreadcrumbList' in types
+  if slug and slug not in ('termeni-si-conditii','prelucrarea-datelor-cu-caracter-personal'):assert 'Service' in types
+  if slug=='termeni-si-conditii':assert 'Service' not in types
   for t,a in p.tags:
    if t=='img' and a.get('src'):
     assert 'alt' in a and a.get('width') and a.get('height'),(f,a)
@@ -53,11 +55,11 @@ def check():
     if target.is_dir():target=target/'index.html'
     assert target.exists(),(f,a[k])
     if u.fragment and target in parsed:assert u.fragment in parsed[target].ids,(f,a[k])
- assert len(set(titles))==5 and len(set(descriptions))==5
+ assert len(set(titles))==len(PAGES) and len(set(descriptions))==len(PAGES)
  xml=ET.parse(ROOT/'sitemap.xml');urls=[x.text for x in xml.findall('.//{*}loc')];assert set(urls)=={BASE+(slug+'/' if slug else '') for slug,*_ in PAGES}
  for name in ('robots.txt','llms.txt','llms-full.txt'):assert (ROOT/name).exists()
  assert (ROOT/'index.html').read_text().count('class="gallery-item"')==12
  assert 'Allow: /' in (ROOT/'robots.txt').read_text()
  assert 'Sitemap: '+BASE+'sitemap.xml' in (ROOT/'robots.txt').read_text()
- print('SEO checks passed: 5 pages, unique metadata, schema, sitemap, links, responsive images and AI text exports.')
+ print(f'SEO checks passed: {len(PAGES)} pages, unique metadata, schema, sitemap, links, responsive images and AI text exports.')
 if __name__=='__main__':check()

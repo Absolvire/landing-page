@@ -11,7 +11,11 @@ PAGES = [
  ("diplome-si-accesorii", "Diplome și accesorii de absolvire | Absolvire.ro", "Diplome, medalii, trofee, invitații și suveniruri personalizate pentru festivitatea de absolvire. Descoperă opțiunile și solicită o ofertă.", "diploma"),
  ("albume", "Albume foto de absolvire și fotocărți | Absolvire.ro", "Albume de absolvire, mape și fotocărți personalizate. Nouă modele: Elegant, Special, Modern, Muschetar, Rege, Velvet, King, Royal și Premier.", "album"),
  ("festivitati-si-baluri", "Festivități și baluri de absolvire | Absolvire.ro", "Organizarea festivităților și balurilor de absolvire: locație, muzică, catering și foto-video, într-o propunere adaptată promoției voastre.", "party")]
+PAGES.append(("termeni-si-conditii", "Termeni și condiții | Absolvire.ro", "Termenii și condițiile de utilizare a site-ului Absolvire.ro: informații despre operator, utilizare, răspundere și protecția datelor.", "robe"))
+PAGES.append(("prelucrarea-datelor-cu-caracter-personal", "Confidențialitate | Absolvire.ro", "Politica Absolvire.ro privind prelucrarea datelor personale, scopurile utilizării, păstrarea și protejarea acestora și drepturile persoanelor vizate.", "robe"))
 NAMES = ["Absolvire.ro", "Robe și eșarfe", "Diplome și accesorii", "Albume și fotografie", "Festivități și baluri"]
+NAMES.append("Termeni și condiții")
+NAMES.append("Confidențialitate")
 class MainText(HTMLParser):
  def __init__(self):
   super().__init__(); self.main=False; self.skip=0; self.out=[]
@@ -47,6 +51,12 @@ def run():
    graph[2]['breadcrumb']={"@id":url+'#breadcrumb'}
   else:
    graph[2]['hasPart']=[{"@id":BASE+x[0]+'/#webpage'} for x in PAGES[1:]]
+  if slug == "termeni-si-conditii":
+   graph=[item for item in graph if item["@type"] != "Service"]
+   graph[2]["about"]={"@id":BASE+"#organization"}
+  if slug == "prelucrarea-datelor-cu-caracter-personal":
+   graph=[item for item in graph if item["@type"] != "Service"]
+   graph[2]["about"]={"@id":BASE+"#organization"}
   metadata=f'<title>{escape(title)}</title><meta name="description" content="{escape(desc,quote=True)}"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="{url}"><link rel="alternate" type="text/markdown" href="{url}index.md" title="Versiune text">'
   for key,value in {'og:title':title,'og:description':desc,'og:type':'website','og:url':url,'og:site_name':'Absolvire.ro','og:locale':'ro_RO','og:image':BASE+'assets/'+photo+'.jpg','og:image:alt':NAMES[i]+' — Absolvire.ro'}.items():metadata+=f'<meta property="{key}" content="{escape(value,quote=True)}">'
   for key,value in {'twitter:card':'summary_large_image','twitter:title':title,'twitter:description':desc,'twitter:image':BASE+'assets/'+photo+'.jpg'}.items():metadata+=f'<meta name="{key}" content="{escape(value,quote=True)}">'
@@ -70,8 +80,17 @@ def run():
   s=re.sub(r'<img\b[^>]*>',optimize,s,flags=re.S)
   # Accessible descriptive permanent links in the footer of every page.
   s=re.sub(r'<!-- SERVICES:START -->.*?<!-- SERVICES:END -->','',s,flags=re.S)
-  links=''.join(f'<a href="{prefix}{row[0]}/">{NAMES[n]}</a>' for n,row in enumerate(PAGES[1:],1))
+  links=''.join(f'<a href="{prefix}{row[0]}/">{NAMES[n]}</a>' for n,row in enumerate(PAGES[1:5],1))
   s=s.replace('<div class="footer-bottom">','<!-- SERVICES:START --><nav class="service-navigation" aria-label="Servicii Absolvire">'+links+'</nav><!-- SERVICES:END --><div class="footer-bottom">')
+  s=re.sub(r'<!-- CREDIT:START -->.*?<!-- CREDIT:END -->','',s,flags=re.S)
+  credit='<div class="footer-credit"><span>Site realizat de</span><a href="https://www.proiectulpaginiweb.ro/" target="_blank" rel="noopener noreferrer" aria-label="Proiectul Pagini Web — creatorul site-ului"><span class="ppw-wordmark">Proiectul<br>Pagini Web<span class="ppw-credit-dot" aria-hidden="true">.</span></span></a></div>'
+  s=re.sub(r'(<div class="footer-bottom">.*?)(</div>)', lambda m:m[1]+'<!-- CREDIT:START -->'+credit+'<!-- CREDIT:END -->'+m[2], s, count=1, flags=re.S)
+  s=re.sub(r'(<a\b[^>]*href=")https://www\.absolvire\.ro/termeni-si-conditii/"', lambda m:m[1]+prefix+'termeni-si-conditii/"', s)
+  s=re.sub(r'(<a\b[^>]*href=")https://(?:www\.)?absolvire\.ro/prelucrarea-datelor-cu-caracter-personal/"', lambda m:m[1]+prefix+'prelucrarea-datelor-cu-caracter-personal/"', s)
+  s=re.sub(r'<!-- CONSUMER:START -->.*?<!-- CONSUMER:END -->','',s,flags=re.S)
+  badges='<div class="consumer-links" aria-label="Soluționarea litigiilor"><a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="noopener noreferrer"><img src="../assets/anpc-sal.png" alt="ANPC — Soluționarea alternativă a litigiilor" width="250" height="50" loading="lazy" decoding="async"></a><a href="http://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer"><img src="../assets/solutionare-online.png" alt="Soluționarea online a litigiilor" width="250" height="50" loading="lazy" decoding="async"></a></div>'
+  badges=badges.replace('../assets/',prefix+'assets/')
+  s=s.replace('</footer>','<!-- CONSUMER:START -->'+badges+'<!-- CONSUMER:END --></footer>')
   file.write_text(s)
   text=MainText();text.feed(s)
   md=f'# {NAMES[i]}\n\nSursa canonică: {url}\n\n{desc}\n\n'+text.text()+'\n\n## Contact\n\nAbsolvire.ro — comenzi.scoli@gmail.com — +40 723 88 25 11\nStr. Vatra Luminoasă nr. 1, Sector 2, București.\n'
