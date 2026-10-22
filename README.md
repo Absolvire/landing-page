@@ -14,11 +14,11 @@ Site static, în română, realizat pe baza paginilor și fotografiilor publice 
 
 ## Conținut și imagini
 
-Fotografiile sunt stocate local în `assets/`; URL-urile sursă sunt în `assets/sources.json`. Au fost consultate paginile Acasă, Despre noi, Robe și eșarfe, Diplome și accesorii, Galerie foto-video, Festivități și baluri, Agenda festivității și Contact. Legătura veche către pagina Albume returna 404; fotografiile de albume provin din galerie. Nu sunt reproduse prețuri sau oferte din 2021.
+Fotografiile sunt stocate local în `assets/`; URL-urile sursă sunt în `docs/image-sources.json`. Au fost consultate paginile Acasă, Despre noi, Robe și eșarfe, Diplome și accesorii, Galerie foto-video, Festivități și baluri, Agenda festivității și Contact. Legătura veche către pagina Albume returna 404; fotografiile de albume provin din galerie. Nu sunt reproduse prețuri sau oferte din 2021.
 
 Paletă: coral #e83d47, negru #191919, alb cald. Fonturile Manrope și DM Sans sunt încărcate prin Google Fonts; există fallback sans-serif.
 
-Canonicalul și sitemapul presupun publicarea la https://www.absolvire.ro/. Actualizează-le dacă folosești alt domeniu. Legăturile juridice duc la site-ul original; verifică politicile înainte de lansare și actualizează-le pentru fluxul Web3Forms. Site-ul nu a fost publicat.
+Local, canonicalul și sitemapul folosesc https://www.absolvire.ro/. Variabila SITE_URL poate schimba adresa; workflow-ul Pages preia automat URL-ul public configurat în GitHub. Legăturile juridice duc la site-ul original; verifică politicile înainte de lansare și actualizează-le pentru fluxul Web3Forms. Site-ul nu a fost publicat.
 
 ## Pagini de servicii
 
@@ -34,4 +34,33 @@ La publicare: serviți dist/ la https://www.absolvire.ro/, configurați redirec�
 
 ## Vizualizator de eșarfe
 
-21 de variante fotografice originale stocate în assets/scarves/; proveniența și paleta sunt în colors.json. Selectorul păstrează ultima imagine validă la eroare și ignoră încărcările vechi la clickuri rapide. Selectorul este doar o previzualizare; culoarea nu se transmite în formular. Inscripția PROMOȚIA afișează automat anul curent în fusul Europe/Bucharest. Fișierul decorativ din 2024 nu este folosit, astfel încât previzualizarea nu afișează o promoție învechită.
+21 de variante fotografice originale stocate în assets/scarves/; proveniența și paleta sunt în docs/scarf-colors.json. Selectorul păstrează ultima imagine validă la eroare și ignoră încărcările vechi la clickuri rapide. Selectorul este doar o previzualizare; culoarea nu se transmite în formular. Inscripția PROMOȚIA afișează automat anul curent în fusul Europe/Bucharest. Fișierul decorativ din 2024 nu este folosit, astfel încât previzualizarea nu afișează o promoție învechită.
+
+## Deploy automat pe GitHub Pages
+
+1. Urcă repository-ul pe GitHub cu branch-ul `main`.
+2. În **Settings → Pages → Build and deployment → Source**, selectează **GitHub Actions** (o singură dată).
+3. Orice push în `main` declanșează `.github/workflows/pages.yml`: build, validări SEO/resurse, apoi deploy. Poți porni publicarea și manual din Actions → Deploy GitHub Pages → Run workflow.
+
+Nu ai nevoie de token personal, Node sau pachete Python externe. Workflow-ul folosește permisiunile GitHub standard pentru Pages și Python 3.12 pe Ubuntu. Repository-ul trebuie să permită GitHub Pages și GitHub Actions.
+
+Adresa canonică, sitemapul și exporturile AI folosesc automat URL-ul furnizat de GitHub Pages, inclusiv subdirectorul repository-ului. Pentru domeniul `www.absolvire.ro`, configurează **Custom domain** în Settings → Pages și DNS-ul domeniului înaintea publicării pe acel domeniu; un fișier CNAME singur nu configurează domeniul pentru acest workflow.
+
+### Verificare locală, fără dependențe externe
+
+```sh
+python3 scripts/build.py
+python3 scripts/check_seo.py
+python3 scripts/check_assets.py
+```
+
+Pentru a simula un site Pages într-un subdirector:
+
+```sh
+SITE_URL=https://example.github.io/absolvire-landing-page/ python3 scripts/build.py
+SITE_URL=https://example.github.io/absolvire-landing-page/ python3 scripts/check_seo.py
+```
+
+Build-ul recreează `dist/` de la zero și include doar fișierele statice publice și `.nojekyll`. Nu se comite `dist/`. Proveniența imaginilor este păstrată în `docs/`, în afara site-ului publicat. Variantele responsive `*-640.jpg` sunt deja incluse; pentru o fotografie nouă fără variantă redusă, build-ul folosește imaginea originală și dimensiunile ei reale. Nu mai depinde de comanda macOS `sips`.
+
+Documentație: https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages

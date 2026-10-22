@@ -1,9 +1,10 @@
 from pathlib import Path
 from html.parser import HTMLParser
 from html import escape, unescape
-import json, re, subprocess, shutil
+import json, re, os
+from image_info import image_size
 ROOT = Path(__file__).resolve().parent.parent
-BASE = "https://www.absolvire.ro/"
+BASE = os.environ.get("SITE_URL", "https://www.absolvire.ro/").rstrip("/") + "/"
 PAGES = [
  ("", "Absolvire.ro | Robe, albume și festivități de absolvire", "Robe, toci și eșarfe personalizate, albume foto, diplome și organizarea festivităților de absolvire. Alături de generații din 2002.", "robe"),
  ("robe-si-esarfe", "Robe, toci și eșarfe de absolvire | Absolvire.ro", "Robe de absolvire în negru, albastru și vișiniu, toci și eșarfe personalizate pentru școala și promoția voastră. Descoperă opțiunile și cere o ofertă.", "hero"),
@@ -31,10 +32,6 @@ class MainText(HTMLParser):
   if self.main and not self.skip:self.out.append(re.sub(r'\s+',' ',data))
  def text(self):return re.sub(r'\n[ \t]*\n(?:[ \t]*\n)*','\n\n','\n'.join(line.strip() for line in ''.join(self.out).splitlines())).strip()
 def run():
- # Smaller logo and image sources are generated without altering original assets.
- logo=ROOT/'assets/logo-header.png'
- if not logo.exists() or logo.stat().st_mtime < (ROOT/'assets/logo-v2.png').stat().st_mtime:
-  shutil.copy2(ROOT/'assets/logo-v2.png',logo);subprocess.run(['sips','-Z','600',str(logo)],check=True,stdout=subprocess.DEVNULL)
  texts=[]
  for i,(slug,title,desc,photo) in enumerate(PAGES):
   folder=ROOT/slug; file=folder/'index.html'; s=file.read_text(); prefix='../' if slug else ''; url=BASE+(slug+'/' if slug else '')
@@ -63,14 +60,12 @@ def run():
    image=folder/src[1]
    if image.suffix!='.jpg' or not image.exists():return tag
    small=image.with_name(image.stem+'-640.jpg')
-   if not small.exists() or small.stat().st_mtime < image.stat().st_mtime:
-    shutil.copy2(image,small);subprocess.run(['sips','-Z','640',str(small)],stdout=subprocess.DEVNULL,check=True)
-   dimensions=subprocess.check_output(['sips','-g','pixelWidth','-g','pixelHeight',str(image)],text=True)
-   w=int(re.search(r'pixelWidth: (\d+)',dimensions)[1]);h=int(re.search(r'pixelHeight: (\d+)',dimensions)[1])
+   if not small.exists():small=image
+   w,h=image_size(image)
    tag=re.sub(r'\s(?:srcset|sizes|decoding|width|height)="[^"]*"','',tag)
-   small_dimensions=subprocess.check_output(['sips','-g','pixelWidth',str(small)],text=True)
-   small_w=int(re.search(r'pixelWidth: (\d+)',small_dimensions)[1])
-   attrs=f' width="{w}" height="{h}" decoding="async" srcset="{src[1].replace(image.name,small.name)} {small_w}w, {src[1]} {w}w" sizes="(max-width: 760px) 100vw, 50vw"'
+   small_w=image_size(small)[0]
+   original_candidate=f', {src[1]} {w}w' if small!=image else ''
+   attrs=f' width="{w}" height="{h}" decoding="async" srcset="{src[1].replace(image.name,small.name)} {small_w}w{original_candidate}" sizes="(max-width: 760px) 100vw, 50vw"'
    return re.sub(r'\s*/?>$',attrs+'>',tag)
   s=re.sub(r'<img\b[^>]*>',optimize,s,flags=re.S)
   # Accessible descriptive permanent links in the footer of every page.

@@ -1,8 +1,9 @@
 from pathlib import Path
 from html.parser import HTMLParser
 from urllib.parse import urlsplit, unquote
-import json, re, subprocess, xml.etree.ElementTree as ET
+import json, re, xml.etree.ElementTree as ET
 from seo import PAGES, BASE, MainText
+from image_info import image_size
 ROOT=Path(__file__).resolve().parent.parent/'dist'
 class Page(HTMLParser):
  def __init__(self):super().__init__();self.tags=[];self.ids=set()
@@ -40,8 +41,7 @@ def check():
     for candidate in a['srcset'].split(','):
      path,width=candidate.strip().rsplit(' ',1)
      image=(f.parent/path).resolve();assert image.is_file(),image
-     dimensions=subprocess.check_output(['sips','-g','pixelWidth',str(image)],text=True)
-     actual=int(re.search(r'pixelWidth: (\d+)',dimensions)[1])
+     actual=image_size(image)[0]
      assert width==f'{actual}w',(image,width,actual)
 
  for f,p in parsed.items():
