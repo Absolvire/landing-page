@@ -59,6 +59,7 @@ def check():
  xml=ET.parse(ROOT/'sitemap.xml');urls=[x.text for x in xml.findall('.//{*}loc')];assert set(urls)=={BASE+(slug+'/' if slug else '') for slug,*_ in PAGES}
  for name in ('robots.txt','llms.txt','llms-full.txt'):assert (ROOT/name).exists()
  assert (ROOT/'index.html').read_text().count('class="gallery-item"')==12
+ assert (ROOT/'llms-full.txt').stat().st_size>0
  assert 'Allow: /' in (ROOT/'robots.txt').read_text()
  assert 'Sitemap: '+BASE+'sitemap.xml' in (ROOT/'robots.txt').read_text()
  print(f'SEO checks passed: {len(PAGES)} pages, unique metadata, schema, sitemap, links, responsive images and AI text exports.')

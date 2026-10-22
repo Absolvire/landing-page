@@ -64,3 +64,5 @@ SITE_URL=https://example.github.io/absolvire-landing-page/ python3 scripts/check
 Build-ul recreează `dist/` de la zero și include doar fișierele statice publice și `.nojekyll`. Nu se comite `dist/`. Proveniența imaginilor este păstrată în `docs/`, în afara site-ului publicat. Variantele responsive `*-640.jpg` sunt deja incluse; pentru o fotografie nouă fără variantă redusă, build-ul folosește imaginea originală și dimensiunile ei reale. Nu mai depinde de comanda macOS `sips`.
 
 Documentație: https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages
+
+AI discovery: `/llms.txt` și `/llms-full.txt` sunt generate la fiecare build și incluse în `dist/`.

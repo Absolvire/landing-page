@@ -1,6 +1,6 @@
 from pathlib import Path
 import shutil
-from seo import run, PAGES, PAGES
+from seo import run, PAGES
 run()
 root = Path(__file__).resolve().parent.parent
 out = root / 'dist'
@@ -15,3 +15,4 @@ for name, *_ in PAGES[1:]:
 print('Site static pregătit în dist/')
 
 (out / ".nojekyll").touch()
+

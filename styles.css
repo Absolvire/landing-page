@@ -14,6 +14,8 @@ html {
 }
 body {
   margin: 0;
+  border-top: 3px solid transparent;
+  border-image: linear-gradient(to right, #002b7f 0% 33.333333%, #fcd116 33.333333% 66.666667%, #ce1126 66.666667% 100%) 1;
   background: var(--paper);
   color: var(--ink);
   font:
@@ -758,6 +760,9 @@ dialog p {
   }
   .menu-toggle {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
     gap: 18px;
     background: none;
     border: 1px solid var(--line);
@@ -1545,7 +1550,7 @@ dialog p {
 .consumer-links{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:10px;margin-top:14px}
 .consumer-links a{display:flex;align-items:center;max-width:100%;min-height:36px}
 .consumer-links img{display:block;width:140px;max-width:100%;height:auto}
-@media(max-width:760px){.consumer-links{justify-content:flex-end;margin-top:16px}.consumer-links img{width:125px}}
+@media(max-width:760px){.consumer-links{justify-content:center;margin-top:16px}.consumer-links img{width:125px}}
 
 /* Space after the footer on every page. */
 body{margin-bottom:200px}
