@@ -1497,6 +1497,20 @@ dialog p {
 #cap-band-controls[hidden]{display:block!important;visibility:hidden}
 #cap-band-controls .scarf-palette{max-height:198px;overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable;padding:3px 9px 3px 3px;align-content:start}
 .cap-preview{position:static;align-self:start}
+@media (max-width: 760px) {
+  .cap-preview {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    border-bottom: 1px solid var(--line);
+    padding: 12px 20px;
+  }
+  .cap-preview #cap-image {
+    max-width: 190px;
+    margin: 8px auto;
+  }
+}
+
 @media(max-width:760px){#cap-band-controls{height:280px}#cap-band-controls .scarf-palette{max-height:238px}}
 
 /* One-row colour carousel with dedicated previous/next controls. */
