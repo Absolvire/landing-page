@@ -18,10 +18,13 @@ NAMES.append("Termeni și condiții")
 NAMES.append("Confidențialitate")
 class MainText(HTMLParser):
  def __init__(self):
-  super().__init__(); self.main=False; self.skip=0; self.out=[]
+  super().__init__(); self.main=False; self.skip=0; self.out=[]; self.scarf_colors=[]
  def handle_starttag(self,tag,attrs):
   if tag=='main':self.main=True
   if not self.main:return
+  attrs = dict(attrs)
+  if tag == 'button' and 'data-scarf' in attrs and attrs.get('data-label'):
+   self.scarf_colors.append(attrs['data-label'])
   if tag in ('nav','form','script','style','button'):self.skip+=1
   if self.skip:return
   if tag in ('h1','h2','h3'):self.out.append('\n\n'+'#'*int(tag[1])+' ')
@@ -34,7 +37,11 @@ class MainText(HTMLParser):
   if self.main and not self.skip and tag in ('h1','h2','h3','p','strong','span','article','section','div','summary'):self.out.append('\n\n')
  def handle_data(self,data):
   if self.main and not self.skip:self.out.append(re.sub(r'\s+',' ',data))
- def text(self):return re.sub(r'\n[ \t]*\n(?:[ \t]*\n)*','\n\n','\n'.join(line.strip() for line in ''.join(self.out).splitlines())).strip()
+ def text(self):
+  content = re.sub(r'\n[ \t]*\n(?:[ \t]*\n)*','\n\n','\n'.join(line.strip() for line in ''.join(self.out).splitlines())).strip()
+  if self.scarf_colors:
+   content = content.replace('EȘARFĂ DE ABSOLVIRE', ', '.join(self.scarf_colors) + '.\n\nEȘARFĂ DE ABSOLVIRE', 1)
+  return content
 def run():
  texts=[]
  for i,(slug,title,desc,photo) in enumerate(PAGES):

@@ -64,8 +64,6 @@ O CULOARE. O ÎNTREAGĂ PROMOȚIE.
 
 Explorați cele 21 de culori ale eșarfelor. Alegeți o nuanță și vedeți cum arată, descoperiți combinația care vă reprezintă.
 
-Vezi toate cele 21 de culori
-
 Alb, Albastru, Auriu, Bej, Cărămiziu, Gri închis, Sky, Vernil deschis, Caraibe, Ciclam, Galben, Lila, Mentă, Mov, Olive, Portocaliu, Roșu, Roz, Somon, Verde, Vișiniu.
 
 EȘARFĂ DE ABSOLVIRE
