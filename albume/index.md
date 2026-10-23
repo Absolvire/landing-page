@@ -14,8 +14,6 @@ ALBUME ȘI FOTOGRAFIE
 
 Portrete, colegi și prieteni: fotografiile unei promoții, adunate într-un album pe care îl deschizi cu drag.
 
-Cere o ofertă  ↗
-
 NOUĂ FELURI DE A PĂSTRA AMINTIRILE
 
 ##  Albumul vostru. În stilul vostru.
@@ -86,7 +84,7 @@ PREGĂTIM ÎMPREUNĂ
 
 Alegeți modelul, apoi stabilim ședința foto și selecția imaginilor. Confirmați cu echipa configurația și disponibilitatea curentă înainte de comandă.
 
-Pregătim oferta voastră ↗
+Cere o ofertă  ↗
 
 ## Contact
 

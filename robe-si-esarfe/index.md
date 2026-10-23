@@ -14,8 +14,6 @@ ROBE ȘI EȘARFE
 
 Robe, toci și eșarfe realizate pentru momentul în care întreaga promoție se reunește. Alegem împreună mărimile, culorile și personalizarea.
 
-Cere o ofertă  ↗
-
 DETALII CARE FAC DIFERENȚA
 
 01
@@ -100,7 +98,7 @@ PREGĂTIM ÎMPREUNĂ
 
 Trimiteți numărul de absolvenți, înălțimile, culorile preferate și denumirea instituției. Vă ajutăm să confirmați detaliile înainte de pregătire.
 
-Pregătim oferta voastră ↗
+Cere o ofertă  ↗
 
 ## Contact
 

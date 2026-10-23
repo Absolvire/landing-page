@@ -14,8 +14,6 @@ DIPLOME ȘI ACCESORII
 
 De la diploma înmânată pe scenă la micul suvenir păstrat acasă, fiecare detaliu poate spune povestea promoției voastre.
 
-Cere o ofertă  ↗
-
 RECUNOAȘTERE, BUCURIE, AMINTIRI
 
 ## Micile detalii. Marile reușite.
@@ -98,7 +96,7 @@ PREGĂTIM ÎMPREUNĂ
 
 Spuneți-ne ce produse doriți, cantitățile și textul de personalizat. Confirmăm modelele, materialele și disponibilitatea în ofertă.
 
-Pregătim oferta voastră ↗
+Cere o ofertă  ↗
 
 ## Contact
 

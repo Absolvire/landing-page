@@ -14,8 +14,6 @@ FESTIVITĂȚI ȘI BALURI
 
 Un moment solemn, o fotografie împreună, o seară de sărbătoare. Pregătim evenimentul în jurul oamenilor care îl fac special.
 
-Cere o ofertă  ↗
-
 DETALII CARE FAC DIFERENȚA
 
 01
@@ -64,7 +62,7 @@ PREGĂTIM ÎMPREUNĂ
 
 Începem cu orașul, data estimată, numărul de invitați și bugetul orientativ. Detaliile și serviciile incluse se confirmă în propunerea personalizată.
 
-Pregătim oferta voastră ↗
+Cere o ofertă  ↗
 
 ## Contact
 
