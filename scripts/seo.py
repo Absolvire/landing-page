@@ -39,6 +39,16 @@ def run():
  texts=[]
  for i,(slug,title,desc,photo) in enumerate(PAGES):
   folder=ROOT/slug; file=folder/'index.html'; s=file.read_text(); prefix='../' if slug else ''; url=BASE+(slug+'/' if slug else '')
+  menu_pages = [('', 'Acasă'), ('robe-si-esarfe', 'Robe și eșarfe'), ('diplome-si-accesorii', 'Diplome și accesorii'), ('albume', 'Albume și fotografie'), ('festivitati-si-baluri', 'Festivități și baluri')]
+  menu_links = []
+  for route, label in menu_pages:
+   href = prefix + route + '/' if route else (prefix or './')
+   current = ' aria-current="page"' if slug == route else ''
+   menu_links.append(f'<a href="{href}"{current}>{label}</a>')
+  menu_links.extend([f'<a href="{prefix}#despre">Povestea noastră</a>', f'<a href="{prefix}#galerie">Amintiri</a>', f'<a class="button small" href="{prefix}#contact">Hai să organizăm <span aria-hidden="true">↗</span></a>'])
+  menu = '<nav id="nav" aria-label="Navigare principală">' + '\n        '.join(menu_links) + '</nav>'
+  s, menu_count = re.subn(r'<nav\b[^>]*\bid="nav"[^>]*>.*?</nav>', lambda match: menu, s, count=1, flags=re.S)
+  assert menu_count == 1, f'Meniul principal lipsește: {file}'
   s=re.sub(r'<!-- SEO:START -->.*?<!-- SEO:END -->','',s,flags=re.S)
   s=re.sub(r'<title>.*?</title>','',s,flags=re.S)
   s=re.sub(r'<meta\b(?=[^>]*(?:name="(?:description|robots|twitter:[^"]+)"|property="og:[^"]+"))[^>]*>','',s,flags=re.S)

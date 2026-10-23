@@ -1561,3 +1561,39 @@ main > .section:last-child{padding-bottom:0}
 main > .section:last-child > .detail-cta:last-child{margin-bottom:0}
 .legal-page{padding-bottom:0}
 .legal-content > :last-child{margin-bottom:0}
+
+/* Meniu comun pentru toate paginile, cu spațiu pentru lista de servicii. */
+#nav { gap: 18px; }
+#nav > a { white-space: nowrap; }
+#nav > a[aria-current="page"] { color: var(--red); }
+@media (max-width: 1280px) {
+  body > header { position: relative; z-index: 30; }
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    gap: 18px;
+    background: none;
+    border: 1px solid var(--line);
+    padding: 7px 13px;
+    font-size: 12px;
+    border-radius: 3px;
+  }
+  #nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--paper);
+    padding: 22px;
+    z-index: 10;
+    border-bottom: 1px solid var(--line);
+    align-items: stretch;
+    max-height: calc(100dvh - 105px);
+    overflow-y: auto;
+  }
+  #nav.open { display: flex; flex-direction: column; gap: 8px; }
+  #nav > a { min-height: 44px; display: flex; align-items: center; }
+}
