@@ -1,74 +1,76 @@
-# Absolvire — site de prezentare
+# Absolvire.ro — site static
 
-Site static, în română, realizat pe baza paginilor și fotografiilor publice de la https://www.absolvire.ro/.
+Construit pe baza `xxx- cezar 2/Brief-site-Absolvire-v1.docx` (rev. 3), a machetelor din anexa A și a imaginilor reale din același folder.
+HTML + CSS + JavaScript simplu, fără framework.
 
-## Pornire
+## Rulare locală
 
-`npm run dev` — http://127.0.0.1:4174
-
-`npm run build` — produce folderul `dist/`, pregătit pentru găzduire statică.
-
-## Formular
-
-În `index.html`, înlocuiește valoarea câmpului `access_key` (`test-test-test`) cu cheia publică Web3Forms validă pentru Absolvire. Valoarea actuală este intenționat blocată în JavaScript și afișează datele de contact, fără să pretindă că mesajul a fost trimis. Cu cheia validă, formularul trimite asincron la Web3Forms, concatenează detaliile cererii în mesaj, verifică răspunsul API și păstrează datele în caz de eroare. Trimiterea reală nu a fost testată cu cheia demonstrativă. Nu este folosită cheia altui proiect.
-
-## Conținut și imagini
-
-Fotografiile sunt stocate local în `assets/`; URL-urile sursă sunt în `docs/image-sources.json`. Au fost consultate paginile Acasă, Despre noi, Robe și eșarfe, Diplome și accesorii, Galerie foto-video, Festivități și baluri, Agenda festivității și Contact. Legătura veche către pagina Albume returna 404; fotografiile de albume provin din galerie. Nu sunt reproduse prețuri sau oferte din 2021.
-
-Paletă: coral #e83d47, negru #191919, alb cald. Fonturile Manrope și DM Sans sunt încărcate prin Google Fonts; există fallback sans-serif.
-
-Local, canonicalul și sitemapul folosesc https://www.absolvire.ro/. Variabila SITE_URL poate schimba adresa; workflow-ul Pages preia automat URL-ul public configurat în GitHub. Legăturile juridice duc la site-ul original; verifică politicile înainte de lansare și actualizează-le pentru fluxul Web3Forms. Site-ul nu a fost publicat.
-
-## Pagini de servicii
-
-Sunt disponibile /robe-si-esarfe/, /diplome-si-accesorii/, /albume/ și /festivitati-si-baluri/. Cardurile și navigarea serviciilor leagă aceste pagini. Butoanele de ofertă preselectează serviciul în formularul de pe pagina principală. Galeria principală conține 12 fotografii. Pagina Albume a fost reconstruită folosind conținutul indexat al URL-ului original (accesul direct returnează 404); configurațiile se confirmă la ofertare.
-
-## SEO și acces pentru agenți AI
-
-`npm run build` rulează `scripts/seo.py`: metadate unice, canonical, Open Graph/Twitter, JSON-LD Organization/WebSite/WebPage/Service/BreadcrumbList, imagini responsive, sitemap și exporturi text `index.md`, `llms.txt`, `llms-full.txt`. HTML-ul conține tot conținutul fără JavaScript. `npm run check:seo` verifică distribuția generată. Modificați titlurile și descrierile în `scripts/seo.py`; metadatele generate se rescriu la build.
-
-`llms.txt` este un ajutor de descoperire, nu un standard care garantează indexarea. robots.txt permite crawlerele; accesul real depinde și de hosting/CDN. Nu există garanții de poziționare sau citare AI.
-
-La publicare: serviți dist/ la https://www.absolvire.ro/, configurați redirecționări permanente de la HTTP și domeniul fără www către canonical, evitați blocarea crawlerelor în firewall/CDN, trimiteți sitemap.xml în Google Search Console/Bing Webmaster Tools și verificați URL-urile în instrumentele lor. Verificați Core Web Vitals cu date reale după publicare. Rutele inexistente trebuie să răspundă 404; nu redirecționați orice URL către homepage. Setări recomandate pentru hosting: compresie Brotli/gzip, cache revalidabil pentru HTML și cache pentru assets. Site-ul nu a fost publicat în această sesiune.
-
-## Vizualizator de eșarfe
-
-21 de variante fotografice originale stocate în assets/scarves/; proveniența și paleta sunt în docs/scarf-colors.json. Selectorul păstrează ultima imagine validă la eroare și ignoră încărcările vechi la clickuri rapide. Selectorul este doar o previzualizare; culoarea nu se transmite în formular. Inscripția PROMOȚIA afișează automat anul curent + 1, calculat în fusul Europe/Bucharest. Fișierul decorativ din 2024 nu este folosit, astfel încât previzualizarea nu afișează o promoție învechită.
-
-## Deploy automat pe GitHub Pages
-
-1. Urcă repository-ul pe GitHub cu branch-ul `main`.
-2. În **Settings → Pages → Build and deployment → Source**, selectează **GitHub Actions** (o singură dată).
-3. Orice push în `main` declanșează `.github/workflows/pages.yml`: build, validări SEO/resurse, apoi deploy. Poți porni publicarea și manual din Actions → Deploy GitHub Pages → Run workflow.
-
-Nu ai nevoie de token personal, Node sau pachete Python externe. Workflow-ul folosește permisiunile GitHub standard pentru Pages și Python 3.12 pe Ubuntu. Repository-ul trebuie să permită GitHub Pages și GitHub Actions.
-
-Adresa canonică, sitemapul și exporturile AI folosesc automat URL-ul furnizat de GitHub Pages, inclusiv subdirectorul repository-ului. Pentru domeniul `www.absolvire.ro`, configurează **Custom domain** în Settings → Pages și DNS-ul domeniului înaintea publicării pe acel domeniu; un fișier CNAME singur nu configurează domeniul pentru acest workflow.
-
-### Verificare locală, fără dependențe externe
-
-```sh
-python3 scripts/build.py
-python3 scripts/check_seo.py
-python3 scripts/check_assets.py
+```bash
+python3 -m http.server 8765 --directory landing-page
 ```
 
-Pentru a simula un site Pages într-un subdirector:
+Apoi deschide http://localhost:8765. Rulează site-ul prin server, nu prin dublu-click pe fișier:
+eșarfa colorată folosește o mască CSS, iar browserele nu o încarcă de pe `file://`.
 
-```sh
-SITE_URL=https://example.github.io/absolvire-landing-page/ python3 scripts/build.py
-SITE_URL=https://example.github.io/absolvire-landing-page/ python3 scripts/check_seo.py
-```
+## Pagini
 
-Build-ul recreează `dist/` de la zero și include doar fișierele statice publice și `.nojekyll`. Nu se comite `dist/`. Proveniența imaginilor este păstrată în `docs/`, în afara site-ului publicat. Variantele responsive `*-640.jpg` sunt deja incluse; pentru o fotografie nouă fără variantă redusă, build-ul folosește imaginea originală și dimensiunile ei reale. Nu mai depinde de comanda macOS `sips`.
+| Pagină | Conținut |
+|---|---|
+| `index.html` | Carusel, avantaje, modelele de albume, „Toca ta. Designul tău.”, selecția foto online, categorii |
+| `albume.html` | Toate modelele + tabel comparativ |
+| `album-economy/velvet/deluxe/class/elite.html` | Pagina fiecărui album: simulator de copertă, estimare cu pragul de 15, interior, promoții asociate |
+| `vestimentatie.html` | Configuratorul ținutei complete (robă, pălărie, eșarfă, insignă/cocardă, diplomă A4, bonus diriginte) |
+| `palarie.html`, `esarfa.html`, `insigna-cocarda.html` | Configuratoarele individuale („Nu vreau ținuta completă”) |
+| `foto-video.html`, `festivitati.html`, `banchete.html` | Fotografii pentru diplomă, servicii de festivitate și de banchet |
+| `premiere.html`, `parade.html` | Diplome, medalii, plachete; steaguri, pancarte și proiecte speciale |
+| `pachete.html`, `promotii.html` | Pachete vestimentație + album (fără preț public); oferte active cu filtre |
+| `cerere.html` | „Cererea mea”: recapitulare, subtotal calculabil, poziții de confirmat, formular |
 
-Documentație: https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages
+## Cum se editează
 
-AI discovery: `/llms.txt` și `/llms-full.txt` sunt generate la fiecare build și incluse în `dist/`.
+- **Prețuri, culori, albume, servicii, campanii, contacte**: `assets/js/data.js`. Paginile le citesc de acolo.
+- **Texte, antet, subsol**: sursele sunt în `_src/`: `partials/` (antet, subsol, eșarfă, secțiunea foto) și `pages/` (corpul fiecărei pagini; `_album.html` e șablonul paginilor de album). După modificare rulează:
 
-## Configurator de toci — /toci/
+  ```bash
+  python3 _src/build.py
+  ```
 
-Pagina reutilizează selecția de culori și panglici din `script.js`, cu fotografiile reale din `pictures/poze reale`. Extensia pentru fotografii este activată numai prin `data-real-photos`; vizualizatorul existent păstrează modelele Perfect Fit și Clasică. Pagina include trei culori, 21 de panglici, detaliu medalion, anul promoției, cantitate, 50 lei/bucată și suplimentul de 20 lei/bucată pentru design comun. Designul individual are preț la cerere. Prețurile sunt estimative, după macheta furnizată. Anii diferiți de 2027 sunt simulați în previzualizare; fotografiile originale prezintă 2027.
+  Scriptul (are nevoie de Python 3 și Node) regenerează fișierele `.html` din rădăcină. Nu edita direct `.html`-urile din rădăcină, pentru că se suprascriu la următorul build.
+- **Stiluri**: `assets/css/style.css`. **Logică**: `assets/js/app.js`.
 
-Personalizarea este primul pas și conține numai trei opțiuni radio, fără încărcare de imagini. Cererea se pregătește prin e-mail, iar fișierele și detaliile personalizării se stabilesc ulterior cu echipa. Buildul include pagina și fotografiile sale.
+## Imagini
+
+- `assets/img/`: imaginile clientului convertite în WebP.
+- `cocarda-<culoare>.webp`: fotografia reală a cocardei, cu rozeta recolorată pentru fiecare culoare din paletă și cu insigna reală (din prototipul `coduri html`) în centru.
+- Eșarfa din previzualizare este fotografia reală a eșarfei albe, colorată prin mască CSS.
+
+## De completat înainte de publicare
+
+- **Campanii**: brief-ul cere ca ele să fie inactive la lansare. Pentru demo, 3 sunt activate în `data.js`; pune `active: false` ca să le ascunzi.
+- **Contacte** (`config.contact`) și linkurile către platforma foto și cea de diplome.
+- **Trimiterea cererii**: dacă `config.submitEndpoint` e gol, cererea se salvează doar în browser. Setează un endpoint ca să ajungă efectiv la echipă.
+- **Paleta de eșarfe** (nume, coduri, imprimare albă/neagră) e preluată din prototipul clientului și trebuie confirmată cu catalogul oficial. La fel numele nuanțelor de catifea și ale funditelor pentru Velvet.
+- Clipurile video ale albumelor, fotografii pentru medalii și plachete, pagini „Despre noi” / „Contact” / „Portofoliu”.
+
+## SEO și GEO (motoare de căutare și motoare AI)
+
+Totul se generează la `python3 _src/build.py`, din aceleași date (`assets/js/data.js` + `_src/seo.py`), deci prețurile din text, din întrebările frecvente și din datele structurate rămân sincronizate.
+
+- **Conținut în HTML, nu doar în JavaScript**: albumele, prețurile, serviciile, promoțiile și recomandările sunt scrise direct în pagină (crawlerele AI de regulă nu rulează JavaScript).
+- **Pe fiecare pagină**: titlu ≤ 60 caractere, descriere ≤ 160, `canonical`, Open Graph / Twitter, date structurate JSON-LD (Organization, BreadcrumbList, Product/Offer în lei, Service, FAQPage) și o secțiune vizibilă „Întrebări frecvente”.
+- **`sitemap.xml`**, **`robots.txt`** (permite explicit GPTBot, ClaudeBot, PerplexityBot, Google-Extended etc.) și **`llms.txt`** (rezumatul site-ului cu prețuri și răspunsuri, pentru asistenții AI).
+- `cerere.html` are `noindex` și nu apare în sitemap.
+
+De verificat înainte de publicare: domeniul din `_src/seo.py` (`SITE_URL = "https://www.absolvire.ro"`). Dacă site-ul se publică pe alt domeniu, schimbă-l și rulează din nou build-ul. Când există contacte aprobate în `data.js`, ele apar automat și în datele structurate.
+
+## Publicare (GitHub Pages)
+
+La fiecare push pe `main`, workflow-ul `.github/workflows/pages.yml` rulează:
+
+1. `python3 scripts/build.py` — rulează generatorul `_src/build.py` (cu `SITE_URL` setat automat la adresa reală a site-ului din GitHub Pages; cu domeniu propriu configurat în Pages devine `https://www.absolvire.ro`) și copiază în `dist/` doar fișierele publice, plus `.nojekyll`;
+2. `python3 scripts/check_seo.py` — verifică fiecare pagină: un singur H1, titluri ≤ 60 și descrieri ≤ 160 caractere unice, canonical și Open Graph, JSON-LD (Organization, WebSite / BreadcrumbList, FAQPage), `alt` și `width`/`height` corecte pe imagini, linkuri și ancore interne, `sitemap.xml`, `robots.txt`, `llms.txt`;
+3. `python3 scripts/check_assets.py` — oprește publicarea dacă în `dist/assets` lipsește un fișier folosit sau există un fișier nefolosit;
+
+apoi publică `dist/` pe GitHub Pages. Local, aceleași comenzi: `npm run build`, `npm run check:seo`, `npm run check:assets`.
+
+Generatorul are nevoie de Python 3 și Node.js (citește catalogul din `assets/js/data.js`); ambele sunt disponibile pe runner-ul GitHub `ubuntu-latest`.

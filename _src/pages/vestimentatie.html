@@ -1,0 +1,128 @@
+<!--
+title: Ținuta completă pentru absolvire — robă, pălărie, eșarfă, insignă, diplomă | Absolvire.ro
+description: Configurează ținuta clasei: robă închiriată, pălărie, eșarfă personalizată, insignă sau cocardă și diplomă A4 inclusă. 100 lei / pachet, bonus pentru diriginte.
+page: outfit
+nav: vestimentatie
+-->
+<section class="section section-top">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Acasă</a><span>/</span><span aria-current="page">Vestimentație</span></nav>
+    <div class="outfit-head">
+      <h1>Ținuta completă pentru absolvire</h1>
+      <p class="pill">Robă închiriată + pălărie + eșarfă + insignă + <strong>diplomă A4</strong></p>
+      <div class="separate">
+        <a class="btn btn-outline" href="#individuale">Nu vreau ținuta completă</a>
+        <p id="individuale"><a href="palarie.html">Doar pălărie</a><span>·</span><a href="esarfa.html">Doar eșarfă</a><span>·</span><a href="insigna-cocarda.html">Insignă / cocardă</a></p>
+      </div>
+    </div>
+
+    <div class="config" data-outfit>
+      <div class="config-preview">
+        <div class="mannequin">
+          <div class="m-hat hat"><img class="hat-img" data-o-hat src="assets/img/palarie-visiniu.webp" alt="" width="900" height="638"><span class="hat-band" data-o-band><img src="assets/img/bentita-visiniu.webp" alt=""></span></div>
+          <div class="m-body">
+            <img class="m-robe" data-o-robe src="assets/img/roba-visiniu.webp" alt="Robă de absolvire" width="760" height="1140">
+            {{stole}}
+            <div class="m-badge" data-o-badge aria-hidden="true"><img src="assets/img/insigna.webp" alt=""></div>
+          </div>
+          <figure class="m-diploma">
+            <img src="assets/img/diploma-a4.webp" alt="Exemplu de diplomă A4 personalizată" width="760" height="1075">
+            <figcaption>Diploma A4 este inclusă în preț</figcaption>
+          </figure>
+        </div>
+        <ul class="includes">
+          <li>Robă închiriată din satin, croială elegantă</li>
+          <li>Pălărie cu panglică în culoarea eșarfei și ciucure cu medalionul anului</li>
+          <li>Eșarfă personalizată cu instituția și promoția</li>
+          <li>Insignă sau cocardă personalizată</li>
+          <li>Diplomă A4 inclusă în preț</li>
+        </ul>
+        <div class="choice-summary" data-o-summary aria-live="polite"></div>
+      </div>
+
+      <form class="config-panel" data-outfit-form onsubmit="return false">
+        <fieldset class="opt">
+          <legend><span class="step">1</span> Culoarea robei: <strong data-o-robe-name></strong></legend>
+          <div class="robe-picks" data-o-robes></div>
+        </fieldset>
+        <fieldset class="opt">
+          <legend><span class="step">2</span> Personalizarea pălăriei: <strong data-o-cap-name></strong></legend>
+          <div class="cap-picks">
+            <label class="cap-pick"><input type="radio" name="cap" value="none" checked><img data-o-cap-thumb="plain" src="assets/img/palarie-visiniu.webp" alt=""><b>Fără personalizare</b><small>inclusă</small></label>
+            <label class="cap-pick"><input type="radio" name="cap" value="common"><img data-o-cap-thumb="pers" src="assets/img/palarie-visiniu-pers.webp" alt=""><b>Design comun al clasei</b><small>+20 lei / pachet</small></label>
+            <label class="cap-pick"><input type="radio" name="cap" value="individual"><img data-o-cap-thumb="pers" src="assets/img/palarie-visiniu-pers.webp" alt=""><b>Design individual</b><small>preț de confirmat</small></label>
+          </div>
+          <div class="cap-detail" data-o-cap-common hidden>
+            <label class="check"><input type="checkbox" data-o-cap-email> <span>Voi trimite poza pe email <span class="muted">(designul comun al clasei)</span></span></label>
+            <label>Text pe capac <span class="muted">(opțional)</span><input type="text" data-o-cap-text maxlength="40" placeholder="ex. We did it! · XII A"></label>
+            <p class="hint">Aceeași grafică pe toate pălăriile grupului. Macheta finală se aprobă înainte de producție.</p>
+          </div>
+          <p class="hint cap-detail" data-o-cap-individual hidden>Fiecare elev își încarcă propriul design în platforma online, după trimiterea cererii. Fișierele se pot înlocui până la închiderea etapei de personalizare.</p>
+          <p class="hint">Panglica pălăriei preia culoarea eșarfei, iar ciucurele are medalionul auriu al anului.</p>
+        </fieldset>
+        <fieldset class="opt">
+          <legend><span class="step">3</span> Culoarea eșarfei: <strong data-o-scarf-name></strong></legend>
+          <div class="swatches swatches-code" data-o-scarves></div>
+          <p class="hint" data-o-print></p>
+        </fieldset>
+        <fieldset class="opt">
+          <legend><span class="step">4</span> Insignă sau cocardă?</legend>
+          <div class="badge-picks">
+            <label class="badge-pick"><input type="radio" name="badge" value="insigna" checked><img src="assets/img/insigna.webp" alt=""><span><b>Insignă</b><small>inclusă în pachet</small></span></label>
+            <label class="badge-pick"><input type="radio" name="badge" value="cocarda"><img data-o-cocarda-thumb src="assets/img/cocarda-visiniu.webp" alt=""><span><b>Cocardă</b><small>+10 lei / pachet</small></span></label>
+          </div>
+          <div class="rosette" data-o-rosette hidden>
+            <p>Culoarea rozetei: <strong data-o-rosette-name></strong> <span class="tag" data-o-rosette-rec></span></p>
+            <div class="swatches swatches-sm" data-o-rosettes></div>
+          </div>
+        </fieldset>
+        <fieldset class="opt">
+          <legend><span class="step">5</span> Diplomă</legend>
+          <div class="radio-list">
+            <label><input type="radio" name="diploma" value="a4" checked><span>Diplomă A4</span><em>inclusă</em></label>
+            <label><input type="radio" name="diploma" value="catifea"><span>Diplomă pe suport de catifea</span><em>+25 lei / elev</em></label>
+          </div>
+        </fieldset>
+        <fieldset class="opt">
+          <legend><span class="step">6</span> Date pentru personalizare</legend>
+          <div class="grid-3">
+            <label>Instituția<input type="text" data-o-inst placeholder="Instituția voastră" maxlength="60"></label>
+            <label>Clasa<input type="text" data-o-class placeholder="XII A" maxlength="20"></label>
+            <label>Promoția<input type="number" data-o-year min="2024" max="2100"></label>
+          </div>
+          <p class="hint">Datele, sigla și mărimile robelor se pot completa și după prima solicitare.</p>
+        </fieldset>
+        <fieldset class="opt">
+          <legend><span class="step">7</span> Număr de pachete plătite</legend>
+          <span class="stepper big"><button type="button" data-step="-1" aria-label="Mai puțin">−</button><input type="number" min="1" value="25" data-o-qty inputmode="numeric" aria-label="Număr de pachete plătite"><button type="button" data-step="1" aria-label="Mai mult">+</button></span>
+        </fieldset>
+
+        <div class="price-box" data-o-price aria-live="polite"></div>
+        <button class="btn btn-primary btn-block" type="button" data-o-add>Adaugă în cererea de ofertă <span aria-hidden="true">→</span></button>
+        <p class="micro center">Disponibilitatea se confirmă în oferta personalizată.</p>
+        <div class="promo-lines" data-promo-lines="festivitate" hidden><h2>Promoții disponibile</h2><ul></ul></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="section-head"><div><h2>Completează momentul de premiere</h2></div></div>
+    <div class="reco-grid" data-recos="outfit"></div>
+  </div>
+</section>
+
+<section class="section section-tight">
+  <div class="wrap">
+    <h2 class="h3-serif">Ce include ținuta</h2>
+    <ul class="kit">
+      <li><img src="assets/img/roba-visiniu-pack.webp" alt="" loading="lazy"><span>Robă închiriată</span></li>
+      <li><img src="assets/img/palarie-visiniu.webp" alt="" loading="lazy"><span>Pălărie</span></li>
+      <li><img src="assets/img/esarfa-alba.webp" alt="" loading="lazy"><span>Eșarfă personalizată</span></li>
+      <li><img src="assets/img/cocarda-visiniu.webp" alt="" loading="lazy"><span>Insignă sau cocardă</span></li>
+      <li><img src="assets/img/diploma-a4.webp" alt="" loading="lazy"><span>Diplomă A4</span></li>
+      <li class="kit-note"><b>⟳</b><span>Roba se returnează.<br>Accesoriile rămân amintire.</span></li>
+    </ul>
+  </div>
+</section>

@@ -1,11 +1,32 @@
-"""Read JPEG/PNG dimensions using only the Python standard library."""
+"""Read JPEG/PNG/WebP dimensions using only the Python standard library."""
 import struct
+
+
+def _webp_size(f):
+    f.seek(12)
+    chunk = f.read(4)
+    if chunk == b'VP8X':
+        f.seek(24)
+        b = f.read(6)
+        return 1 + int.from_bytes(b[0:3], 'little'), 1 + int.from_bytes(b[3:6], 'little')
+    if chunk == b'VP8L':
+        f.seek(21)
+        bits = int.from_bytes(f.read(4), 'little')
+        return (bits & 0x3FFF) + 1, ((bits >> 14) & 0x3FFF) + 1
+    if chunk == b'VP8 ':
+        f.seek(26)
+        w, h = struct.unpack('<HH', f.read(4))
+        return w & 0x3FFF, h & 0x3FFF
+    raise ValueError('Unsupported WebP chunk')
+
 
 def image_size(path):
     with open(path, 'rb') as f:
         signature = f.read(24)
         if signature[:8] == b'\x89PNG\r\n\x1a\n':
             return struct.unpack('>II', signature[16:24])
+        if signature[:4] == b'RIFF' and signature[8:12] == b'WEBP':
+            return _webp_size(f)
         if signature[:2] != b'\xff\xd8':
             raise ValueError(f'Unsupported image: {path}')
         f.seek(2)

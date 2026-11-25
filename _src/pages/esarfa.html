@@ -1,0 +1,63 @@
+<!--
+title: Eșarfă de absolvire personalizată — 35 lei/buc. | Absolvire.ro
+description: Eșarfă de absolvire personalizată cu denumirea instituției și anul promoției, în culorile clasei. Imprimare albă sau neagră, stabilită pentru fiecare nuanță.
+page: scarf
+nav: vestimentatie
+-->
+<section class="section section-top">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Acasă</a><span>/</span><a href="vestimentatie.html">Vestimentație</a><span>/</span><span aria-current="page">Eșarfă</span></nav>
+    <header class="product-head">
+      <p class="kicker">Culorile clasei, într-o amintire de păstrat.</p>
+      <h1>Eșarfa de absolvire</h1>
+    </header>
+
+    <div class="config" data-scarf>
+      <div class="config-preview">
+        <div class="stage stage-tall">
+          {{stole}}
+        </div>
+        <a class="link-arrow" href="vestimentatie.html">Vezi ținuta completă <span aria-hidden="true">→</span></a>
+      </div>
+
+      <form class="config-panel" onsubmit="return false">
+        <fieldset class="opt">
+          <legend><span class="step">1</span> Culoarea eșarfei: <strong data-s-name></strong></legend>
+          <div class="swatches swatches-code" data-s-colors></div>
+          <p class="chip-line" data-s-print></p>
+        </fieldset>
+        <fieldset class="opt">
+          <legend><span class="step">2</span> Date pentru personalizare</legend>
+          <div class="grid-2 wide-first">
+            <label>Denumirea instituției<input type="text" data-s-inst placeholder="Ex. Colegiul Național …" maxlength="60"></label>
+            <label>Anul promoției<input type="number" data-s-year min="2024" max="2100"></label>
+          </div>
+        </fieldset>
+        <fieldset class="opt">
+          <legend><span class="step">3</span> Cantitate</legend>
+          <span class="stepper big"><button type="button" data-step="-1" aria-label="Mai puțin">−</button><input type="number" min="1" value="25" data-s-qty inputmode="numeric" aria-label="Cantitate"><button type="button" data-step="1" aria-label="Mai mult">+</button></span>
+        </fieldset>
+        <div class="price-box" data-s-price aria-live="polite"></div>
+        <button class="btn btn-primary btn-block" type="button" data-s-add>Adaugă în cererea de ofertă <span aria-hidden="true">→</span></button>
+        <p class="micro center">Personalizarea instituției este inclusă în preț.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tight">
+  <div class="wrap print-banner">
+    <div>
+      <h2>Personalizare potrivită fiecărei nuanțe.</h2>
+      <p>Culoarea imprimării este stabilită pentru fiecare eșarfă, conform modelelor prezentate: imprimare neagră pe nuanțele deschise, albă pe cele închise.</p>
+    </div>
+    <div class="print-tips" data-print-tips></div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="section-head"><div><h2>Completează alegerea voastră</h2></div></div>
+    <div class="reco-grid four" data-recos="esarfa"></div>
+  </div>
+</section>

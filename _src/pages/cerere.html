@@ -1,0 +1,54 @@
+<!--
+title: Cererea mea — cerere de ofertă și disponibilitate | Absolvire.ro
+description: Recapitularea selecțiilor tale și formularul pentru cererea de ofertă și disponibilitate.
+page: cerere
+nav: cerere
+-->
+<section class="section section-top">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Acasă</a><span>/</span><span aria-current="page">Cererea mea</span></nav>
+    <h1 class="page-title">Cererea mea</h1>
+    <div class="request" data-cart-page>
+      <div data-cart-view class="request-grid">
+        <div>
+          <div data-cart-items></div>
+        </div>
+        <aside class="request-side">
+          <div class="cart-summary" data-cart-summary></div>
+          <form class="request-form card" data-request-form novalidate>
+            <h2>Datele solicitării</h2>
+            <div class="grid-2">
+              <label>Persoană de contact *<input name="name" required autocomplete="name"></label>
+              <label>Telefon *<input name="phone" type="tel" required autocomplete="tel"></label>
+            </div>
+            <label>Email *<input name="email" type="email" required autocomplete="email"></label>
+            <label class="check"><input type="checkbox" name="individual" data-individual> Solicitare individuală (nu pentru o clasă)</label>
+            <div class="grid-2" data-school-fields>
+              <label>Instituție *<input name="school" required></label>
+              <label>Clasă / grup de clase *<input name="classes" required placeholder="ex. XII A, XII B"></label>
+            </div>
+            <div class="grid-2">
+              <label>Localitate *<input name="city" required autocomplete="address-level2"></label>
+              <label>Nr. elevi / participanți *<input name="people" type="number" min="1" required></label>
+            </div>
+            <details>
+              <summary>Date opționale</summary>
+              <div class="grid-2">
+                <label>Data / intervalul evenimentului<input name="date" placeholder="ex. iunie 2027"></label>
+                <label>Locația exactă<input name="venue"></label>
+              </div>
+              <label>Buget orientativ<input name="budget"></label>
+              <label>Observații<textarea name="notes" rows="3"></textarea></label>
+            </details>
+            <label class="check"><input type="checkbox" name="gdpr" required> <span>Sunt de acord cu prelucrarea datelor pentru transmiterea ofertei, conform <a href="politica-de-confidentialitate.html" target="_blank">Politicii de confidențialitate</a>. *</span></label>
+            <input type="checkbox" name="botcheck" class="sr" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <p class="form-error" data-form-error role="alert" hidden></p>
+            <p class="micro">Solicitarea este estimativă și nu constituie comandă fermă sau rezervare. Echipa Absolvire.ro confirmă oferta, disponibilitatea, programarea și livrarea.</p>
+            <button class="btn btn-primary btn-block" type="submit">Trimite cererea de ofertă și disponibilitate</button>
+          </form>
+        </aside>
+      </div>
+      <div class="sent" data-sent-view hidden></div>
+    </div>
+  </div>
+</section>

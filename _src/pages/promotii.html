@@ -1,0 +1,26 @@
+<!--
+title: Promoții Absolvire.ro — albume, festivitate, banchet
+description: Ofertele active pentru promoția de absolvenți: beneficii, condiții și perioade, pentru albume, festivitate și banchet.
+page: promotii
+nav: promotii
+-->
+<section class="page-hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Acasă</a><span>/</span><span aria-current="page">Promoții</span></nav>
+    <p class="eyebrow">Promoții</p>
+    <h1>Oferte active pentru promoția <span data-year>{{year}}</span></h1>
+  </div>
+</section>
+
+<section class="section section-tight">
+  <div class="wrap">
+    <div class="filters" role="group" aria-label="Filtrează promoțiile" data-promo-filters>
+      <button type="button" class="chip is-on" data-filter="all" aria-pressed="true">Toate</button>
+      <button type="button" class="chip" data-filter="albume" aria-pressed="false">Albume</button>
+      <button type="button" class="chip" data-filter="festivitate" aria-pressed="false">Festivitate</button>
+      <button type="button" class="chip" data-filter="banchet" aria-pressed="false">Banchet</button>
+    </div>
+    <div class="promo-list" data-promo-list></div>
+    <p class="note">Site-ul afișează beneficiul posibil pe baza informațiilor introduse. Eligibilitatea și beneficiul final se confirmă de echipa Absolvire.ro în oferta transmisă.</p>
+  </div>
+</section>

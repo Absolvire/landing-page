@@ -1,0 +1,95 @@
+<!--
+title: Absolvire.ro — Albume de absolvire, vestimentație și evenimente
+description: Albume de absolvire cu selecție online a fotografiilor, robe și pălării personalizate, festivități și baluri. Configurează și cere oferta clasei.
+page: home
+-->
+<!-- Carusel (secțiunea 19): slide general + slide pentru fiecare promoție activă -->
+<section class="hero" aria-roledescription="carusel" aria-label="Prezentare și promoții">
+  <div class="hero-track" data-hero-track>
+    <article class="slide is-active" data-slide aria-roledescription="slide">
+      <div class="slide-media"><img src="assets/img/photo-wall.webp" alt="Absolvenți în robe și eșarfe albastre, fotografiați la photo wall-ul Absolvire.ro" width="1536" height="1024" fetchpriority="high"></div>
+      <div class="wrap slide-body">
+        <p class="eyebrow">Promoția <span data-year>{{year}}</span></p>
+        <h1 class="slide-title">Ani de povești.<br><em>Amintiri în culorile voastre.</em></h1>
+        <p class="slide-lead">Albume de absolvire, vestimentație și evenimente pentru generația voastră — într-o singură cerere de ofertă.</p>
+        <div class="slide-cta">
+          <a class="btn btn-primary" href="albume.html">Descoperă albumele <span aria-hidden="true">→</span></a>
+          <a class="btn btn-outline" href="vestimentatie.html">Configurează vestimentația</a>
+        </div>
+      </div>
+    </article>
+  </div>
+  <div class="wrap hero-controls" data-hero-controls hidden>
+    <button class="hero-arrow" type="button" data-hero-prev aria-label="Slide-ul anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <div class="hero-dots" data-hero-dots role="tablist" aria-label="Alege slide-ul"></div>
+    <button class="hero-pause" type="button" data-hero-pause aria-label="Oprește rotația" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true" class="i-pause"><path d="M9 6v12M15 6v12"/></svg>
+      <svg viewBox="0 0 24 24" aria-hidden="true" class="i-play"><path d="M8 5l11 7-11 7z"/></svg>
+    </button>
+    <span class="hero-count" data-hero-count aria-live="polite">01 / 01</span>
+    <button class="hero-arrow" type="button" data-hero-next aria-label="Slide-ul următor"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+  </div>
+</section>
+
+<section class="perks" aria-label="Avantaje pe scurt">
+  <div class="wrap perks-grid">
+    <div class="perk">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="17"/><circle cx="17" cy="19" r="2.6"/><circle cx="25" cy="15" r="2.6"/><circle cx="32" cy="21" r="2.6"/><path d="M24 41c-3-4 1-8 5-6 4 2 10 1 12-4"/></svg>
+      <div><h3>Culori și personalizare</h3><p>Catifea, fundițe, eșarfe și coperte în culorile clasei.</p></div>
+    </div>
+    <div class="perk">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="7" y="10" width="34" height="28" rx="3"/><circle cx="17" cy="20" r="3.5"/><path d="M7 33l11-9 8 7 6-5 9 8"/></svg>
+      <div><h3>Alegerea fotografiilor online</h3><p>Fiecare elev își alege de acasă imaginile pentru pagina sa.</p></div>
+    </div>
+    <div class="perk">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="16" r="6"/><circle cx="11" cy="20" r="4.5"/><circle cx="37" cy="20" r="4.5"/><path d="M13 40c0-7 5-12 11-12s11 5 11 12M3 37c0-5 3-8 8-8M45 37c0-5-3-8-8-8"/></svg>
+      <div><h3>O ofertă pentru clasa voastră</h3><p>Albume, vestimentație și evenimente într-o singură cerere.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Albume de absolvire</p>
+        <h2>Albumul vostru începe cu o alegere.</h2>
+      </div>
+      <a class="link-arrow" href="albume.html#compara">Compară toate modelele <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="album-cards" data-album-cards></div>
+    <p class="note center">Prețuri de referință pentru minimum <strong data-album-min>{{min_qty}}</strong> albume contra cost, cu ședința foto aferentă modelului inclusă.</p>
+  </div>
+</section>
+
+<section class="section cap-section">
+  <div class="wrap cap-grid">
+    <div class="cap-copy">
+      <p class="eyebrow">Personalizare tocă</p>
+      <h2>Toca ta. Designul tău.</h2>
+      <p class="lead">Un design comun pentru întreaga clasă sau o creație diferită pentru fiecare elev. Încarcă propriul design în platforma online și personalizează-ți toca de absolvire.</p>
+      <ul class="cap-modes">
+        <li><strong>Fără personalizare</strong><span>Panglica, ciucurele și medalionul anului rămân cele ale pălăriei alese.</span></li>
+        <li><strong>Design comun al clasei</strong><span>Aceeași grafică pentru tot grupul — <b>+20 lei / pălărie</b>.</span></li>
+        <li><strong>Design individual</strong><span>Fiecare elev își încarcă fișierul în platformă — <b>preț de confirmat</b>.</span></li>
+      </ul>
+      <a class="btn btn-primary" href="palarie.html">Descoperă personalizarea <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="cap-visual" aria-hidden="true">
+      <img class="cap a" src="assets/img/palarie-negru-pers.webp" alt="" width="900" height="638" loading="lazy">
+      <img class="cap b" src="assets/img/palarie-albastru-pers.webp" alt="" width="900" height="638" loading="lazy">
+      <img class="cap c" src="assets/img/palarie-visiniu-pers.webp" alt="" width="900" height="638" loading="lazy">
+      <div class="upload-chip"><svg viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M5 20h14"/></svg> Designul tău</div>
+    </div>
+  </div>
+</section>
+
+{{photo_experience}}
+
+<section class="section tiles-section" aria-label="Categorii">
+  <div class="wrap tiles">
+    <a class="tile" href="vestimentatie.html"><img src="assets/img/photo-wall.webp" alt="" width="1536" height="1024" loading="lazy"><span>Vestimentație<br>în culorile clasei</span><i aria-hidden="true">→</i></a>
+    <a class="tile" href="festivitati.html"><img src="assets/img/photo-wall-2.webp" alt="" width="1536" height="1024" loading="lazy"><span>Festivitatea<br>de absolvire</span><i aria-hidden="true">→</i></a>
+    <a class="tile" href="banchete.html"><img src="assets/img/elite-int-5.webp" alt="" width="1400" height="969" loading="lazy"><span>Banchetul<br>vostru</span><i aria-hidden="true">→</i></a>
+  </div>
+</section>

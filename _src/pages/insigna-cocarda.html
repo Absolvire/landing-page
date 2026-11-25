@@ -1,0 +1,60 @@
+<!--
+title: Insignă și cocardă de absolvire personalizate | Absolvire.ro
+description: Insignă personalizată (5 lei/buc.) sau cocardă cu rozetă textilă (15 lei/buc.), cu denumirea, sigla instituției și anul promoției.
+page: badge
+nav: vestimentatie
+-->
+<section class="section section-top">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Acasă</a><span>/</span><a href="vestimentatie.html">Vestimentație</a><span>/</span><span aria-current="page">Insignă / cocardă</span></nav>
+    <header class="product-head">
+      <p class="kicker">Un detaliu de distincție pentru fiecare absolvent.</p>
+      <h1>Insignă sau cocardă</h1>
+    </header>
+
+    <div class="config" data-badge-config>
+      <div class="config-preview">
+        <div class="stage">
+          <img class="stage-badge-img" data-b-img src="assets/img/cocarda-visiniu.webp" alt="" width="520" height="866">
+        </div>
+        <p class="hint center">Insigna centrală este aceeași; cocarda o decorează cu rozetă și panglici textile.</p>
+        <a class="link-arrow" href="vestimentatie.html">Vezi ținuta completă <span aria-hidden="true">→</span></a>
+      </div>
+
+      <form class="config-panel" onsubmit="return false">
+        <fieldset class="opt">
+          <legend><span class="step">1</span> Produs</legend>
+          <div class="badge-picks">
+            <label class="badge-pick"><input type="radio" name="bprod" value="insigna"><img src="assets/img/insigna.webp" alt=""><span><b>Insignă Ø 6 cm</b><small>5 lei / buc.</small></span></label>
+            <label class="badge-pick"><input type="radio" name="bprod" value="cocarda" checked><img data-b-thumb src="assets/img/cocarda-visiniu.webp" alt=""><span><b>Cocardă</b><small>15 lei / buc.</small></span></label>
+          </div>
+        </fieldset>
+        <fieldset class="opt" data-b-rosette>
+          <legend><span class="step">2</span> Culoarea rozetei: <strong data-b-rosette-name></strong></legend>
+          <div class="swatches swatches-code" data-b-rosettes></div>
+        </fieldset>
+        <fieldset class="opt">
+          <legend><span class="step" data-b-step>3</span> Insigna centrală</legend>
+          <div class="grid-2 wide-first">
+            <label>Denumirea instituției<input type="text" data-b-inst placeholder="Ex. Colegiul Național …" maxlength="60"></label>
+            <label>Anul promoției<input type="number" data-b-year min="2024" max="2100"></label>
+          </div>
+          <label class="check check-spaced"><input type="checkbox" data-b-logo-email> <span>Voi trimite poza pe email <span class="muted">(sigla instituției)</span></span></label>
+        </fieldset>
+        <fieldset class="opt">
+          <legend><span class="step" data-b-step2>4</span> Cantitate</legend>
+          <span class="stepper big"><button type="button" data-step="-1" aria-label="Mai puțin">−</button><input type="number" min="1" value="25" data-b-qty inputmode="numeric" aria-label="Cantitate"><button type="button" data-step="1" aria-label="Mai mult">+</button></span>
+        </fieldset>
+        <div class="price-box" data-b-price aria-live="polite"></div>
+        <button class="btn btn-primary btn-block" type="button" data-b-add>Adaugă în cererea de ofertă <span aria-hidden="true">→</span></button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="section-head"><div><h2>Completează alegerea voastră</h2></div></div>
+    <div class="reco-grid" data-recos="insigna"></div>
+  </div>
+</section>

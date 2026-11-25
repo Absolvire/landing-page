@@ -1,0 +1,83 @@
+<!--
+title: Album de absolvire {{album_name}} — {{album_size}}, {{album_price}} lei/elev | Absolvire.ro
+description: Albumul {{album_name}}: {{album_cover}}, {{album_binding}}, {{album_photos}}. Configurează coperta și cere oferta pentru clasa ta.
+page: album
+album: {{album_id}}
+nav: albume
+-->
+<section class="section section-top">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Acasă</a><span>/</span><a href="albume.html">Albume</a><span>/</span><span aria-current="page">{{album_name}}</span></nav>
+    <nav class="model-tabs" aria-label="Alte modele de album" data-model-tabs></nav>
+
+    <div class="album-studio" data-album-studio>
+      <div class="studio-gallery">
+        <div class="studio-stage">
+          <img data-studio-img src="{{album_img}}" alt="Album {{album_name}}" width="900" height="900">
+          <span class="stage-badge" data-studio-badge hidden></span>
+        </div>
+        <div class="studio-thumbs" data-studio-thumbs aria-label="Galeria modelului"></div>
+        <p class="stage-caption" data-studio-caption></p>
+      </div>
+      <div class="studio-panel">
+        <p class="eyebrow">Album de absolvire</p>
+        <h1 class="studio-title">{{album_name}} <span class="studio-tag">{{album_price}} lei / elev</span></h1>
+        <p class="studio-lead">{{album_short}}</p>
+        <dl class="specs">
+          <div><dt>Dimensiune</dt><dd>{{album_size}}</dd></div>
+          <div><dt>Copertă</dt><dd>{{album_cover}}</dd></div>
+          <div><dt>Pagini</dt><dd>{{album_binding}}</dd></div>
+          <div><dt>Fotografii</dt><dd>{{album_photos}}</dd></div>
+        </dl>
+
+        <fieldset class="opt" data-studio-opt1>
+          <legend><span class="step">1</span> <span data-opt1-label></span>: <strong data-opt1-name></strong></legend>
+          <div class="swatches" data-opt1-list></div>
+        </fieldset>
+        <fieldset class="opt" data-studio-opt2>
+          <legend><span class="step">2</span> <span data-opt2-label></span>: <strong data-opt2-name></strong></legend>
+          <div class="swatches" data-opt2-list></div>
+        </fieldset>
+
+        <fieldset class="opt">
+          <legend><span class="step" data-qty-step>3</span> Cantitate</legend>
+          <div class="qty-row">
+            <label class="qty-class">Clasa
+              <input type="text" data-album-class placeholder="ex. XII A" maxlength="20">
+            </label>
+            <label>Albume contra cost
+              <span class="stepper"><button type="button" data-step="-1" aria-label="Mai puțin">−</button><input type="number" min="1" value="25" data-album-qty inputmode="numeric"><button type="button" data-step="1" aria-label="Mai mult">+</button></span>
+            </label>
+            <label>Exemplare gratuite
+              <span class="stepper"><button type="button" data-step="-1" aria-label="Mai puțin">−</button><input type="number" min="0" value="0" data-album-free inputmode="numeric"><button type="button" data-step="1" aria-label="Mai mult">+</button></span>
+            </label>
+          </div>
+          <div class="estimate" data-album-estimate aria-live="polite"></div>
+        </fieldset>
+
+        <button class="btn btn-primary btn-block" type="button" data-album-add>Adaugă în cerere <span aria-hidden="true">→</span></button>
+        <p class="micro">Previzualizarea are caracter orientativ; macheta de producție urmează fluxul de aprobare.</p>
+
+        <div class="promo-lines" data-album-promos hidden>
+          <h2>Promoții disponibile pentru acest album</h2>
+          <ul></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">În interiorul albumului {{album_name}}</p>
+        <h2>Povestea clasei, pagină cu pagină.</h2>
+      </div>
+      <p class="head-note">{{album_layout}} Toate exemplarele albumului clasei au același conținut — albumul este comun, nu diferit pentru fiecare elev.</p>
+    </div>
+    <ol class="interior-strip" data-interior></ol>
+  </div>
+</section>
+
+{{photo_experience}}

@@ -1,12 +1,32 @@
-"""Fail CI for missing or unused deployed assets, including selector images."""
+"""Fail CI for missing or unused deployed assets, including images chosen in the configurators."""
 from pathlib import Path
 import re
-from seo import PAGES
+import sys
 
-root = Path(__file__).resolve().parent.parent / 'dist'
-files = [root / 'styles.css', root / 'script.js'] + [root / slug / 'index.html' for slug, *_ in PAGES]
-text = '\n'.join(p.read_text() for p in files)
-referenced = set(re.findall(r'assets/[A-Za-z0-9_./-]+', text))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from seo import DIST  # noqa: E402
+
+root = DIST
+html = list(root.glob('*.html'))
+css = root / 'assets/css/style.css'
+data_js = root / 'assets/js/data.js'
+app_js = root / 'assets/js/app.js'
+text = '\n'.join(p.read_text(encoding='utf8') for p in html + [data_js, app_js])
+
+referenced = set(re.findall(r'assets/[A-Za-z0-9_./-]+\.[a-z0-9]+', text))
+# url(...) din CSS, relative la assets/css/
+for ref in re.findall(r'url\("?([^")]+)"?\)', css.read_text(encoding='utf8')):
+    if not re.match(r'^(https?:|data:)', ref):
+        referenced.add((css.parent / ref).resolve().relative_to(root.resolve()).as_posix())
+# fotografiile cocardei se aleg dinamic în configuratoare: assets/img/cocarda-${culoare}.webp
+data = data_js.read_text(encoding='utf8')
+if 'cocarda-${id}' in app_js.read_text(encoding='utf8'):
+    rosettes = data[data.index('scarves:'):data.index('insignaImg')]
+    for rid in re.findall(r'\{ id: "([\w-]+)", name:', rosettes):
+        referenced.add(f'assets/img/cocarda-{rid}.webp')
+# fișierele de cod sunt incluse de toate paginile
+referenced |= {'assets/css/style.css', 'assets/js/data.js', 'assets/js/app.js'}
+
 actual = {p.relative_to(root).as_posix() for p in (root / 'assets').rglob('*') if p.is_file()}
 assert not referenced - actual, f'Missing assets: {sorted(referenced - actual)}'
 assert not actual - referenced, f'Unused assets: {sorted(actual - referenced)}'

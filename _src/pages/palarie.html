@@ -1,0 +1,68 @@
+<!--
+title: Pălărie de absolvire personalizată — 50 lei/buc. | Absolvire.ro
+description: Pălărie de absolvire cu bentiță colorată și ciucure cu anul promoției, 50 lei. Alege culoarea, panglica și designul capacului: comun +20 lei sau individual.
+page: hat
+nav: vestimentatie
+-->
+<section class="section section-top">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Acasă</a><span>/</span><a href="vestimentatie.html">Vestimentație</a><span>/</span><span aria-current="page">Pălărie</span></nav>
+    <header class="product-head">
+      <p class="kicker">Toca ta. Designul tău.</p>
+      <h1>Pălăria de absolvire</h1>
+    </header>
+
+    <div class="config" data-hat>
+      <div class="config-preview">
+        <div class="stage">
+          <div class="stage-hat hat"><img class="hat-img" data-h-img src="assets/img/palarie-visiniu.webp" alt="Pălărie de absolvire" width="900" height="638"><span class="hat-band" data-h-band><img src="assets/img/bentita-visiniu.webp" alt=""></span></div>
+          <span class="stage-badge" data-h-ribbon></span>
+        </div>
+        <ul class="includes compact">
+          <li>Bentiță satinată colorată și ciucure cu medalionul auriu al anului</li>
+          <li>Pălăria se cumpără separat, fără obligația de a alege robă sau eșarfă</li>
+        </ul>
+        <a class="link-arrow" href="vestimentatie.html">Vezi ținuta completă <span aria-hidden="true">→</span></a>
+      </div>
+
+      <form class="config-panel" onsubmit="return false">
+        <fieldset class="opt">
+          <legend><span class="step">1</span> Culoarea pălăriei: <strong data-h-color-name></strong></legend>
+          <div class="robe-picks hat-picks" data-h-colors></div>
+        </fieldset>
+        <fieldset class="opt">
+          <legend><span class="step">2</span> Panglica: <strong data-h-ribbon-name></strong></legend>
+          <div class="swatches swatches-code" data-h-ribbons></div>
+          <p class="hint">Panglica se alege independent de culoarea pălăriei.</p>
+        </fieldset>
+        <fieldset class="opt">
+          <legend><span class="step">3</span> Personalizarea capacului</legend>
+          <div class="radio-list">
+            <label><input type="radio" name="hcap" value="none" checked><span>Fără personalizare</span></label>
+            <label><input type="radio" name="hcap" value="common"><span>Design comun al clasei</span><em>+20 lei / pălărie</em></label>
+            <label><input type="radio" name="hcap" value="individual"><span>Design individual, încărcat de fiecare elev</span><em>preț de confirmat</em></label>
+          </div>
+          <p class="hint" data-h-cap-hint hidden>Fiecare elev își încarcă fișierul în platforma online; fișierele se pot completa după solicitarea inițială.</p>
+        </fieldset>
+        <fieldset class="opt">
+          <legend><span class="step">4</span> Anul promoției și cantitatea</legend>
+          <div class="grid-2">
+            <label>Anul promoției<input type="number" data-h-year min="2024" max="2100"></label>
+            <label>Cantitate
+              <span class="stepper"><button type="button" data-step="-1" aria-label="Mai puțin">−</button><input type="number" min="1" value="25" data-h-qty inputmode="numeric"><button type="button" data-step="1" aria-label="Mai mult">+</button></span>
+            </label>
+          </div>
+        </fieldset>
+        <div class="price-box" data-h-price aria-live="polite"></div>
+        <button class="btn btn-primary btn-block" type="button" data-h-add>Adaugă în cererea de ofertă <span aria-hidden="true">→</span></button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="section-head"><div><h2>Completează alegerea voastră</h2></div></div>
+    <div class="reco-grid four" data-recos="palarie"></div>
+  </div>
+</section>

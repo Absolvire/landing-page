@@ -1,19 +1,89 @@
 # Absolvire.ro
 
-> Produse și servicii pentru absolvire, în România. Atelier propriu; activitate din 2002.
+> Albume de absolvire cu selecție online a fotografiilor, vestimentație de absolvire (robă închiriată, pălărie, eșarfă, insignă sau cocardă, diplomă A4), fotografii pentru diplomă, servicii pentru festivitate și bal, diplome, medalii și decoruri. Clienții configurează produsele pe site și trimit o cerere de ofertă și disponibilitate; echipa confirmă oferta finală.
 
-## Pagini
+Toate prețurile sunt în lei (RON) și sunt prețuri de referință; transportul, disponibilitatea și programarea se confirmă în oferta personalizată. Trimiterea cererii nu este comandă fermă.
 
-- [Absolvire.ro](https://www.absolvire.ro/index.md): Robe, toci și eșarfe personalizate, albume foto, diplome și organizarea festivităților de absolvire. Alături de generații din 2002.
-- [Robe și eșarfe](https://www.absolvire.ro/robe-si-esarfe/index.md): Robe de absolvire în negru, albastru și vișiniu, toci și eșarfe personalizate pentru școala și promoția voastră. Descoperă opțiunile și cere o ofertă.
-- [Diplome și accesorii](https://www.absolvire.ro/diplome-si-accesorii/index.md): Diplome, medalii, trofee, invitații și suveniruri personalizate pentru festivitatea de absolvire. Descoperă opțiunile și solicită o ofertă.
-- [Albume și fotografie](https://www.absolvire.ro/albume/index.md): Albume de absolvire, mape și fotocărți personalizate. Nouă modele: Elegant, Special, Modern, Muschetar, Rege, Velvet, King, Royal și Premier.
-- [Festivități și baluri](https://www.absolvire.ro/festivitati-si-baluri/index.md): Organizarea festivităților și balurilor de absolvire: locație, muzică, catering și foto-video, într-o propunere adaptată promoției voastre.
-- [Termeni și condiții](https://www.absolvire.ro/termeni-si-conditii/index.md): Termenii și condițiile de utilizare a site-ului Absolvire.ro: informații despre operator, utilizare, răspundere și protecția datelor.
-- [Confidențialitate](https://www.absolvire.ro/prelucrarea-datelor-cu-caracter-personal/index.md): Politica Absolvire.ro privind prelucrarea datelor personale, scopurile utilizării, păstrarea și protejarea acestora și drepturile persoanelor vizate.
+## Albume de absolvire
+Prețuri per elev pentru minimum 15 albume contra cost, cu ședința foto inclusă; sub prag, ofertă personalizată.
+- [Economy](https://www.absolvire.ro/album-economy.html): 120 lei/elev — A4, copertă tip revistă, pagini flexibile capsate, 1 fotografie / elev.
+- [Velvet](https://www.absolvire.ro/album-velvet.html): 200 lei/elev — 20 × 20 cm, copertă de catifea cu fundă, pagini flexibile broșate, 2 fotografii / elev.
+- [Deluxe](https://www.absolvire.ro/album-deluxe.html): 230 lei/elev — A4, copertă rigidă din catifea, pagini flexibile broșate, portret și semigrup.
+- [Class](https://www.absolvire.ro/album-class.html): 260 lei/elev — 20 × 20 cm, copertă personalizată, printată, pagini groase lay-flat, 2 elevi / pagină.
+- [Elite](https://www.absolvire.ro/album-elite.html): 320 lei/elev — 25 × 25 cm, catifea cu inserție personalizată, pagini lay-flat, pagină proprie cu 3 fotografii.
+- [Comparație modele](https://www.absolvire.ro/albume.html)
+
+## Vestimentație
+- [Ținuta completă](https://www.absolvire.ro/vestimentatie.html): robă închiriată + pălărie + eșarfă + insignă + diplomă A4, 100 lei/elev; cu cocardă 110 lei. Design comun pe capac +20 lei. De la 15 pachete plătite, 1 pachet gratuit pentru diriginte.
+- [Pălărie](https://www.absolvire.ro/palarie.html): 50 lei/buc.
+- [Eșarfă personalizată](https://www.absolvire.ro/esarfa.html): 35 lei/buc.
+- [Insignă / cocardă](https://www.absolvire.ro/insigna-cocarda.html): insignă 5 lei/buc., cocardă 15 lei/buc.
+- [Pachete vestimentație + album](https://www.absolvire.ro/pachete.html): ofertă personalizată, fără preț public.
+
+## Evenimente și alte produse
+- [Foto și video](https://www.absolvire.ro/foto-video.html): Set de 6 fotografii simple tip ID 20 lei/set; Set de 18 fotografii autoadezive, 3 × 4 cm 30 lei/set.
+- [Festivități](https://www.absolvire.ro/festivitati.html): Fotografiere festivitate (de la 1.500 lei / eveniment); Filmarea festivității (de la 1.500 lei / eveniment); Decor cu baloane (de la 1.500 lei / eveniment); Baloane colorate cu heliu, livrate la festivitate (estimativ 20 lei / elev); Sonorizare festivitate, cu tehnician de sunet (preț la cerere); Show profesionist de fumigene colorate (preț la cerere); Prezentator festivitate (preț la cerere); Scenă mobilă în curtea școlii (preț la cerere); Scaune de închiriat pentru festivitate (preț la cerere); Photo wall / photo corner tematic (preț la cerere).
+- [Banchete](https://www.absolvire.ro/banchete.html): Foto banchet, Video banchet, Sonorizare și DJ / MC, Manager de eveniment dedicat, Cabină foto cu accesorii, Platformă video selfie 360, Primire Hollywood Glam, Decor și lumini, Meniu și servicii de bar, Entertainment și momente speciale, Planificare și invitații — preț la cerere.
+- [Premiere și diplome](https://www.absolvire.ro/premiere.html): Diplomă personalizată A4 5 lei; Diplomă pe suport de catifea 30 lei; Medalie aurie 7 cm, inscripționată, cu șnur 25 lei; Trofeu figurină absolvent, soclu de marmură 100 lei; Plachetă de onoare în mapă de catifea, 13 × 18 cm 150 lei; Diplomă de onoare în mapă de catifea, 21 × 31 cm 150 lei; Cheia Succesului 150 lei.
+- [Parade și decoruri](https://www.absolvire.ro/parade.html): Steag personalizat pe o față 150 lei; Pancartă inscripționată pe o față, 50 × 35 cm 100 lei; Mini-banner personalizat, cu suport de lemn 180 lei; proiecte speciale la cerere.
+- [Promoții](https://www.absolvire.ro/promotii.html)
 
 ## Contact
+Cererile de ofertă se trimit din site (pagina „Cererea mea”) sau direct:
+- Firma: ROBE ABSOLVIRE SRL, București, Sector 2, Str. Vatra Luminoasă nr. 1 · CIF 43761331 · J40/2908/2021
+- Telefon: +40 723 882 511
+- Email: comenzi.scoli@gmail.com
 
-comenzi.scoli@gmail.com · +40 723 88 25 11
-
-Configurațiile și disponibilitatea se confirmă în ofertă. Nu sunt publicate prețuri ferme.
+## Întrebări frecvente
+- **Ce oferă Absolvire.ro?** Albume de absolvire cu selecție online a fotografiilor, vestimentație de absolvire (robă închiriată, pălărie, eșarfă, insignă sau cocardă, diplomă), fotografii pentru diplomă, servicii pentru festivitate și bal, diplome, medalii și decoruri pentru parade — toate într-o singură cerere de ofertă.
+- **Cât costă un album de absolvire?** Prețurile de referință sunt per elev, pentru minimum 15 albume contra cost: Economy 120 lei, Velvet 200 lei, Deluxe 230 lei, Class 260 lei, Elite 320 lei. Ședința foto aferentă modelului este inclusă.
+- **Cât costă ținuta completă de absolvire?** Ținuta completă (robă închiriată, pălărie, eșarfă, insignă și diplomă A4) costă 100 lei per elev; cu cocardă în loc de insignă, 110 lei.
+- **Cum își aleg elevii fotografiile pentru album?** După ședința foto, fiecare elev primește acces individual la platforma online cu fotografiile sale și își alege imaginile pentru pagina sa din album, de pe telefon sau calculator.
+- **Trimiterea cererii este o comandă fermă?** Nu. Cererea de ofertă și disponibilitate nu constituie comandă fermă sau rezervare. Echipa Absolvire.ro analizează solicitarea și confirmă oferta, disponibilitatea, programarea și livrarea.
+- **Ce se întâmplă dacă clasa comandă mai puțin de 15 albume?** Modelul și opțiunile alese se păstrează, iar cererea se trimite normal; prețul se stabilește printr-o ofertă personalizată pentru cantitatea respectivă.
+- **Exemplarele gratuite intră în pragul minim?** Nu. Exemplarele gratuite apar separat și nu contribuie la pragul de 15 albume contra cost.
+- **Fiecare elev are un album diferit?** Nu. Toate exemplarele albumului clasei au același conținut; fiecare elev își alege fotografiile pentru pagina sa, iar paginile tuturor elevilor sunt reunite în albumul comun.
+- **Primim și o variantă electronică a albumului?** Da. Pe lângă albumul fizic, prezentarea ofertei include și varianta electronică (PDF) a albumului.
+- **Cât costă albumul Economy?** Prețul de referință este 120 lei per elev, pentru minimum 15 albume contra cost, cu ședința foto aferentă modelului inclusă. Sub prag, oferta se personalizează.
+- **Ce caracteristici are albumul Economy?** Format A4, copertă tip revistă, pagini flexibile capsate, 1 fotografie / elev. Elevii sunt prezentați în pagini comune, cu câte un portret.
+- **Cât costă albumul Velvet?** Prețul de referință este 200 lei per elev, pentru minimum 15 albume contra cost, cu ședința foto aferentă modelului inclusă. Sub prag, oferta se personalizează.
+- **Ce caracteristici are albumul Velvet?** Format 20 × 20 cm, copertă de catifea cu fundă, pagini flexibile broșate, 2 fotografii / elev. O pagină pentru fiecare elev: portret, fotografie cu prietenii și mesaj.
+- **Ce variante de copertă are albumul Velvet?** Culoarea catifelei: Negru, Bleu, Albastru, Gri albăstrui, Lila, Mov, Ciclam, Vișiniu, Smarald. Previzualizarea din simulator este orientativă; macheta de producție urmează fluxul de aprobare.
+- **Cât costă albumul Deluxe?** Prețul de referință este 230 lei per elev, pentru minimum 15 albume contra cost, cu ședința foto aferentă modelului inclusă. Sub prag, oferta se personalizează.
+- **Ce caracteristici are albumul Deluxe?** Format A4, copertă rigidă din catifea, pagini flexibile broșate, portret și semigrup. Fiecare elev are portretul său, plus fotografii pe semigrupuri.
+- **Ce variante de copertă are albumul Deluxe?** Culoarea copertei: Negru, Vișiniu, Bleu, Lila, Maldives. Previzualizarea din simulator este orientativă; macheta de producție urmează fluxul de aprobare.
+- **Cât costă albumul Class?** Prețul de referință este 260 lei per elev, pentru minimum 15 albume contra cost, cu ședința foto aferentă modelului inclusă. Sub prag, oferta se personalizează.
+- **Ce caracteristici are albumul Class?** Format 20 × 20 cm, copertă personalizată, printată, pagini groase lay-flat, 2 elevi / pagină. Paginile se deschid complet plat; câte doi elevi pe pagină.
+- **Ce variante de copertă are albumul Class?** Design copertă printată: Cu fotografia clasei, Ramă pentru fotografie. Previzualizarea din simulator este orientativă; macheta de producție urmează fluxul de aprobare.
+- **Cât costă albumul Elite?** Prețul de referință este 320 lei per elev, pentru minimum 15 albume contra cost, cu ședința foto aferentă modelului inclusă. Sub prag, oferta se personalizează.
+- **Ce caracteristici are albumul Elite?** Format 25 × 25 cm, catifea cu inserție personalizată, pagini lay-flat, pagină proprie cu 3 fotografii. Fiecare elev are pagina lui, cu trei fotografii.
+- **Ce variante de copertă are albumul Elite?** Inserția marmorată: Bej, Sky, Lila, Smarald, Vișiniu. Previzualizarea din simulator este orientativă; macheta de producție urmează fluxul de aprobare.
+- **Ce include ținuta completă de absolvire?** Robă închiriată, pălărie cu panglică în culoarea eșarfei și ciucure cu medalionul anului, eșarfă personalizată cu instituția și promoția, insignă sau cocardă personalizată și diplomă A4 inclusă în preț.
+- **Cât costă ținuta completă?** 100 lei per elev cu insignă și 110 lei cu cocardă. Designul comun pe capacul pălăriei costă +20 lei, iar diploma pe suport de catifea +25 lei per elev.
+- **Dirigintele primește ținuta gratuit?** De la 15 pachete plătite, clasa primește 1 pachet gratuit pentru diriginte. Pachetul gratuit este evidențiat separat și nu contribuie la prag.
+- **Roba se cumpără sau se închiriază?** Roba se închiriază și se returnează; pălăria, eșarfa, insigna sau cocarda și diploma rămân amintire.
+- **Pot cumpăra doar pălăria sau doar eșarfa?** Da. Pălăria (50 lei), eșarfa (35 lei), insigna (5 lei) și cocarda (15 lei) se pot comanda separat, cu cantități independente.
+- **Cât costă o pălărie de absolvire?** 50 lei bucata, cu bentiță colorată și ciucure cu anul promoției. De exemplu, 25 de pălării fără imprimare pe capac costă 1.250 lei.
+- **Cum se personalizează capacul pălăriei?** Cu un design comun pentru toată clasa (+20 lei pe pălărie) sau cu un design individual încărcat de fiecare elev în platforma online (preț de confirmat).
+- **Pot alege culoarea panglicii separat?** Da. La pălăria cumpărată separat, panglica se alege independent de culoarea pălăriei.
+- **Cât costă o eșarfă de absolvire personalizată?** 35 lei bucata, cu denumirea instituției și anul promoției incluse. De exemplu, 25 de eșarfe costă 875 lei.
+- **Ce culoare are imprimarea pe eșarfă?** Imprimarea este albă sau neagră, stabilită pentru fiecare nuanță: neagră pe culorile deschise (de exemplu bej), albă pe cele închise (de exemplu vișiniu).
+- **Ce culori de eșarfă sunt disponibile?** Bej (cod 21), Alb (cod 1), Roz (cod 10), Roșu (cod 3), Vișiniu (cod 12), Orange (cod 15), Galben (cod 6), Verde (cod 19), Caraibe (cod 30), Sky (cod 24), Albastru (cod 2), Mov (cod 29).
+- **Care este diferența dintre insignă și cocardă?** Cocarda are aceeași insignă centrală, decorată cu o rozetă și panglici textile. Culoarea rozetei se alege separat.
+- **Cât costă insigna și cocarda?** Insigna personalizată (Ø 6 cm) costă 5 lei bucata, iar cocarda 15 lei bucata. De exemplu, 25 de cocarde costă 375 lei.
+- **Ce se personalizează pe insignă?** Denumirea instituției, sigla instituției și anul promoției. Sigla se poate trimite și după cererea inițială.
+- **Ce conține pachetul vestimentație + album?** Ținuta completă de absolvire și albumul clasei ales dintre modelele Economy, Velvet, Deluxe, Class sau Elite, cu ședința foto aferentă.
+- **Pachetul are preț public?** Nu. Pachetele complete se ofertează personalizat, după numărul de elevi și configurația aleasă.
+- **Cât costă fotografiile pentru diplomă?** Set de 6 fotografii simple tip ID: 20 lei/set; Set de 18 fotografii autoadezive, 3 × 4 cm: 30 lei/set.
+- **Cum se organizează fotografierea pentru diplomă?** Prin reunirea mai multor clase interesate. Cererea transmite numărul participanților, clasele și localitatea, iar echipa confirmă data și locația.
+- **Cât costă fotografierea festivității?** Fotografierea și filmarea festivității pornesc fiecare de la 1.500 lei pe eveniment; prețul final se confirmă după disponibilitate și oraș.
+- **Ce servicii sunt disponibile pentru festivitatea de absolvire?** Fotografiere festivitate, Filmarea festivității, Decor cu baloane, Baloane colorate cu heliu, livrate la festivitate, Sonorizare festivitate, cu tehnician de sunet, Show profesionist de fumigene colorate, Prezentator festivitate, Scenă mobilă în curtea școlii, Scaune de închiriat pentru festivitate, Photo wall / photo corner tematic.
+- **Cum se stabilește prețul pentru festivitate?** Oferta se personalizează după locație, numărul participanților și serviciile dorite. Unele servicii au preț de pornire sau estimativ, celelalte sunt la cerere.
+- **Transportul este inclus în preț?** Transportul nu este calculat automat pe site; se confirmă în oferta personalizată trimisă de echipă.
+- **Ce servicii sunt disponibile pentru balul de absolvire?** Foto banchet, Video banchet, Sonorizare și DJ / MC, Manager de eveniment dedicat, Cabină foto cu accesorii, Platformă video selfie 360, Primire Hollywood Glam, Decor și lumini, Meniu și servicii de bar, Entertainment și momente speciale, Planificare și invitații.
+- **Serviciile de banchet au aceleași tarife ca la festivitate?** Nu. Serviciile pentru banchet au tarife proprii, separate de cele ale festivității, și se pot solicita individual sau reunite într-o ofertă de banchet.
+- **Ce produse de premiere oferă Absolvire.ro?** Diplomă personalizată A4: 5 lei; Diplomă pe suport de catifea: 30 lei; Medalie aurie 7 cm, inscripționată, cu șnur: 25 lei; Trofeu figurină absolvent, soclu de marmură: 100 lei; Plachetă de onoare în mapă de catifea, 13 × 18 cm: 150 lei; Diplomă de onoare în mapă de catifea, 21 × 31 cm: 150 lei; Cheia Succesului: 150 lei.
+- **Se pot completa listele de elevi după cerere?** Da. Listele de elevi, mesajele și fotografiile se pot completa după solicitarea inițială; macheta se aprobă înainte de producție.
+- **Ce produse pentru parada de absolvire sunt disponibile?** Steag personalizat pe o față: 150 lei; Pancartă inscripționată pe o față, 50 × 35 cm: 100 lei; Mini-banner personalizat, cu suport de lemn: 180 lei.
+- **Pot cere un decor sau un proiect special?** Da. Descrieți ideea, dimensiunile aproximative și locul utilizării; echipa propune soluția de realizare după evaluare, cu preț de confirmat.
+- **Cum se acordă beneficiile unei promoții?** Site-ul afișează beneficiul posibil pe baza informațiilor introduse. Eligibilitatea și beneficiul final se confirmă de echipa Absolvire.ro în oferta transmisă.
