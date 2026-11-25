@@ -51,6 +51,15 @@ def check():
         assert canonical == [page_url(name)], (f, canonical, page_url(name))
         if not indexable:
             assert name == 'cerere.html', (f, 'noindex permis doar pe cerere.html')
+        md = f.with_suffix('.md')
+        alternate = [a.get('href') for t, a in p.tags if t == 'link' and a.get('type') == 'text/markdown']
+        if indexable:
+            assert alternate == [md.name] and md.is_file(), (f, 'lipsește versiunea Markdown')
+            text = md.read_text(encoding='utf8')
+            assert text.startswith('# ') and f'Pagina: {page_url(name)}' in text, (md, 'Markdown invalid')
+            assert len(text) > 400, (md, 'Markdown prea scurt')
+        else:
+            assert not alternate and not md.exists(), (f, 'pagina noindex nu are versiune Markdown')
         for key in ('og:title', 'og:description', 'og:url', 'og:image'):
             values = meta(p, 'property', key)
             assert len(values) == 1 and values[0], (f, key)
@@ -92,8 +101,8 @@ def check():
     llms = (DIST / 'llms.txt').read_text(encoding='utf8')
     for name, _, idx in site:
         if idx and name != 'index.html' and not name.startswith(('termeni', 'politica')):
-            assert page_url(name) in llms, (name, 'lipsește din llms.txt')
-    print(f'SEO checks passed: {len(site)} pages, unique metadata, canonical/Open Graph, schema, links, images, sitemap, robots and llms.txt.')
+            assert f'({BASE}{name[:-5]}.md)' in llms, (name, 'lipsește din llms.txt')
+    print(f'SEO checks passed: {len(site)} pages, unique metadata, canonical/Open Graph, schema, links, images, sitemap, robots, llms.txt and Markdown pages.')
 
 
 if __name__ == '__main__':

@@ -1,6 +1,6 @@
 """Build pentru GitHub Pages: generează site-ul din _src/ și pregătește dist/.
 
-1. rulează _src/build.py (pagini HTML, sitemap.xml, robots.txt, llms.txt; SITE_URL din mediu);
+1. rulează _src/build.py (pagini HTML + versiunile .md, sitemap.xml, robots.txt, llms.txt; SITE_URL din mediu);
 2. copiază în dist/ doar fișierele publice (fără _src/, scripts/, README) și adaugă .nojekyll.
 """
 from pathlib import Path
@@ -21,6 +21,9 @@ if DIST.exists():
 DIST.mkdir()
 for page in sorted(ROOT.glob('*.html')):
     shutil.copy2(page, DIST / page.name)
+    md = page.with_suffix('.md')  # versiunea Markdown a paginii (README.md nu e pagină, nu se publică)
+    if md.is_file():
+        shutil.copy2(md, DIST / md.name)
 for name in PUBLIC_FILES:
     shutil.copy2(ROOT / name, DIST / name)
 shutil.copytree(ROOT / 'assets', DIST / 'assets', ignore=shutil.ignore_patterns('.DS_Store', '*.psd'))

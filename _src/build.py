@@ -8,6 +8,8 @@
   re-randează identic și adaugă interactivitatea.
 - SEO / GEO: titluri, descrieri, canonical, Open Graph, date structurate (JSON-LD), întrebări
   frecvente, sitemap.xml, robots.txt și llms.txt — configurate în _src/seo.py.
+- Fiecare pagină indexabilă are și o versiune Markdown (<pagina>.md, din _src/md.py), legată
+  din <head> (rel=alternate) și din llms.txt, pentru asistenții AI.
 
 Rulare (din folderul landing-page):  python3 _src/build.py
 """
@@ -23,6 +25,7 @@ SRC = pathlib.Path(__file__).resolve().parent
 ROOT = SRC.parent
 sys.path.insert(0, str(SRC))
 import seo  # noqa: E402
+from md import page_markdown  # noqa: E402
 
 data = json.loads(subprocess.check_output([
     "node", "-e",
@@ -50,6 +53,24 @@ except ImportError:  # pragma: no cover - fără scripts/, dimensiunile rămân 
 _DIMS = {}
 
 
+# Imagini responsive: variantele <nume>-480/-800.webp și lățimile afișate (sizes) vin din
+# scripts/responsive_images.py; fără ele, <img> rămâne doar cu src.
+VARIANT_WIDTHS = (480, 800)
+_SIZES_FILE = SRC / "image_sizes.json"
+IMAGE_SIZES = json.loads(_SIZES_FILE.read_text(encoding="utf8")) if _SIZES_FILE.is_file() else {}
+
+
+def srcset(src, natural_w):
+    """(srcset, sizes) pentru o imagine din assets/img care are variante mai mici, altfel None."""
+    path = ROOT / src
+    variants = [(w, f"{src[:-5]}-{w}.webp") for w in VARIANT_WIDTHS
+                if src.endswith(".webp") and path.with_name(f"{path.stem}-{w}.webp").is_file()]
+    if not variants:
+        return None
+    candidates = ", ".join(f"{u} {w}w" for w, u in variants) + f", {src} {natural_w}w"
+    return candidates, IMAGE_SIZES.get(src, "100vw")
+
+
 def img_dims(html):
     if not image_size:
         return html
@@ -65,8 +86,12 @@ def img_dims(html):
         if path not in _DIMS:
             _DIMS[path] = image_size(path)
         w, h = _DIMS[path]
-        tag = re.sub(r'\s(?:width|height)="[^"]*"', "", tag)
-        return re.sub(r"\s*/?>$", f' width="{w}" height="{h}">', tag)
+        tag = re.sub(r'\s(?:width|height|srcset|sizes)="[^"]*"', "", tag)
+        extra = ""
+        rs = srcset(src.group(1), w)
+        if rs:
+            extra = f' srcset="{rs[0]}" sizes="{rs[1]}"'
+        return re.sub(r"\s*/?>$", f'{extra} width="{w}" height="{h}">', tag)
     return re.sub(r"<img\b[^>]*>", repl, html)
 
 
@@ -80,6 +105,16 @@ def lei(n):
 
 def absu(path):
     return f"{seo.SITE_URL}/{'' if path == 'index.html' else path}"
+
+
+def md_name(path):
+    """Numele versiunii Markdown a unei pagini (albume.html → albume.md)."""
+    return path.removesuffix(".html") + ".md"
+
+
+def mdu(path):
+    """Adresa versiunii Markdown a unei pagini (index.html → index.md)."""
+    return f"{seo.SITE_URL}/{md_name(path)}"
 
 
 # ------------------------------------------------------------------ prerandare
@@ -389,8 +424,13 @@ def seo_head(page_key, url, meta, title, desc, robots_noindex):
         f'<meta name="twitter:description" content="{e(desc)}">',
         f'<meta name="twitter:image" content="{e(img)}">',
     ]
+    if not robots_noindex:
+        tags.append(f'<link rel="alternate" type="text/markdown" href="{e(md_name(url))}" title="Versiunea Markdown">')
     if page_key == "index":
-        tags.append('<link rel="preload" as="image" href="assets/img/photo-wall.webp" fetchpriority="high">')
+        hero = "assets/img/photo-wall.webp"
+        rs = srcset(hero, image_size(ROOT / hero)[0]) if image_size else None
+        tags.append(f'<link rel="preload" as="image" href="{hero}" fetchpriority="high"'
+                    + (f' imagesrcset="{rs[0]}" imagesizes="{rs[1]}"' if rs else "") + ">")
     return "\n  ".join(tags)
 
 
@@ -451,6 +491,14 @@ def render(front, body, values, page_name, album=None):
     return img_dims(prerender(page, album)), url, title, desc, smeta, qa
 
 
+def write_md(html, url, title, desc, smeta):
+    target = ROOT / md_name(url)
+    if smeta.get("noindex"):
+        target.unlink(missing_ok=True)
+        return
+    target.write_text(page_markdown(html, absu(url), title, desc, TODAY), encoding="utf8")
+
+
 written, index_entries = [], []
 for path in sorted((SRC / "pages").glob("*.html")):
     front, body = parse(path.read_text(encoding="utf8"))
@@ -466,12 +514,14 @@ for path in sorted((SRC / "pages").glob("*.html")):
             fm = {k: fill(v, values) for k, v in front.items()}
             html, url, title, desc, smeta, qa = render(fm, fill(body, values), values, "album", a)
             (ROOT / url).write_text(html, encoding="utf8")
+            write_md(html, url, title, desc, smeta)
             written.append(url)
             index_entries.append((url, title, desc, smeta, qa))
         continue
     name = path.stem
     html, url, title, desc, smeta, qa = render(front, body, {"min_qty": C["albumMinQty"]}, name)
     (ROOT / url).write_text(html, encoding="utf8")
+    write_md(html, url, title, desc, smeta)
     written.append(url)
     index_entries.append((url, title, desc, smeta, qa))
 
@@ -503,31 +553,33 @@ llms = [
     "",
     "Toate prețurile sunt în lei (RON) și sunt prețuri de referință; transportul, disponibilitatea și programarea se confirmă în oferta personalizată. Trimiterea cererii nu este comandă fermă.",
     "",
+    f"Linkurile de mai jos duc la versiunea Markdown a fiecărei pagini; pagina HTML are aceeași adresă cu „.html” în loc de „.md” (prima pagină: {absu('index.html')}).",
+    "",
     "## Albume de absolvire",
     f"Prețuri per elev pentru minimum {C['albumMinQty']} albume contra cost, cu ședința foto inclusă; sub prag, ofertă personalizată.",
 ]
 for a in data["albums"]:
-    llms.append(f"- [{a['name']}]({absu('album-' + a['id'] + '.html')}): {lei(a['price'])}/elev — {a['size']}, {a['cover'].lower()}, {a['binding'].lower()}, {a['photos'].lower()}.")
+    llms.append(f"- [{a['name']}]({mdu('album-' + a['id'] + '.html')}): {lei(a['price'])}/elev — {a['size']}, {a['cover'].lower()}, {a['binding'].lower()}, {a['photos'].lower()}.")
 llms += [
-    f"- [Comparație modele]({absu('albume.html')})",
+    f"- [Comparație modele]({mdu('albume.html')})",
     "",
     "## Vestimentație",
-    f"- [Ținuta completă]({absu('vestimentatie.html')}): robă închiriată + pălărie + eșarfă + insignă + diplomă A4, {lei(o['basePriceInsigna'])}/elev; cu cocardă {lei(o['basePriceCocarda'])}. Design comun pe capac +{lei(o['capCommonDesign'])}. De la {C['outfitBonusMinQty']} pachete plătite, 1 pachet gratuit pentru diriginte.",
-    f"- [Pălărie]({absu('palarie.html')}): {lei(s['palarie'])}/buc.",
-    f"- [Eșarfă personalizată]({absu('esarfa.html')}): {lei(s['esarfa'])}/buc.",
-    f"- [Insignă / cocardă]({absu('insigna-cocarda.html')}): insignă {lei(s['insigna'])}/buc., cocardă {lei(s['cocarda'])}/buc.",
-    f"- [Pachete vestimentație + album]({absu('pachete.html')}): ofertă personalizată, fără preț public.",
+    f"- [Ținuta completă]({mdu('vestimentatie.html')}): robă închiriată + pălărie + eșarfă + insignă + diplomă A4, {lei(o['basePriceInsigna'])}/elev; cu cocardă {lei(o['basePriceCocarda'])}. Design comun pe capac +{lei(o['capCommonDesign'])}. De la {C['outfitBonusMinQty']} pachete plătite, 1 pachet gratuit pentru diriginte.",
+    f"- [Pălărie]({mdu('palarie.html')}): {lei(s['palarie'])}/buc.",
+    f"- [Eșarfă personalizată]({mdu('esarfa.html')}): {lei(s['esarfa'])}/buc.",
+    f"- [Insignă / cocardă]({mdu('insigna-cocarda.html')}): insignă {lei(s['insigna'])}/buc., cocardă {lei(s['cocarda'])}/buc.",
+    f"- [Pachete vestimentație + album]({mdu('pachete.html')}): ofertă personalizată, fără preț public.",
     "",
     "## Evenimente și alte produse",
-    f"- [Foto și video]({absu('foto-video.html')}): " + "; ".join(f"{x['name']} {lei(x['price'])}/{x['unit']}" for x in data["idPhotos"]) + ".",
-    f"- [Festivități]({absu('festivitati.html')}): " + "; ".join(f"{x['name']} ({price_label(x).lower()})" for x in data["festivalServices"]) + ".",
-    f"- [Banchete]({absu('banchete.html')}): " + ", ".join(x["name"] for x in data["banquetServices"]) + " — preț la cerere.",
-    f"- [Premiere și diplome]({absu('premiere.html')}): " + "; ".join(f"{x['name']} {lei(x['price'])}" for x in data["awards"]) + ".",
-    f"- [Parade și decoruri]({absu('parade.html')}): " + "; ".join(f"{x['name']} {lei(x['price'])}" for x in data["parade"]) + "; proiecte speciale la cerere.",
-    f"- [Promoții]({absu('promotii.html')})",
+    f"- [Foto și video]({mdu('foto-video.html')}): " + "; ".join(f"{x['name']} {lei(x['price'])}/{x['unit']}" for x in data["idPhotos"]) + ".",
+    f"- [Festivități]({mdu('festivitati.html')}): " + "; ".join(f"{x['name']} ({price_label(x).lower()})" for x in data["festivalServices"]) + ".",
+    f"- [Banchete]({mdu('banchete.html')}): " + ", ".join(x["name"] for x in data["banquetServices"]) + " — preț la cerere.",
+    f"- [Premiere și diplome]({mdu('premiere.html')}): " + "; ".join(f"{x['name']} {lei(x['price'])}" for x in data["awards"]) + ".",
+    f"- [Parade și decoruri]({mdu('parade.html')}): " + "; ".join(f"{x['name']} {lei(x['price'])}" for x in data["parade"]) + "; proiecte speciale la cerere.",
+    f"- [Promoții]({mdu('promotii.html')})",
     "",
     "## Contact",
-    "Cererile de ofertă se trimit din site (pagina „Cererea mea”) sau direct:",
+    f"Cererile de ofertă se trimit din site (pagina [Cererea mea]({mdu('cerere.html')})) sau direct:",
 ] + ([f"- Firma: {C['company']['name']}, {C['company']['city']}, {C['company']['region']}, {C['company']['street']} · CIF {C['company']['cif']} · {C['company']['regCom']}"] if C.get("company") else []) + ([f"- Telefon: {C['contact']['phone']}"] if C["contact"].get("phone") else []) + (
     [f"- Email: {C['contact']['email']}"] if C["contact"].get("email") else []) + [
     "",
@@ -539,7 +591,9 @@ for u in urls:
         if q not in seen:
             seen.add(q)
             llms.append(f"- **{q}** {a}")
+llms += ["", "## Optional", f"- [Prima pagină]({mdu('index.html')})"] + [
+    f"- [{t}]({mdu(u)})" for u, t in (("termeni-si-conditii.html", "Termeni și condiții"), ("politica-de-confidentialitate.html", "Politica de confidențialitate")) if u in indexable]
 (ROOT / "llms.txt").write_text("\n".join(llms) + "\n", encoding="utf8")
 
 print("Pagini generate:", ", ".join(written))
-print("Plus: sitemap.xml, robots.txt, llms.txt")
+print("Plus: versiunile .md ale paginilor, sitemap.xml, robots.txt, llms.txt")

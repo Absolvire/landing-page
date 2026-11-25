@@ -18,13 +18,13 @@
   <meta name="twitter:title" content="Festivitatea de absolvire: servicii | Absolvire.ro">
   <meta name="twitter:description" content="Servicii pentru festivitatea de absolvire: fotografie și filmare, decor cu baloane, sonorizare, scenă, scaune, photo wall, show de fumigene și prezentator.">
   <meta name="twitter:image" content="https://www.absolvire.ro/assets/img/photo-wall-2.webp">
+  <link rel="alternate" type="text/markdown" href="festivitati.md" title="Versiunea Markdown">
   <meta name="theme-color" content="#6e1129">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="assets/img/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/playfair-display.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/style.css">
   <script type="application/ld+json">
 {
@@ -220,7 +220,7 @@
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="logo" href="index.html" aria-label="Absolvire.ro — prima pagină">
-      <img src="assets/img/logo-black.webp" alt="Absolvire.ro" width="640" height="186">
+      <img src="assets/img/logo-black.webp" alt="Absolvire.ro" srcset="assets/img/logo-black-480.webp 480w, assets/img/logo-black.webp 640w" sizes="(max-width: 760px) 33vw, 168px" width="640" height="186">
     </a>
     <nav class="main-nav" id="main-nav" aria-label="Navigare principală">
       <a href="albume.html" data-nav="albume">Albume</a>
@@ -247,7 +247,7 @@
   <div class="wrap">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Acasă</a><span>/</span><span aria-current="page">Festivități</span></nav>
     <div class="event-hero">
-      <img src="assets/img/photo-wall-2.webp" alt="Amenajare de festivitate cu photo wall Absolvire.ro, covor roșu și baloane" width="1536" height="1024">
+      <img src="assets/img/photo-wall-2.webp" alt="Amenajare de festivitate cu photo wall Absolvire.ro, covor roșu și baloane" srcset="assets/img/photo-wall-2-480.webp 480w, assets/img/photo-wall-2-800.webp 800w, assets/img/photo-wall-2.webp 1536w" sizes="(max-width: 760px) 91vw, 608px" width="1536" height="1024">
       <div>
         <p class="eyebrow">Festivitatea de absolvire</p>
         <h1>Ceremonie, premiere, amenajare și coordonare.</h1>
@@ -300,7 +300,7 @@
 
 <section class="section section-tight">
   <div class="wrap two-col">
-    <a class="link-card" href="vestimentatie.html"><img src="assets/img/roba-albastru-pack.webp" alt="" loading="lazy" width="640" height="585"><span><b>Vestimentație</b>Robe, pălării, eșarfe și cocarde în culorile clasei</span></a>
+    <a class="link-card" href="vestimentatie.html"><img src="assets/img/roba-albastru-pack.webp" alt="" loading="lazy" srcset="assets/img/roba-albastru-pack-480.webp 480w, assets/img/roba-albastru-pack.webp 640w" sizes="(max-width: 760px) 22vw, 90px" width="640" height="585"><span><b>Vestimentație</b>Robe, pălării, eșarfe și cocarde în culorile clasei</span></a>
     <a class="link-card" href="premiere.html"><img src="assets/img/diploma-a4.webp" alt="" loading="lazy" width="537" height="760"><span><b>Premiere și diplome</b>Diplome, medalii, plachete și trofee</span></a>
   </div>
 </section>
@@ -324,11 +324,11 @@
 <footer class="site-footer">
   <div class="wrap footer-grid">
     <div>
-      <img class="footer-logo" src="assets/img/logo-bej.webp" alt="Absolvire.ro" loading="lazy" width="640" height="203">
+      <img class="footer-logo" src="assets/img/logo-bej.webp" alt="Absolvire.ro" loading="lazy" srcset="assets/img/logo-bej-480.webp 480w, assets/img/logo-bej.webp 640w" sizes="(max-width: 760px) 47vw, 190px" width="640" height="203">
       <p>Albume, vestimentație și evenimente de absolvire.</p>
     </div>
     <nav aria-label="Produse">
-      <h4>Produse</h4>
+      <h3>Produse</h3>
       <a href="albume.html">Albume de absolvire</a>
       <a href="vestimentatie.html">Ținuta completă</a>
       <a href="palarie.html">Pălării</a>
@@ -338,7 +338,7 @@
       <a href="parade.html">Parade și decoruri</a>
     </nav>
     <nav aria-label="Servicii">
-      <h4>Servicii</h4>
+      <h3>Servicii</h3>
       <a href="foto-video.html">Foto și video</a>
       <a href="festivitati.html">Festivități</a>
       <a href="banchete.html">Banchete</a>
@@ -346,7 +346,7 @@
       <a href="promotii.html">Promoții</a>
     </nav>
     <div>
-      <h4>Contact</h4>
+      <h3>Contact</h3>
       <p data-contact><a href="tel:+40723882511">+40 723 882 511</a><br><a href="mailto:comenzi.scoli@gmail.com">comenzi.scoli@gmail.com</a></p>
       <a class="link-arrow" href="cerere.html">Cererea mea →</a>
     </div>

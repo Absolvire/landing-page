@@ -4,32 +4,34 @@
 
 Toate prețurile sunt în lei (RON) și sunt prețuri de referință; transportul, disponibilitatea și programarea se confirmă în oferta personalizată. Trimiterea cererii nu este comandă fermă.
 
+Linkurile de mai jos duc la versiunea Markdown a fiecărei pagini; pagina HTML are aceeași adresă cu „.html” în loc de „.md” (prima pagină: https://www.absolvire.ro/).
+
 ## Albume de absolvire
 Prețuri per elev pentru minimum 15 albume contra cost, cu ședința foto inclusă; sub prag, ofertă personalizată.
-- [Economy](https://www.absolvire.ro/album-economy.html): 120 lei/elev — A4, copertă tip revistă, pagini flexibile capsate, 1 fotografie / elev.
-- [Velvet](https://www.absolvire.ro/album-velvet.html): 200 lei/elev — 20 × 20 cm, copertă de catifea cu fundă, pagini flexibile broșate, 2 fotografii / elev.
-- [Deluxe](https://www.absolvire.ro/album-deluxe.html): 230 lei/elev — A4, copertă rigidă din catifea, pagini flexibile broșate, portret și semigrup.
-- [Class](https://www.absolvire.ro/album-class.html): 260 lei/elev — 20 × 20 cm, copertă personalizată, printată, pagini groase lay-flat, 2 elevi / pagină.
-- [Elite](https://www.absolvire.ro/album-elite.html): 320 lei/elev — 25 × 25 cm, catifea cu inserție personalizată, pagini lay-flat, pagină proprie cu 3 fotografii.
-- [Comparație modele](https://www.absolvire.ro/albume.html)
+- [Economy](https://www.absolvire.ro/album-economy.md): 120 lei/elev — A4, copertă tip revistă, pagini flexibile capsate, 1 fotografie / elev.
+- [Velvet](https://www.absolvire.ro/album-velvet.md): 200 lei/elev — 20 × 20 cm, copertă de catifea cu fundă, pagini flexibile broșate, 2 fotografii / elev.
+- [Deluxe](https://www.absolvire.ro/album-deluxe.md): 230 lei/elev — A4, copertă rigidă din catifea, pagini flexibile broșate, portret și semigrup.
+- [Class](https://www.absolvire.ro/album-class.md): 260 lei/elev — 20 × 20 cm, copertă personalizată, printată, pagini groase lay-flat, 2 elevi / pagină.
+- [Elite](https://www.absolvire.ro/album-elite.md): 320 lei/elev — 25 × 25 cm, catifea cu inserție personalizată, pagini lay-flat, pagină proprie cu 3 fotografii.
+- [Comparație modele](https://www.absolvire.ro/albume.md)
 
 ## Vestimentație
-- [Ținuta completă](https://www.absolvire.ro/vestimentatie.html): robă închiriată + pălărie + eșarfă + insignă + diplomă A4, 100 lei/elev; cu cocardă 110 lei. Design comun pe capac +20 lei. De la 15 pachete plătite, 1 pachet gratuit pentru diriginte.
-- [Pălărie](https://www.absolvire.ro/palarie.html): 50 lei/buc.
-- [Eșarfă personalizată](https://www.absolvire.ro/esarfa.html): 35 lei/buc.
-- [Insignă / cocardă](https://www.absolvire.ro/insigna-cocarda.html): insignă 5 lei/buc., cocardă 15 lei/buc.
-- [Pachete vestimentație + album](https://www.absolvire.ro/pachete.html): ofertă personalizată, fără preț public.
+- [Ținuta completă](https://www.absolvire.ro/vestimentatie.md): robă închiriată + pălărie + eșarfă + insignă + diplomă A4, 100 lei/elev; cu cocardă 110 lei. Design comun pe capac +20 lei. De la 15 pachete plătite, 1 pachet gratuit pentru diriginte.
+- [Pălărie](https://www.absolvire.ro/palarie.md): 50 lei/buc.
+- [Eșarfă personalizată](https://www.absolvire.ro/esarfa.md): 35 lei/buc.
+- [Insignă / cocardă](https://www.absolvire.ro/insigna-cocarda.md): insignă 5 lei/buc., cocardă 15 lei/buc.
+- [Pachete vestimentație + album](https://www.absolvire.ro/pachete.md): ofertă personalizată, fără preț public.
 
 ## Evenimente și alte produse
-- [Foto și video](https://www.absolvire.ro/foto-video.html): Set de 6 fotografii simple tip ID 20 lei/set; Set de 18 fotografii autoadezive, 3 × 4 cm 30 lei/set.
-- [Festivități](https://www.absolvire.ro/festivitati.html): Fotografiere festivitate (de la 1.500 lei / eveniment); Filmarea festivității (de la 1.500 lei / eveniment); Decor cu baloane (de la 1.500 lei / eveniment); Baloane colorate cu heliu, livrate la festivitate (estimativ 20 lei / elev); Sonorizare festivitate, cu tehnician de sunet (preț la cerere); Show profesionist de fumigene colorate (preț la cerere); Prezentator festivitate (preț la cerere); Scenă mobilă în curtea școlii (preț la cerere); Scaune de închiriat pentru festivitate (preț la cerere); Photo wall / photo corner tematic (preț la cerere).
-- [Banchete](https://www.absolvire.ro/banchete.html): Foto banchet, Video banchet, Sonorizare și DJ / MC, Manager de eveniment dedicat, Cabină foto cu accesorii, Platformă video selfie 360, Primire Hollywood Glam, Decor și lumini, Meniu și servicii de bar, Entertainment și momente speciale, Planificare și invitații — preț la cerere.
-- [Premiere și diplome](https://www.absolvire.ro/premiere.html): Diplomă personalizată A4 5 lei; Diplomă pe suport de catifea 30 lei; Medalie aurie 7 cm, inscripționată, cu șnur 25 lei; Trofeu figurină absolvent, soclu de marmură 100 lei; Plachetă de onoare în mapă de catifea, 13 × 18 cm 150 lei; Diplomă de onoare în mapă de catifea, 21 × 31 cm 150 lei; Cheia Succesului 150 lei.
-- [Parade și decoruri](https://www.absolvire.ro/parade.html): Steag personalizat pe o față 150 lei; Pancartă inscripționată pe o față, 50 × 35 cm 100 lei; Mini-banner personalizat, cu suport de lemn 180 lei; proiecte speciale la cerere.
-- [Promoții](https://www.absolvire.ro/promotii.html)
+- [Foto și video](https://www.absolvire.ro/foto-video.md): Set de 6 fotografii simple tip ID 20 lei/set; Set de 18 fotografii autoadezive, 3 × 4 cm 30 lei/set.
+- [Festivități](https://www.absolvire.ro/festivitati.md): Fotografiere festivitate (de la 1.500 lei / eveniment); Filmarea festivității (de la 1.500 lei / eveniment); Decor cu baloane (de la 1.500 lei / eveniment); Baloane colorate cu heliu, livrate la festivitate (estimativ 20 lei / elev); Sonorizare festivitate, cu tehnician de sunet (preț la cerere); Show profesionist de fumigene colorate (preț la cerere); Prezentator festivitate (preț la cerere); Scenă mobilă în curtea școlii (preț la cerere); Scaune de închiriat pentru festivitate (preț la cerere); Photo wall / photo corner tematic (preț la cerere).
+- [Banchete](https://www.absolvire.ro/banchete.md): Foto banchet, Video banchet, Sonorizare și DJ / MC, Manager de eveniment dedicat, Cabină foto cu accesorii, Platformă video selfie 360, Primire Hollywood Glam, Decor și lumini, Meniu și servicii de bar, Entertainment și momente speciale, Planificare și invitații — preț la cerere.
+- [Premiere și diplome](https://www.absolvire.ro/premiere.md): Diplomă personalizată A4 5 lei; Diplomă pe suport de catifea 30 lei; Medalie aurie 7 cm, inscripționată, cu șnur 25 lei; Trofeu figurină absolvent, soclu de marmură 100 lei; Plachetă de onoare în mapă de catifea, 13 × 18 cm 150 lei; Diplomă de onoare în mapă de catifea, 21 × 31 cm 150 lei; Cheia Succesului 150 lei.
+- [Parade și decoruri](https://www.absolvire.ro/parade.md): Steag personalizat pe o față 150 lei; Pancartă inscripționată pe o față, 50 × 35 cm 100 lei; Mini-banner personalizat, cu suport de lemn 180 lei; proiecte speciale la cerere.
+- [Promoții](https://www.absolvire.ro/promotii.md)
 
 ## Contact
-Cererile de ofertă se trimit din site (pagina „Cererea mea”) sau direct:
+Cererile de ofertă se trimit din site (pagina [Cererea mea](https://www.absolvire.ro/cerere.md)) sau direct:
 - Firma: ROBE ABSOLVIRE SRL, București, Sector 2, Str. Vatra Luminoasă nr. 1 · CIF 43761331 · J40/2908/2021
 - Telefon: +40 723 882 511
 - Email: comenzi.scoli@gmail.com
@@ -87,3 +89,8 @@ Cererile de ofertă se trimit din site (pagina „Cererea mea”) sau direct:
 - **Ce produse pentru parada de absolvire sunt disponibile?** Steag personalizat pe o față: 150 lei; Pancartă inscripționată pe o față, 50 × 35 cm: 100 lei; Mini-banner personalizat, cu suport de lemn: 180 lei.
 - **Pot cere un decor sau un proiect special?** Da. Descrieți ideea, dimensiunile aproximative și locul utilizării; echipa propune soluția de realizare după evaluare, cu preț de confirmat.
 - **Cum se acordă beneficiile unei promoții?** Site-ul afișează beneficiul posibil pe baza informațiilor introduse. Eligibilitatea și beneficiul final se confirmă de echipa Absolvire.ro în oferta transmisă.
+
+## Optional
+- [Prima pagină](https://www.absolvire.ro/index.md)
+- [Termeni și condiții](https://www.absolvire.ro/termeni-si-conditii.md)
+- [Politica de confidențialitate](https://www.absolvire.ro/politica-de-confidentialitate.md)

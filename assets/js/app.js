@@ -236,10 +236,14 @@
   })();
 
   /* ================= Albume ================= */
+  // Blocurile de catalog sunt scrise direct în HTML de _src/build.py, identic cu randarea de mai jos;
+  // scriptul le randează doar dacă lipsesc (fără muncă dublă și fără elemente noi la încărcare).
+  const prerendered = (el) => el.firstElementChild !== null;
   const albums = D.albums;
   const albumUrl = (a) => `album-${a.id}.html`;
 
   $$("[data-album-cards]").forEach((box) => {
+    if (prerendered(box)) return;
     box.innerHTML = albums.map((a) => `
       <article class="album-card">
         <a class="album-card-img" href="${albumUrl(a)}" tabindex="-1" aria-hidden="true"><img src="${esc(a.img)}" alt="Album de absolvire ${esc(a.name)}" loading="lazy"></a>
@@ -255,7 +259,7 @@
 
   (function initCompare() {
     const t = $("[data-compare]");
-    if (!t) return;
+    if (!t || prerendered($("tbody", t))) return;
     const rows = [["Preț de referință*", (a) => `<b>${fmt(a.price)} lei</b> / elev`], ["Dimensiune", (a) => esc(a.size)], ["Copertă", (a) => esc(a.cover)], ["Pagini", (a) => esc(a.binding)], ["Fotografii", (a) => esc(a.photos)], ["Distribuția elevilor", (a) => esc(a.layout)], ["", (a) => `<a class="btn btn-outline btn-sm" href="${albumUrl(a)}">Configurează</a>`]];
     $("thead", t).innerHTML = `<tr><th scope="col"><span class="sr">Caracteristică</span></th>${albums.map((a) => `<th scope="col"><img src="${esc((a.options[0] && a.options[0].img) || a.img)}" alt="" loading="lazy">${esc(a.name)}</th>`).join("")}</tr>`;
     $("tbody", t).innerHTML = rows.map(([k, f]) => `<tr><th scope="row">${k}</th>${albums.map((a) => `<td>${f(a)}</td>`).join("")}</tr>`).join("")
@@ -268,14 +272,14 @@
     const m = albums.find((a) => a.id === document.body.dataset.album) || albums[0];
     const st = { opt1: m.options[0] || null, opt2: (m.options2 || [])[0] || null, view: -1 };
 
-    $("[data-model-tabs]").innerHTML = albums.map((a) => `<a href="${albumUrl(a)}"${a.id === m.id ? ' aria-current="page" class="is-on"' : ""}>${esc(a.name)}</a>`).join("");
+    if (!prerendered($("[data-model-tabs]"))) $("[data-model-tabs]").innerHTML = albums.map((a) => `<a href="${albumUrl(a)}"${a.id === m.id ? ' aria-current="page" class="is-on"' : ""}>${esc(a.name)}</a>`).join("");
     const f1 = $("[data-studio-opt1]"), f2 = $("[data-studio-opt2]");
     f1.hidden = !m.options.length;
     f2.hidden = !(m.options2 && m.options2.length);
     if (!f1.hidden) { $("[data-opt1-label]").textContent = m.optionLabel; $("[data-opt1-list]").innerHTML = m.options.map((o) => swatchHtml(o, false, "opt1")).join(""); }
     if (!f2.hidden) { $("[data-opt2-label]").textContent = m.option2Label; $("[data-opt2-list]").innerHTML = m.options2.map((o) => swatchHtml(o, false, "opt2")).join(""); }
     $("[data-qty-step]").textContent = 1 + (!f1.hidden) + (!f2.hidden);
-    $("[data-interior]").innerHTML = m.interior.map((it, i) => `<li><button type="button" data-view="${i}"><img src="${esc(it.img)}" alt="${esc(m.name)} — ${esc(it.title)}" loading="lazy"></button><span>${esc(it.title)}</span></li>`).join("");
+    if (!prerendered($("[data-interior]"))) $("[data-interior]").innerHTML = m.interior.map((it, i) => `<li><button type="button" data-view="${i}"><img src="${esc(it.img)}" alt="${esc(m.name)} — ${esc(it.title)}" loading="lazy"></button><span>${esc(it.title)}</span></li>`).join("");
     promoLines($("[data-album-promos]"), liveCampaigns.filter((c) => (c.albums || []).includes(m.id)));
 
     // Modele cu o singură fotografie (Velvet): straturile extrase din fotografie (catifea, fundiță)
@@ -549,6 +553,7 @@
 
   /* ================= Recomandări ================= */
   $$("[data-recos]").forEach((box) => {
+    if (prerendered(box)) return;
     const ids = D.recoSets[box.dataset.recos] || [];
     box.innerHTML = ids.map((id) => D.recos[id]).filter(Boolean).map((r) => `
       <article class="reco">
@@ -568,6 +573,7 @@
   }
   const catNames = { idPhotos: "Foto pentru diplomă", awards: "Premiere și diplome", parade: "Parade și decoruri", festivalServices: "Servicii festivitate", banquetServices: "Servicii banchet" };
   $$("[data-list]").forEach((ul) => {
+    if (prerendered(ul)) return;
     const key = ul.dataset.list;
     let items = D[key].map((x) => Object.assign({ mode: "fixed" }, x));
     if (ul.dataset.filter) { const ids = ul.dataset.filter.split(","); items = items.filter((x) => ids.includes(x.id)); }
@@ -633,7 +639,9 @@
       $$("[data-filter]", e.currentTarget).forEach((x) => { const on = x === b; x.classList.toggle("is-on", on); x.setAttribute("aria-pressed", String(on)); });
       render(b.dataset.filter);
     });
-    render("all");
+    const hashId = location.hash.startsWith("#promo-") ? location.hash.slice(7) : "";
+    const sameAsHtml = $$(".promo", list).map((x) => x.id).join() === liveCampaigns.map((c) => "promo-" + c.id).join();
+    if (!sameAsHtml || (hashId && !liveCampaigns.some((c) => c.id === hashId))) render("all");
     const jump = () => { if (location.hash.startsWith("#promo-")) { const el = document.getElementById(location.hash.slice(1)); if (el) el.scrollIntoView(); } };
     window.addEventListener("hashchange", () => { render("all"); jump(); });
     jump();
@@ -646,7 +654,7 @@
     const box = $("[data-cart-items]"), form = $("[data-request-form]"), grid = $(".request-grid", root);
     renderCart = function () {
       if (!cart.length) {
-        box.innerHTML = `<div class="cart-empty card"><img src="assets/img/lauri.webp" alt=""><h2>Cererea ta este goală.</h2><p>Adaugă albume, vestimentație sau servicii — selecțiile se păstrează în acest browser, fără cont.</p><div class="btn-row center"><a class="btn btn-primary" href="albume.html">Vezi albumele</a><a class="btn btn-outline" href="vestimentatie.html">Configurează vestimentația</a></div></div>`;
+        if (!$(".cart-empty", box)) box.innerHTML = `<div class="cart-empty card"><img src="assets/img/lauri.webp" alt=""><h2>Cererea ta este goală.</h2><p>Adaugă albume, vestimentație sau servicii — selecțiile se păstrează în acest browser, fără cont.</p><div class="btn-row center"><a class="btn btn-primary" href="albume.html">Vezi albumele</a><a class="btn btn-outline" href="vestimentatie.html">Configurează vestimentația</a></div></div>`;
         $(".request-side", root).hidden = true;
         grid.classList.add("is-empty");
         return;

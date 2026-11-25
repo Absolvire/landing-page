@@ -18,13 +18,13 @@
   <meta name="twitter:title" content="Albume de absolvire: modele și prețuri | Absolvire.ro">
   <meta name="twitter:description" content="Compară modelele de albume de absolvire: dimensiune, copertă, pagini, fotografii incluse și prețuri de referință pentru minimum 15 albume.">
   <meta name="twitter:image" content="https://www.absolvire.ro/assets/img/velvet-cover-wide.webp">
+  <link rel="alternate" type="text/markdown" href="albume.md" title="Versiunea Markdown">
   <meta name="theme-color" content="#6e1129">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="assets/img/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/playfair-display.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/style.css">
   <script type="application/ld+json">
 {
@@ -298,7 +298,7 @@
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="logo" href="index.html" aria-label="Absolvire.ro — prima pagină">
-      <img src="assets/img/logo-black.webp" alt="Absolvire.ro" width="640" height="186">
+      <img src="assets/img/logo-black.webp" alt="Absolvire.ro" srcset="assets/img/logo-black-480.webp 480w, assets/img/logo-black.webp 640w" sizes="(max-width: 760px) 33vw, 168px" width="640" height="186">
     </a>
     <nav class="main-nav" id="main-nav" aria-label="Navigare principală">
       <a href="albume.html" data-nav="albume" aria-current="page">Albume</a>
@@ -332,6 +332,7 @@
 
 <section class="section section-tight">
   <div class="wrap">
+    <h2 class="sr">Modelele de albume</h2>
     <div class="album-cards" data-album-cards>
       <article class="album-card">
         <a class="album-card-img" href="album-economy.html" tabindex="-1" aria-hidden="true"><img src="assets/img/economy-cover.webp" alt="Album de absolvire Economy" loading="lazy" width="529" height="700"></a>
@@ -344,7 +345,7 @@
         </div>
       </article>
       <article class="album-card">
-        <a class="album-card-img" href="album-velvet.html" tabindex="-1" aria-hidden="true"><img src="assets/img/velvet-cover.webp" alt="Album de absolvire Velvet" loading="lazy" width="900" height="900"></a>
+        <a class="album-card-img" href="album-velvet.html" tabindex="-1" aria-hidden="true"><img src="assets/img/velvet-cover.webp" alt="Album de absolvire Velvet" loading="lazy" srcset="assets/img/velvet-cover-480.webp 480w, assets/img/velvet-cover-800.webp 800w, assets/img/velvet-cover.webp 900w" sizes="(max-width: 760px) 78vw, 518px" width="900" height="900"></a>
         <div class="album-card-body">
           <h3><a href="album-velvet.html">Velvet</a></h3>
           <p class="price"><b>200</b> lei / elev</p>
@@ -364,7 +365,7 @@
         </div>
       </article>
       <article class="album-card">
-        <a class="album-card-img" href="album-class.html" tabindex="-1" aria-hidden="true"><img src="assets/img/class-cover.webp" alt="Album de absolvire Class" loading="lazy" width="900" height="900"></a>
+        <a class="album-card-img" href="album-class.html" tabindex="-1" aria-hidden="true"><img src="assets/img/class-cover.webp" alt="Album de absolvire Class" loading="lazy" srcset="assets/img/class-cover-480.webp 480w, assets/img/class-cover-800.webp 800w, assets/img/class-cover.webp 900w" sizes="(max-width: 760px) 78vw, 518px" width="900" height="900"></a>
         <div class="album-card-body">
           <h3><a href="album-class.html">Class</a></h3>
           <p class="price"><b>260</b> lei / elev</p>
@@ -374,7 +375,7 @@
         </div>
       </article>
       <article class="album-card">
-        <a class="album-card-img" href="album-elite.html" tabindex="-1" aria-hidden="true"><img src="assets/img/elite-lila.webp" alt="Album de absolvire Elite" loading="lazy" width="900" height="900"></a>
+        <a class="album-card-img" href="album-elite.html" tabindex="-1" aria-hidden="true"><img src="assets/img/elite-lila.webp" alt="Album de absolvire Elite" loading="lazy" srcset="assets/img/elite-lila-480.webp 480w, assets/img/elite-lila-800.webp 800w, assets/img/elite-lila.webp 900w" sizes="(max-width: 760px) 37vw, 188px" width="900" height="900"></a>
         <div class="album-card-body">
           <h3><a href="album-elite.html">Elite</a></h3>
           <p class="price"><b>320</b> lei / elev</p>
@@ -396,7 +397,7 @@
       </div>
     </div>
     <div class="table-scroll" tabindex="0" role="region" aria-label="Tabel comparativ albume">
-      <table class="compare" data-compare><thead><tr><th scope="col"><span class="sr">Caracteristică</span></th><th scope="col"><img src="assets/img/economy-cover.webp" alt="" loading="lazy" width="529" height="700">Economy</th><th scope="col"><img src="assets/img/velvet-cover.webp" alt="" loading="lazy" width="900" height="900">Velvet</th><th scope="col"><img src="assets/img/deluxe-negru.webp" alt="" loading="lazy" width="506" height="760">Deluxe</th><th scope="col"><img src="assets/img/class-cover.webp" alt="" loading="lazy" width="900" height="900">Class</th><th scope="col"><img src="assets/img/elite-bej.webp" alt="" loading="lazy" width="900" height="900">Elite</th></tr></thead><tbody><tr><th scope="row">Preț de referință*</th><td><b>120 lei</b> / elev</td><td><b>200 lei</b> / elev</td><td><b>230 lei</b> / elev</td><td><b>260 lei</b> / elev</td><td><b>320 lei</b> / elev</td></tr><tr><th scope="row">Dimensiune</th><td>A4</td><td>20 × 20 cm</td><td>A4</td><td>20 × 20 cm</td><td>25 × 25 cm</td></tr><tr><th scope="row">Copertă</th><td>Copertă tip revistă</td><td>Copertă de catifea cu fundă</td><td>Copertă rigidă din catifea</td><td>Copertă personalizată, printată</td><td>Catifea cu inserție personalizată</td></tr><tr><th scope="row">Pagini</th><td>Pagini flexibile capsate</td><td>Pagini flexibile broșate</td><td>Pagini flexibile broșate</td><td>Pagini groase lay-flat</td><td>Pagini lay-flat</td></tr><tr><th scope="row">Fotografii</th><td>1 fotografie / elev</td><td>2 fotografii / elev</td><td>Portret și semigrup</td><td>2 elevi / pagină</td><td>Pagină proprie cu 3 fotografii</td></tr><tr><th scope="row">Distribuția elevilor</th><td>Elevii sunt prezentați în pagini comune, cu câte un portret.</td><td>O pagină pentru fiecare elev: portret, fotografie cu prietenii și mesaj.</td><td>Fiecare elev are portretul său, plus fotografii pe semigrupuri.</td><td>Paginile se deschid complet plat; câte doi elevi pe pagină.</td><td>Fiecare elev are pagina lui, cu trei fotografii.</td></tr><tr><th scope="row"></th><td><a class="btn btn-outline btn-sm" href="album-economy.html">Configurează</a></td><td><a class="btn btn-outline btn-sm" href="album-velvet.html">Configurează</a></td><td><a class="btn btn-outline btn-sm" href="album-deluxe.html">Configurează</a></td><td><a class="btn btn-outline btn-sm" href="album-class.html">Configurează</a></td><td><a class="btn btn-outline btn-sm" href="album-elite.html">Configurează</a></td></tr><tr class="foot"><td colspan="6">* Pentru minimum 15 albume contra cost. Sub prag, oferta se personalizează pentru cantitatea cerută.</td></tr></tbody></table>
+      <table class="compare" data-compare><thead><tr><th scope="col"><span class="sr">Caracteristică</span></th><th scope="col"><img src="assets/img/economy-cover.webp" alt="" loading="lazy" width="529" height="700">Economy</th><th scope="col"><img src="assets/img/velvet-cover.webp" alt="" loading="lazy" srcset="assets/img/velvet-cover-480.webp 480w, assets/img/velvet-cover-800.webp 800w, assets/img/velvet-cover.webp 900w" sizes="(max-width: 760px) 78vw, 518px" width="900" height="900">Velvet</th><th scope="col"><img src="assets/img/deluxe-negru.webp" alt="" loading="lazy" width="506" height="760">Deluxe</th><th scope="col"><img src="assets/img/class-cover.webp" alt="" loading="lazy" srcset="assets/img/class-cover-480.webp 480w, assets/img/class-cover-800.webp 800w, assets/img/class-cover.webp 900w" sizes="(max-width: 760px) 78vw, 518px" width="900" height="900">Class</th><th scope="col"><img src="assets/img/elite-bej.webp" alt="" loading="lazy" srcset="assets/img/elite-bej-480.webp 480w, assets/img/elite-bej-800.webp 800w, assets/img/elite-bej.webp 900w" sizes="(max-width: 760px) 78vw, 518px" width="900" height="900">Elite</th></tr></thead><tbody><tr><th scope="row">Preț de referință*</th><td><b>120 lei</b> / elev</td><td><b>200 lei</b> / elev</td><td><b>230 lei</b> / elev</td><td><b>260 lei</b> / elev</td><td><b>320 lei</b> / elev</td></tr><tr><th scope="row">Dimensiune</th><td>A4</td><td>20 × 20 cm</td><td>A4</td><td>20 × 20 cm</td><td>25 × 25 cm</td></tr><tr><th scope="row">Copertă</th><td>Copertă tip revistă</td><td>Copertă de catifea cu fundă</td><td>Copertă rigidă din catifea</td><td>Copertă personalizată, printată</td><td>Catifea cu inserție personalizată</td></tr><tr><th scope="row">Pagini</th><td>Pagini flexibile capsate</td><td>Pagini flexibile broșate</td><td>Pagini flexibile broșate</td><td>Pagini groase lay-flat</td><td>Pagini lay-flat</td></tr><tr><th scope="row">Fotografii</th><td>1 fotografie / elev</td><td>2 fotografii / elev</td><td>Portret și semigrup</td><td>2 elevi / pagină</td><td>Pagină proprie cu 3 fotografii</td></tr><tr><th scope="row">Distribuția elevilor</th><td>Elevii sunt prezentați în pagini comune, cu câte un portret.</td><td>O pagină pentru fiecare elev: portret, fotografie cu prietenii și mesaj.</td><td>Fiecare elev are portretul său, plus fotografii pe semigrupuri.</td><td>Paginile se deschid complet plat; câte doi elevi pe pagină.</td><td>Fiecare elev are pagina lui, cu trei fotografii.</td></tr><tr><th scope="row"></th><td><a class="btn btn-outline btn-sm" href="album-economy.html">Configurează</a></td><td><a class="btn btn-outline btn-sm" href="album-velvet.html">Configurează</a></td><td><a class="btn btn-outline btn-sm" href="album-deluxe.html">Configurează</a></td><td><a class="btn btn-outline btn-sm" href="album-class.html">Configurează</a></td><td><a class="btn btn-outline btn-sm" href="album-elite.html">Configurează</a></td></tr><tr class="foot"><td colspan="6">* Pentru minimum 15 albume contra cost. Sub prag, oferta se personalizează pentru cantitatea cerută.</td></tr></tbody></table>
     </div>
   </div>
 </section>
@@ -409,9 +410,9 @@
       <p class="lead">Privești pe îndelete. Alegi ce te reprezintă.</p>
       <p>După ședința foto, fiecare elev primește acces individual la platforma online, cu toate fotografiile sale în format digital. Compară cadrele de acasă, pe telefon sau calculator, și alege imaginile care intră pe pagina lui din album.</p>
       <ol class="steps">
-        <li><span>1</span><div><strong>Ședința foto a albumului</strong> — programarea și locația se stabilesc cu echipa, în răspunsul la cerere.</div></li>
-        <li><span>2</span><div><strong>Selecția online</strong> — fiecare elev își alege fotografiile pentru pagina sa.</div></li>
-        <li><span>3</span><div><strong>Albumul fizic + varianta PDF</strong> — același conținut pentru toată clasa.</div></li>
+        <li><span aria-hidden="true">1</span><div><strong>Ședința foto a albumului</strong> — programarea și locația se stabilesc cu echipa, în răspunsul la cerere.</div></li>
+        <li><span aria-hidden="true">2</span><div><strong>Selecția online</strong> — fiecare elev își alege fotografiile pentru pagina sa.</div></li>
+        <li><span aria-hidden="true">3</span><div><strong>Albumul fizic + varianta PDF</strong> — același conținut pentru toată clasa.</div></li>
       </ol>
       <p class="micro">Numărul fotografiilor incluse în album este o caracteristică a modelului, nu numărul total de cadre realizate.</p>
       <p class="micro">Linkul către platforma foto și datele de acces le primiți după ședința foto.</p>
@@ -419,12 +420,12 @@
     <div class="photo-visual">
       <div class="laptop">
         <div class="laptop-screen">
-          <div class="pf-bar"><img src="assets/img/logo-black.webp" alt="" width="640" height="186"><span>Fotografiile mele</span><span>Selecție</span><span class="on">Albumul meu</span></div>
-          <img src="assets/img/elite-int-4.webp" alt="Pagini de elevi dintr-un album Elite, cu câte trei fotografii" loading="lazy" width="1400" height="969">
+          <div class="pf-bar" aria-hidden="true"><img src="assets/img/logo-black.webp" alt="" srcset="assets/img/logo-black-480.webp 480w, assets/img/logo-black.webp 640w" sizes="(max-width: 760px) 33vw, 168px" width="640" height="186"><span>Fotografiile mele</span><span>Selecție</span><span class="on">Albumul meu</span></div>
+          <img src="assets/img/elite-int-4.webp" alt="Pagini de elevi dintr-un album Elite, cu câte trei fotografii" loading="lazy" srcset="assets/img/elite-int-4-480.webp 480w, assets/img/elite-int-4-800.webp 800w, assets/img/elite-int-4.webp 1400w" sizes="(max-width: 760px) 81vw, 557px" width="1400" height="969">
         </div>
         <div class="laptop-base"></div>
       </div>
-      <figure class="polaroid"><img src="assets/img/velvet-int-3.webp" alt="Paginile elevilor într-un album Velvet" loading="lazy" width="1400" height="764"></figure>
+      <figure class="polaroid"><img src="assets/img/velvet-int-3.webp" alt="Paginile elevilor într-un album Velvet" loading="lazy" srcset="assets/img/velvet-int-3-480.webp 480w, assets/img/velvet-int-3-800.webp 800w, assets/img/velvet-int-3.webp 1400w" sizes="(max-width: 760px) 100vw, 1076px" width="1400" height="764"></figure>
     </div>
   </div>
   <div class="wrap autumn">
@@ -440,8 +441,8 @@
 <section class="section section-tight">
   <div class="wrap bundle-inner">
     <div class="bundle-imgs" aria-hidden="true">
-      <img src="assets/img/roba-negru-pack.webp" alt="" loading="lazy" width="640" height="640">
-      <img src="assets/img/elite-smarald.webp" alt="" loading="lazy" width="900" height="900">
+      <img src="assets/img/roba-negru-pack.webp" alt="" loading="lazy" srcset="assets/img/roba-negru-pack-480.webp 480w, assets/img/roba-negru-pack.webp 640w" sizes="(max-width: 760px) 53vw, 319px" width="640" height="640">
+      <img src="assets/img/elite-smarald.webp" alt="" loading="lazy" srcset="assets/img/elite-smarald-480.webp 480w, assets/img/elite-smarald-800.webp 800w, assets/img/elite-smarald.webp 900w" sizes="(max-width: 760px) 51vw, 308px" width="900" height="900">
     </div>
     <div>
       <p class="eyebrow">Pachete vestimentație + album</p>
@@ -471,11 +472,11 @@
 <footer class="site-footer">
   <div class="wrap footer-grid">
     <div>
-      <img class="footer-logo" src="assets/img/logo-bej.webp" alt="Absolvire.ro" loading="lazy" width="640" height="203">
+      <img class="footer-logo" src="assets/img/logo-bej.webp" alt="Absolvire.ro" loading="lazy" srcset="assets/img/logo-bej-480.webp 480w, assets/img/logo-bej.webp 640w" sizes="(max-width: 760px) 47vw, 190px" width="640" height="203">
       <p>Albume, vestimentație și evenimente de absolvire.</p>
     </div>
     <nav aria-label="Produse">
-      <h4>Produse</h4>
+      <h3>Produse</h3>
       <a href="albume.html">Albume de absolvire</a>
       <a href="vestimentatie.html">Ținuta completă</a>
       <a href="palarie.html">Pălării</a>
@@ -485,7 +486,7 @@
       <a href="parade.html">Parade și decoruri</a>
     </nav>
     <nav aria-label="Servicii">
-      <h4>Servicii</h4>
+      <h3>Servicii</h3>
       <a href="foto-video.html">Foto și video</a>
       <a href="festivitati.html">Festivități</a>
       <a href="banchete.html">Banchete</a>
@@ -493,7 +494,7 @@
       <a href="promotii.html">Promoții</a>
     </nav>
     <div>
-      <h4>Contact</h4>
+      <h3>Contact</h3>
       <p data-contact><a href="tel:+40723882511">+40 723 882 511</a><br><a href="mailto:comenzi.scoli@gmail.com">comenzi.scoli@gmail.com</a></p>
       <a class="link-arrow" href="cerere.html">Cererea mea →</a>
     </div>

@@ -35,7 +35,7 @@ PAGES = {
     "promotii": {"title": "Promoții pentru absolvenți | Absolvire.ro", "img": "assets/img/velvet-int-3.webp", "crumbs": [("Promoții", "promotii.html")]},
     "termeni-si-conditii": {"title": "Termeni și condiții | Absolvire.ro", "img": "assets/img/photo-wall.webp", "crumbs": [("Termeni și condiții", "termeni-si-conditii.html")]},
     "politica-de-confidentialitate": {"title": "Politica de confidențialitate | Absolvire.ro", "img": "assets/img/photo-wall.webp", "crumbs": [("Politica de confidențialitate", "politica-de-confidentialitate.html")]},
-    "cerere": {"title": "Cererea mea | Absolvire.ro", "img": "assets/img/photo-wall.webp", "crumbs": [("Cererea mea", "cerere.html")], "noindex": True},
+    "cerere": {"title": "Cererea mea | Absolvire.ro", "img": "assets/img/photo-wall.webp", "crumbs": [("Cererea mea", "cerere.html")]},
 }
 
 

@@ -18,13 +18,13 @@
   <meta name="twitter:title" content="Ținuta completă de absolvire, 100 lei | Absolvire.ro">
   <meta name="twitter:description" content="Configurează ținuta clasei: robă închiriată, pălărie, eșarfă personalizată, insignă sau cocardă și diplomă A4 inclusă. 100 lei / pachet, bonus pentru diriginte.">
   <meta name="twitter:image" content="https://www.absolvire.ro/assets/img/roba-visiniu-pack.webp">
+  <link rel="alternate" type="text/markdown" href="vestimentatie.md" title="Versiunea Markdown">
   <meta name="theme-color" content="#6e1129">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="assets/img/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/playfair-display.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/style.css">
   <script type="application/ld+json">
 {
@@ -146,7 +146,7 @@
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="logo" href="index.html" aria-label="Absolvire.ro — prima pagină">
-      <img src="assets/img/logo-black.webp" alt="Absolvire.ro" width="640" height="186">
+      <img src="assets/img/logo-black.webp" alt="Absolvire.ro" srcset="assets/img/logo-black-480.webp 480w, assets/img/logo-black.webp 640w" sizes="(max-width: 760px) 33vw, 168px" width="640" height="186">
     </a>
     <nav class="main-nav" id="main-nav" aria-label="Navigare principală">
       <a href="albume.html" data-nav="albume">Albume</a>
@@ -185,7 +185,7 @@
     <div class="config" data-outfit>
       <div class="config-preview">
         <div class="mannequin">
-          <div class="m-hat hat"><img class="hat-img" data-o-hat src="assets/img/palarie-visiniu.webp" alt="" width="900" height="638"><span class="hat-band" data-o-band><img src="assets/img/bentita-visiniu.webp" alt="" width="900" height="638"></span></div>
+          <div class="m-hat hat"><img class="hat-img" data-o-hat src="assets/img/palarie-visiniu.webp" alt="" srcset="assets/img/palarie-visiniu-480.webp 480w, assets/img/palarie-visiniu-800.webp 800w, assets/img/palarie-visiniu.webp 900w" sizes="(max-width: 760px) 74vw, 484px" width="900" height="638"><span class="hat-band" data-o-band><img src="assets/img/bentita-visiniu.webp" alt="" srcset="assets/img/bentita-visiniu-480.webp 480w, assets/img/bentita-visiniu-800.webp 800w, assets/img/bentita-visiniu.webp 900w" sizes="(max-width: 760px) 74vw, 484px" width="900" height="638"></span></div>
           <div class="m-body">
             <img class="m-robe" data-o-robe src="assets/img/roba-visiniu.webp" alt="Robă de absolvire" width="506" height="760">
             <div class="stole-wrap" aria-hidden="true">
@@ -225,9 +225,9 @@
         <fieldset class="opt">
           <legend><span class="step">2</span> Personalizarea pălăriei: <strong data-o-cap-name></strong></legend>
           <div class="cap-picks">
-            <label class="cap-pick"><input type="radio" name="cap" value="none" checked><img data-o-cap-thumb="plain" src="assets/img/palarie-visiniu.webp" alt="" width="900" height="638"><b>Fără personalizare</b><small>inclusă</small></label>
-            <label class="cap-pick"><input type="radio" name="cap" value="common"><img data-o-cap-thumb="pers" src="assets/img/palarie-visiniu-pers.webp" alt="" width="900" height="638"><b>Design comun al clasei</b><small>+20 lei / pachet</small></label>
-            <label class="cap-pick"><input type="radio" name="cap" value="individual"><img data-o-cap-thumb="pers" src="assets/img/palarie-visiniu-pers.webp" alt="" width="900" height="638"><b>Design individual</b><small>preț de confirmat</small></label>
+            <label class="cap-pick"><input type="radio" name="cap" value="none" checked><img data-o-cap-thumb="plain" src="assets/img/palarie-visiniu.webp" alt="" srcset="assets/img/palarie-visiniu-480.webp 480w, assets/img/palarie-visiniu-800.webp 800w, assets/img/palarie-visiniu.webp 900w" sizes="(max-width: 760px) 74vw, 484px" width="900" height="638"><b>Fără personalizare</b><small>inclusă</small></label>
+            <label class="cap-pick"><input type="radio" name="cap" value="common"><img data-o-cap-thumb="pers" src="assets/img/palarie-visiniu-pers.webp" alt="" srcset="assets/img/palarie-visiniu-pers-480.webp 480w, assets/img/palarie-visiniu-pers-800.webp 800w, assets/img/palarie-visiniu-pers.webp 900w" sizes="(max-width: 760px) 53vw, 345px" width="900" height="638"><b>Design comun al clasei</b><small>+20 lei / pachet</small></label>
+            <label class="cap-pick"><input type="radio" name="cap" value="individual"><img data-o-cap-thumb="pers" src="assets/img/palarie-visiniu-pers.webp" alt="" srcset="assets/img/palarie-visiniu-pers-480.webp 480w, assets/img/palarie-visiniu-pers-800.webp 800w, assets/img/palarie-visiniu-pers.webp 900w" sizes="(max-width: 760px) 53vw, 345px" width="900" height="638"><b>Design individual</b><small>preț de confirmat</small></label>
           </div>
           <div class="cap-detail" data-o-cap-common hidden>
             <label class="check"><input type="checkbox" data-o-cap-email> <span>Voi trimite poza pe email <span class="muted">(designul comun al clasei)</span></span></label>
@@ -300,7 +300,7 @@
         <a class="btn btn-outline btn-sm" href="premiere.html">Vezi produsul <span aria-hidden="true">→</span></a>
       </article>
       <article class="reco">
-        <div class="reco-img" ><img src="assets/img/diploma-prof.webp" alt="Plachetă pentru diriginte" loading="lazy" width="1000" height="706"></div>
+        <div class="reco-img" ><img src="assets/img/diploma-prof.webp" alt="Plachetă pentru diriginte" loading="lazy" srcset="assets/img/diploma-prof-480.webp 480w, assets/img/diploma-prof-800.webp 800w, assets/img/diploma-prof.webp 1000w" sizes="(max-width: 760px) 91vw, 578px" width="1000" height="706"></div>
         <h3>Plachetă pentru diriginte</h3>
         <p>Un gest de apreciere pentru cei care v-au îndrumat.</p>
         <a class="btn btn-outline btn-sm" href="premiere.html">Vezi produsul <span aria-hidden="true">→</span></a>
@@ -312,12 +312,12 @@
   <div class="wrap">
     <h2 class="h3-serif">Ce include ținuta</h2>
     <ul class="kit">
-      <li><img src="assets/img/roba-visiniu-pack.webp" alt="" loading="lazy" width="640" height="585"><span>Robă închiriată</span></li>
-      <li><img src="assets/img/palarie-visiniu.webp" alt="" loading="lazy" width="900" height="638"><span>Pălărie</span></li>
+      <li><img src="assets/img/roba-visiniu-pack.webp" alt="" loading="lazy" srcset="assets/img/roba-visiniu-pack-480.webp 480w, assets/img/roba-visiniu-pack.webp 640w" sizes="(max-width: 760px) 100vw, 1076px" width="640" height="585"><span>Robă închiriată</span></li>
+      <li><img src="assets/img/palarie-visiniu.webp" alt="" loading="lazy" srcset="assets/img/palarie-visiniu-480.webp 480w, assets/img/palarie-visiniu-800.webp 800w, assets/img/palarie-visiniu.webp 900w" sizes="(max-width: 760px) 74vw, 484px" width="900" height="638"><span>Pălărie</span></li>
       <li><img src="assets/img/esarfa-alba.webp" alt="" loading="lazy" width="400" height="600"><span>Eșarfă personalizată</span></li>
       <li><img src="assets/img/cocarda-visiniu.webp" alt="" loading="lazy" width="520" height="866"><span>Insignă sau cocardă</span></li>
       <li><img src="assets/img/diploma-a4.webp" alt="" loading="lazy" width="537" height="760"><span>Diplomă A4</span></li>
-      <li class="kit-note"><b>⟳</b><span>Roba se returnează.<br>Accesoriile rămân amintire.</span></li>
+      <li class="kit-note"><b aria-hidden="true">⟳</b><span>Roba se returnează.<br>Accesoriile rămân amintire.</span></li>
     </ul>
   </div>
 </section>
@@ -341,11 +341,11 @@
 <footer class="site-footer">
   <div class="wrap footer-grid">
     <div>
-      <img class="footer-logo" src="assets/img/logo-bej.webp" alt="Absolvire.ro" loading="lazy" width="640" height="203">
+      <img class="footer-logo" src="assets/img/logo-bej.webp" alt="Absolvire.ro" loading="lazy" srcset="assets/img/logo-bej-480.webp 480w, assets/img/logo-bej.webp 640w" sizes="(max-width: 760px) 47vw, 190px" width="640" height="203">
       <p>Albume, vestimentație și evenimente de absolvire.</p>
     </div>
     <nav aria-label="Produse">
-      <h4>Produse</h4>
+      <h3>Produse</h3>
       <a href="albume.html">Albume de absolvire</a>
       <a href="vestimentatie.html">Ținuta completă</a>
       <a href="palarie.html">Pălării</a>
@@ -355,7 +355,7 @@
       <a href="parade.html">Parade și decoruri</a>
     </nav>
     <nav aria-label="Servicii">
-      <h4>Servicii</h4>
+      <h3>Servicii</h3>
       <a href="foto-video.html">Foto și video</a>
       <a href="festivitati.html">Festivități</a>
       <a href="banchete.html">Banchete</a>
@@ -363,7 +363,7 @@
       <a href="promotii.html">Promoții</a>
     </nav>
     <div>
-      <h4>Contact</h4>
+      <h3>Contact</h3>
       <p data-contact><a href="tel:+40723882511">+40 723 882 511</a><br><a href="mailto:comenzi.scoli@gmail.com">comenzi.scoli@gmail.com</a></p>
       <a class="link-arrow" href="cerere.html">Cererea mea →</a>
     </div>

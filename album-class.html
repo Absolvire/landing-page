@@ -18,13 +18,13 @@
   <meta name="twitter:title" content="Album de absolvire Class, 260 lei/elev | Absolvire.ro">
   <meta name="twitter:description" content="Albumul Class: Copertă personalizată, printată, Pagini groase lay-flat, 2 elevi / pagină. Configurează coperta și cere oferta pentru clasa ta.">
   <meta name="twitter:image" content="https://www.absolvire.ro/assets/img/class-cover.webp">
+  <link rel="alternate" type="text/markdown" href="album-class.md" title="Versiunea Markdown">
   <meta name="theme-color" content="#6e1129">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="assets/img/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/playfair-display.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/style.css">
   <script type="application/ld+json">
 {
@@ -169,7 +169,7 @@
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="logo" href="index.html" aria-label="Absolvire.ro — prima pagină">
-      <img src="assets/img/logo-black.webp" alt="Absolvire.ro" width="640" height="186">
+      <img src="assets/img/logo-black.webp" alt="Absolvire.ro" srcset="assets/img/logo-black-480.webp 480w, assets/img/logo-black.webp 640w" sizes="(max-width: 760px) 33vw, 168px" width="640" height="186">
     </a>
     <nav class="main-nav" id="main-nav" aria-label="Navigare principală">
       <a href="albume.html" data-nav="albume" aria-current="page">Albume</a>
@@ -200,7 +200,7 @@
     <div class="album-studio" data-album-studio>
       <div class="studio-gallery">
         <div class="studio-stage">
-          <img data-studio-img src="assets/img/class-cover.webp" alt="Album Class" width="900" height="900">
+          <img data-studio-img src="assets/img/class-cover.webp" alt="Album Class" srcset="assets/img/class-cover-480.webp 480w, assets/img/class-cover-800.webp 800w, assets/img/class-cover.webp 900w" sizes="(max-width: 760px) 78vw, 518px" width="900" height="900">
           <span class="stage-badge" data-studio-badge hidden></span>
         </div>
         <div class="studio-thumbs" data-studio-thumbs aria-label="Galeria modelului"></div>
@@ -263,7 +263,7 @@
       </div>
       <p class="head-note">Paginile se deschid complet plat; câte doi elevi pe pagină. Toate exemplarele albumului clasei au același conținut — albumul este comun, nu diferit pentru fiecare elev.</p>
     </div>
-    <ol class="interior-strip" data-interior><li><button type="button" data-view="0"><img src="assets/img/class-int-1.webp" alt="Class — Dirigintele și profesorii" loading="lazy" width="1400" height="933"></button><span>Dirigintele și profesorii</span></li><li><button type="button" data-view="1"><img src="assets/img/class-int-2.webp" alt="Class — Mulțumiri și grupuri" loading="lazy" width="1400" height="933"></button><span>Mulțumiri și grupuri</span></li><li><button type="button" data-view="2"><img src="assets/img/class-int-3.webp" alt="Class — Paginile elevilor — 2 elevi / pagină" loading="lazy" width="1400" height="933"></button><span>Paginile elevilor — 2 elevi / pagină</span></li><li><button type="button" data-view="3"><img src="assets/img/class-int-4.webp" alt="Class — Încheiere" loading="lazy" width="1400" height="933"></button><span>Încheiere</span></li></ol>
+    <ol class="interior-strip" data-interior><li><button type="button" data-view="0"><img src="assets/img/class-int-1.webp" alt="Class — Dirigintele și profesorii" loading="lazy" srcset="assets/img/class-int-1-480.webp 480w, assets/img/class-int-1-800.webp 800w, assets/img/class-int-1.webp 1400w" sizes="(max-width: 760px) 57vw, 270px" width="1400" height="933"></button><span>Dirigintele și profesorii</span></li><li><button type="button" data-view="1"><img src="assets/img/class-int-2.webp" alt="Class — Mulțumiri și grupuri" loading="lazy" srcset="assets/img/class-int-2-480.webp 480w, assets/img/class-int-2-800.webp 800w, assets/img/class-int-2.webp 1400w" sizes="(max-width: 760px) 57vw, 270px" width="1400" height="933"></button><span>Mulțumiri și grupuri</span></li><li><button type="button" data-view="2"><img src="assets/img/class-int-3.webp" alt="Class — Paginile elevilor — 2 elevi / pagină" loading="lazy" srcset="assets/img/class-int-3-480.webp 480w, assets/img/class-int-3-800.webp 800w, assets/img/class-int-3.webp 1400w" sizes="(max-width: 760px) 57vw, 270px" width="1400" height="933"></button><span>Paginile elevilor — 2 elevi / pagină</span></li><li><button type="button" data-view="3"><img src="assets/img/class-int-4.webp" alt="Class — Încheiere" loading="lazy" srcset="assets/img/class-int-4-480.webp 480w, assets/img/class-int-4-800.webp 800w, assets/img/class-int-4.webp 1400w" sizes="(max-width: 760px) 57vw, 270px" width="1400" height="933"></button><span>Încheiere</span></li></ol>
   </div>
 </section>
 
@@ -275,9 +275,9 @@
       <p class="lead">Privești pe îndelete. Alegi ce te reprezintă.</p>
       <p>După ședința foto, fiecare elev primește acces individual la platforma online, cu toate fotografiile sale în format digital. Compară cadrele de acasă, pe telefon sau calculator, și alege imaginile care intră pe pagina lui din album.</p>
       <ol class="steps">
-        <li><span>1</span><div><strong>Ședința foto a albumului</strong> — programarea și locația se stabilesc cu echipa, în răspunsul la cerere.</div></li>
-        <li><span>2</span><div><strong>Selecția online</strong> — fiecare elev își alege fotografiile pentru pagina sa.</div></li>
-        <li><span>3</span><div><strong>Albumul fizic + varianta PDF</strong> — același conținut pentru toată clasa.</div></li>
+        <li><span aria-hidden="true">1</span><div><strong>Ședința foto a albumului</strong> — programarea și locația se stabilesc cu echipa, în răspunsul la cerere.</div></li>
+        <li><span aria-hidden="true">2</span><div><strong>Selecția online</strong> — fiecare elev își alege fotografiile pentru pagina sa.</div></li>
+        <li><span aria-hidden="true">3</span><div><strong>Albumul fizic + varianta PDF</strong> — același conținut pentru toată clasa.</div></li>
       </ol>
       <p class="micro">Numărul fotografiilor incluse în album este o caracteristică a modelului, nu numărul total de cadre realizate.</p>
       <p class="micro">Linkul către platforma foto și datele de acces le primiți după ședința foto.</p>
@@ -285,12 +285,12 @@
     <div class="photo-visual">
       <div class="laptop">
         <div class="laptop-screen">
-          <div class="pf-bar"><img src="assets/img/logo-black.webp" alt="" width="640" height="186"><span>Fotografiile mele</span><span>Selecție</span><span class="on">Albumul meu</span></div>
-          <img src="assets/img/elite-int-4.webp" alt="Pagini de elevi dintr-un album Elite, cu câte trei fotografii" loading="lazy" width="1400" height="969">
+          <div class="pf-bar" aria-hidden="true"><img src="assets/img/logo-black.webp" alt="" srcset="assets/img/logo-black-480.webp 480w, assets/img/logo-black.webp 640w" sizes="(max-width: 760px) 33vw, 168px" width="640" height="186"><span>Fotografiile mele</span><span>Selecție</span><span class="on">Albumul meu</span></div>
+          <img src="assets/img/elite-int-4.webp" alt="Pagini de elevi dintr-un album Elite, cu câte trei fotografii" loading="lazy" srcset="assets/img/elite-int-4-480.webp 480w, assets/img/elite-int-4-800.webp 800w, assets/img/elite-int-4.webp 1400w" sizes="(max-width: 760px) 81vw, 557px" width="1400" height="969">
         </div>
         <div class="laptop-base"></div>
       </div>
-      <figure class="polaroid"><img src="assets/img/velvet-int-3.webp" alt="Paginile elevilor într-un album Velvet" loading="lazy" width="1400" height="764"></figure>
+      <figure class="polaroid"><img src="assets/img/velvet-int-3.webp" alt="Paginile elevilor într-un album Velvet" loading="lazy" srcset="assets/img/velvet-int-3-480.webp 480w, assets/img/velvet-int-3-800.webp 800w, assets/img/velvet-int-3.webp 1400w" sizes="(max-width: 760px) 100vw, 1076px" width="1400" height="764"></figure>
     </div>
   </div>
   <div class="wrap autumn">
@@ -322,11 +322,11 @@
 <footer class="site-footer">
   <div class="wrap footer-grid">
     <div>
-      <img class="footer-logo" src="assets/img/logo-bej.webp" alt="Absolvire.ro" loading="lazy" width="640" height="203">
+      <img class="footer-logo" src="assets/img/logo-bej.webp" alt="Absolvire.ro" loading="lazy" srcset="assets/img/logo-bej-480.webp 480w, assets/img/logo-bej.webp 640w" sizes="(max-width: 760px) 47vw, 190px" width="640" height="203">
       <p>Albume, vestimentație și evenimente de absolvire.</p>
     </div>
     <nav aria-label="Produse">
-      <h4>Produse</h4>
+      <h3>Produse</h3>
       <a href="albume.html">Albume de absolvire</a>
       <a href="vestimentatie.html">Ținuta completă</a>
       <a href="palarie.html">Pălării</a>
@@ -336,7 +336,7 @@
       <a href="parade.html">Parade și decoruri</a>
     </nav>
     <nav aria-label="Servicii">
-      <h4>Servicii</h4>
+      <h3>Servicii</h3>
       <a href="foto-video.html">Foto și video</a>
       <a href="festivitati.html">Festivități</a>
       <a href="banchete.html">Banchete</a>
@@ -344,7 +344,7 @@
       <a href="promotii.html">Promoții</a>
     </nav>
     <div>
-      <h4>Contact</h4>
+      <h3>Contact</h3>
       <p data-contact><a href="tel:+40723882511">+40 723 882 511</a><br><a href="mailto:comenzi.scoli@gmail.com">comenzi.scoli@gmail.com</a></p>
       <a class="link-arrow" href="cerere.html">Cererea mea →</a>
     </div>
