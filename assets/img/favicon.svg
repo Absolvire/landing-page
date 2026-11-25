@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Favicon Absolvire.ro: pălărie de absolvire pe vișiniul site-ului, cu ciucure auriu -->
+  <rect width="64" height="64" rx="14" fill="#6e1129"/>
+  <path d="M18.5 31.5v8.2c0 3.9 6 6.8 13.5 6.8s13.5-2.9 13.5-6.8v-8.2L32 37.4z" fill="#fffdf8"/>
+  <path d="M32 14.5 8.5 25 32 35.5 55.5 25z" fill="#fffdf8"/>
+  <path d="M32 25 49.5 28.2v12.3" fill="none" stroke="#d8bd80" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M47.2 40.2h4.6l1 6.3h-6.6z" fill="#d8bd80"/>
+  <circle cx="32" cy="25" r="2.3" fill="#d8bd80"/>
+</svg>
