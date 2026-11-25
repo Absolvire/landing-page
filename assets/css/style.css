@@ -727,7 +727,7 @@ div.cap-detail label.file { margin-top: 0; }
 .consumer-links { display: flex; align-items: center; justify-content: flex-end; gap: 8px; flex-wrap: wrap; }
 .consumer-links a { display: block; border-radius: 5px; overflow: hidden; }
 .consumer-links img { width: 120px; max-width: 100%; height: auto; display: block; }
-.site-credit { background: var(--cream); padding: 22px 0 200px; } /* sub subsol, pe fundalul site-ului, cu 200 px spațiu dedesubt */
+.site-credit { background: var(--cream); padding: 22px 0; } /* sub subsol, pe fundalul site-ului; spațiu egal deasupra și dedesubt */
 .footer-credit { display: flex; align-items: center; justify-content: center; gap: 10px; }
 .footer-credit > span { font-size: 10px; color: var(--muted); }
 .footer-credit > a { display: flex; align-items: center; min-height: 36px; color: #191919; text-decoration: none; }
