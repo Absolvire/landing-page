@@ -817,7 +817,7 @@
         <p>${delivered ? "Echipa Absolvire.ro analizează solicitarea și revine cu oferta, disponibilitatea, programarea și livrarea." : "Cererea a fost salvată, dar notificarea nu a putut fi transmisă. Poți încerca din nou."}</p>
         ${C.submitEndpoint ? "" : `<p class="micro demo">Versiune statică: cererea este salvată în acest browser. Setează <code>submitEndpoint</code> în <code>data.js</code> pentru trimitere reală.</p>`}
         ${!delivered ? `<button class="btn btn-primary" type="button" data-retry>Retrimite cererea</button>` : ""}</div>
-        <div class="request-grid"><div><h2 class="h3-serif">Recapitulare</h2><div class="recap">${recap}</div></div><aside class="request-side"><div class="cart-summary">${summary}</div><a class="btn btn-outline btn-block" href="index.html">Înapoi la prima pagină</a></aside></div>`;
+        <h2 class="h3-serif">Recapitulare</h2><div class="request-grid"><div><div class="recap">${recap}</div></div><aside class="request-side"><div class="cart-summary">${summary}</div><a class="btn btn-outline btn-block" href="index.html">Înapoi la prima pagină</a></aside></div>`;
       $$(".ci-actions", sent).forEach((x) => x.remove());
       $("[data-cart-view]").hidden = true; sent.hidden = false;
       window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
