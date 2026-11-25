@@ -5,7 +5,7 @@
 Pagina: https://www.absolvire.ro/album-elite.html  
 Actualizat: 2026-11-26
 
-![Album Elite](https://www.absolvire.ro/assets/img/elite-lila.webp)
+![Album Elite — Coperta](https://www.absolvire.ro/assets/img/elite-bej.webp)
 
 Album de absolvire
 

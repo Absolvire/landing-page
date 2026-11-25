@@ -9,6 +9,16 @@
   const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
   const fmt = (n) => Number(n).toLocaleString("ro-RO", { maximumFractionDigits: 0 });
   const lei = (n) => `${fmt(n)} lei`;
+  // Schimbă imaginea unui <img>. Paginile au srcset/sizes (variante -480/-800 ale imaginii inițiale),
+  // care au prioritate față de src: la altă imagine le scoatem, altfel browserul ar afișa tot varianta veche.
+  const setSrc = (img, src) => {
+    if (!img || img.getAttribute("src") === src) return;
+    img.removeAttribute("srcset"); img.removeAttribute("sizes");
+    img.src = src;
+  };
+  // Varianta mică (480 px) a unei imagini de album, pentru miniaturi; scripts/responsive_images.py o
+  // generează pentru toate imaginile albumelor, iar scripts/check_assets.py verifică existența ei.
+  const small = (src) => String(src).replace(/\.webp$/, "-480.webp");
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const clampInt = (v, min) => Math.max(min, parseInt(v, 10) || 0);
   const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
@@ -88,7 +98,7 @@
     el.style.maskImage = url;
     el.style.setProperty("--band", hex);
     const shade = $("img", el);
-    if (shade.getAttribute("src") !== robe.band) shade.src = robe.band;
+    setSrc(shade, robe.band);
   }
 
   function priceBox(lines, totalLabel, qtyLabel, unitLabel, total) {
@@ -226,7 +236,7 @@
       $$("[data-cap-robe]", visual).forEach((img) => {
         const r = O.robes.find((x) => x.id === img.dataset.capRobe);
         if (!r || !r[KEY[mode]]) return;
-        img.src = r[KEY[mode]];
+        setSrc(img, r[KEY[mode]]);
         img.alt = `Pălărie ${r.name.toLowerCase()} ${LABEL[mode]}`;
       });
       $("[data-cap-note]", visual).hidden = mode !== "individual";
@@ -279,7 +289,7 @@
     if (!f1.hidden) { $("[data-opt1-label]").textContent = m.optionLabel; $("[data-opt1-list]").innerHTML = m.options.map((o) => swatchHtml(o, false, "opt1")).join(""); }
     if (!f2.hidden) { $("[data-opt2-label]").textContent = m.option2Label; $("[data-opt2-list]").innerHTML = m.options2.map((o) => swatchHtml(o, false, "opt2")).join(""); }
     $("[data-qty-step]").textContent = 1 + (!f1.hidden) + (!f2.hidden);
-    if (!prerendered($("[data-interior]"))) $("[data-interior]").innerHTML = m.interior.map((it, i) => `<li><button type="button" data-view="${i}"><img src="${esc(it.img)}" alt="${esc(m.name)} — ${esc(it.title)}" loading="lazy"></button><span>${esc(it.title)}</span></li>`).join("");
+    if (!prerendered($("[data-interior]"))) $("[data-interior]").innerHTML = m.interior.map((it, i) => `<li><button type="button" data-view="${i}"><img src="${esc(small(it.img))}" alt="${esc(m.name)} — ${esc(it.title)}" loading="lazy"></button><span>${esc(it.title)}</span></li>`).join("");
     promoLines($("[data-album-promos]"), liveCampaigns.filter((c) => (c.albums || []).includes(m.id)));
 
     // Modele cu o singură fotografie (Velvet): straturile extrase din fotografie (catifea, fundiță)
@@ -293,10 +303,10 @@
       if (st.opt2) { $("[data-opt2-name]").textContent = st.opt2.name; markSwatches(root, "opt2", st.opt2.id); }
       const coverImg = (st.opt1 && st.opt1.img) || m.img;
       const thumbs = [{ img: coverImg, title: "Coperta" }].concat(m.interior);
-      $("[data-studio-thumbs]").innerHTML = thumbs.map((t, i) => `<button type="button" class="${i - 1 === st.view ? "is-on" : ""}" data-view="${i - 1}" aria-label="${esc(t.title)}"><img src="${esc(t.img)}" alt="">${i === 0 ? layersHtml() : ""}</button>`).join("");
+      $("[data-studio-thumbs]").innerHTML = thumbs.map((t, i) => `<button type="button" class="${i - 1 === st.view ? "is-on" : ""}" data-view="${i - 1}" aria-label="${esc(t.title)}"><img src="${esc(small(t.img))}" alt="" loading="lazy">${i === 0 ? layersHtml() : ""}</button>`).join("");
       const cur = st.view < 0 ? { img: coverImg, title: "Coperta" } : m.interior[st.view];
       const stage = $("[data-studio-img]");
-      stage.src = cur.img; stage.alt = `Album ${m.name} — ${cur.title}`;
+      setSrc(stage, cur.img); stage.alt = `Album ${m.name} — ${cur.title}`;
       stage.parentElement.classList.toggle("is-spread", st.view >= 0);
       $$(".studio-stage [data-recolor]", root).forEach((el) => { el.hidden = st.view >= 0; el.style.setProperty("--c", st[el.dataset.recolor].hex); });
       const badge = $("[data-studio-badge]"), capEl = $("[data-studio-caption]");
@@ -372,19 +382,19 @@
       $("[data-o-rosette]").hidden = st.badge !== "cocarda";
       $("[data-o-rosette-name]").textContent = st.rosette.name;
       $("[data-o-rosette-rec]").textContent = st.rosette.id === rec.id ? "recomandat" : `recomandat: ${rec.name}`;
-      $("[data-o-cocarda-thumb]").src = cocardaImg(st.rosette.id);
+      setSrc($("[data-o-cocarda-thumb]"), cocardaImg(st.rosette.id));
 
-      $("[data-o-robe]").src = st.robe.img;
-      $("[data-o-hat]").src = st.cap === "none" ? st.robe.hat : st.robe.hatPers;
+      setSrc($("[data-o-robe]"), st.robe.img);
+      setSrc($("[data-o-hat]"), st.cap === "none" ? st.robe.hat : st.robe.hatPers);
       paintBand($("[data-o-band]"), st.robe, st.scarf.hex);
-      $$("[data-o-cap-thumb]", root).forEach((img) => (img.src = img.dataset.oCapThumb === "plain" ? st.robe.hat : st.robe.hatPers));
+      $$("[data-o-cap-thumb]", root).forEach((img) => (setSrc(img, img.dataset.oCapThumb === "plain" ? st.robe.hat : st.robe.hatPers)));
       $("[data-o-cap-name]").textContent = { none: "fără personalizare", common: "design comun", individual: "design individual" }[st.cap];
       $("[data-o-cap-common]").hidden = st.cap !== "common";
       $("[data-o-cap-individual]").hidden = st.cap !== "individual";
       paintStole(root, st.scarf, $("[data-o-inst]").value.trim(), yearOf(yearIn));
       const badge = $("[data-o-badge]");
       badge.classList.toggle("is-cocarda", st.badge === "cocarda");
-      $("img", badge).src = st.badge === "cocarda" ? cocardaImg(st.rosette.id) : O.insignaImg;
+      setSrc($("img", badge), st.badge === "cocarda" ? cocardaImg(st.rosette.id) : O.insignaImg);
 
       const qty = clampInt($("[data-o-qty]").value, 1);
       const base = st.badge === "cocarda" ? O.basePriceCocarda : O.basePriceInsigna;
@@ -454,7 +464,7 @@
       markSwatches(root, "ribbon", st.ribbon.id);
       $("[data-h-color-name]").textContent = st.color.name;
       $("[data-h-ribbon-name]").textContent = `${st.ribbon.name} · cod ${st.ribbon.code}`;
-      $("[data-h-img]").src = st.cap === "none" ? st.color.hat : st.color.hatPers;
+      setSrc($("[data-h-img]"), st.cap === "none" ? st.color.hat : st.color.hatPers);
       paintBand($("[data-h-band]"), st.color, st.ribbon.hex);
       $("[data-h-ribbon]").innerHTML = `<i style="--a:${esc(st.ribbon.hex)};--b:${esc(st.ribbon.hex)}"></i>Panglică ${esc(st.ribbon.name.toLowerCase())} · medalion ${yearOf(yearIn)}`;
       $("[data-h-cap-hint]").hidden = st.cap !== "individual";
@@ -528,9 +538,9 @@
       $("[data-b-step]").textContent = isC ? 3 : 2;
       $("[data-b-step2]").textContent = isC ? 4 : 3;
       $("[data-b-rosette-name]").textContent = ros.name;
-      $("[data-b-thumb]").src = cocardaImg(ros.id);
+      setSrc($("[data-b-thumb]"), cocardaImg(ros.id));
       const img = $("[data-b-img]");
-      img.src = isC ? cocardaImg(ros.id) : O.insignaImg;
+      setSrc(img, isC ? cocardaImg(ros.id) : O.insignaImg);
       img.alt = isC ? `Cocardă cu rozetă ${ros.name.toLowerCase()}` : "Insignă personalizată";
       img.classList.toggle("is-insigna", !isC);
       const qty = clampInt($("[data-b-qty]").value, 1);

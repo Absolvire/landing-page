@@ -1,0 +1,22 @@
+#!/bin/sh
+# Înainte de fiecare commit: regenerează site-ul (pagini HTML, versiunile .md, sitemap.xml, robots.txt,
+# llms.txt) din _src/ și assets/js/data.js și adaugă rezultatul în commit, ca fișierele publicate din
+# ramura main să fie mereu la zi.
+#
+# Activare (o singură dată, în fiecare clonă):  git config core.hooksPath .githooks
+# Commit fără regenerare (rar):                 git commit --no-verify
+set -e
+cd "$(git rev-parse --show-toplevel)"
+
+if ! command -v node >/dev/null 2>&1; then
+  echo "pre-commit: lipsește Node.js — _src/build.py citește catalogul din assets/js/data.js." >&2
+  exit 1
+fi
+
+echo "pre-commit: regenerez paginile (python3 _src/build.py)…"
+python3 _src/build.py >/dev/null
+
+# Doar fișierele generate din rădăcină (nu și șabloanele din _src/ sau README.md); -A include și
+# paginile șterse.
+git add -A -- ':(top,glob)*.html' ':(top,glob)*.md' ':(top,exclude)README.md' \
+  ':(top)sitemap.xml' ':(top)robots.txt' ':(top)llms.txt'

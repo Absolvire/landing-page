@@ -1,6 +1,7 @@
 """Imagini responsive (unealtă de dezvoltare, nu rulează în pipeline).
 
-Pentru fiecare imagine mare folosită direct în paginile generate:
+Pentru fiecare imagine mare folosită direct în paginile generate (și pentru imaginile albumelor din
+data.js, pe care app.js le afișează ca miniaturi):
 1. creează variantele mai mici <nume>-480.webp și <nume>-800.webp (cu `cwebp`);
 2. măsoară în Chrome (fără interfață) lățimea afișată pe telefon (412 px) și pe desktop (1350 și 1920 px)
    și scrie rezultatul în _src/image_sizes.json.
@@ -62,21 +63,41 @@ def used_images():
     return sorted(x for x in out if not VARIANT.search(x))
 
 
-def make_variants(images):
+def album_images():
+    """Imaginile albumelor din data.js (opțiuni de copertă, interior): app.js le folosește ca miniaturi -480."""
+    data = json.loads(subprocess.check_output([
+        "node", "-e", "global.window={};require(process.argv[1]);process.stdout.write(JSON.stringify(window.ABS.albums))",
+        str(ROOT / "assets/js/data.js")]))
+    out = set()
+    for a in data:
+        out.add(a["img"])
+        for key in ("options", "options2", "interior"):
+            out |= {x["img"] for x in a.get(key) or [] if x.get("img")}
+    return sorted(out)
+
+
+def make_variants(images, thumbs):
+    """Variante -480/-800 pentru imaginile mari; `thumbs` (imaginile albumelor) primesc mereu -480."""
     if not shutil.which("cwebp"):
         sys.exit("Lipsește cwebp (brew install webp).")
     made = 0
-    for src in images:
+
+    def encode(path, target, width):
+        nonlocal made
+        if not target.exists():
+            subprocess.run(["cwebp", "-quiet", "-q", "78", "-m", "6", "-alpha_q", "100", "-resize", str(width), "0",
+                            str(path), "-o", str(target)], check=True)
+            made += 1
+
+    for src in sorted(set(images) | set(thumbs)):
         path = ROOT / src
         w, _ = image_size(path)
-        if w < MIN_WIDTH:
-            continue
         for vw in WIDTHS:
             target = path.with_name(f"{path.stem}-{vw}.webp")
-            if vw < w * 0.9 and not target.exists():
-                subprocess.run(["cwebp", "-quiet", "-q", "78", "-m", "6", "-alpha_q", "100", "-resize", str(vw), "0",
-                                str(path), "-o", str(target)], check=True)
-                made += 1
+            if w >= MIN_WIDTH and vw < w * 0.9:
+                encode(path, target, vw)
+            elif vw == 480 and src in thumbs:
+                encode(path, target, min(480, w))  # miniatura pentru app.js, chiar dacă imaginea e mică
     print(f"Variante noi: {made}")
 
 
@@ -84,6 +105,12 @@ def measure(chrome):
     class Handler(http.server.SimpleHTTPRequestHandler):
         def log_message(self, *a):
             pass
+
+        def handle(self):  # Chrome anulează des cereri de imagini în timpul măsurării: nu e o eroare
+            try:
+                super().handle()
+            except (BrokenPipeError, ConnectionResetError):
+                pass
 
         def do_GET(self):
             if self.path.startswith("/__measure.html"):
@@ -129,5 +156,5 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--chrome", default=CHROME)
     args = ap.parse_args()
-    make_variants(used_images())
+    make_variants(used_images(), set(album_images()))
     measure(args.chrome)

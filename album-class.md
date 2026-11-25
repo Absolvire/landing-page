@@ -5,7 +5,7 @@
 Pagina: https://www.absolvire.ro/album-class.html  
 Actualizat: 2026-11-26
 
-![Album Class](https://www.absolvire.ro/assets/img/class-cover.webp)
+![Album Class — Coperta](https://www.absolvire.ro/assets/img/class-cover.webp)
 
 Album de absolvire
 

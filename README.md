@@ -35,8 +35,15 @@ eșarfa colorată folosește o mască CSS, iar browserele nu o încarcă de pe `
   python3 _src/build.py
   ```
 
-  Scriptul (are nevoie de Python 3 și Node) regenerează fișierele `.html` din rădăcină. Nu edita direct `.html`-urile din rădăcină, pentru că se suprascriu la următorul build.
+  Scriptul (are nevoie de Python 3 și Node) regenerează fișierele `.html` și `.md` din rădăcină, `sitemap.xml`, `robots.txt` și `llms.txt`. Nu edita direct fișierele generate, pentru că se suprascriu la următorul build.
 - **Stiluri**: `assets/css/style.css`. **Logică**: `assets/js/app.js`.
+- **Hook la commit**: `.githooks/pre-commit` rulează `_src/build.py` înainte de fiecare commit și adaugă fișierele generate în același commit, ca site-ul publicat din `main` să fie mereu la zi. Se activează o singură dată în fiecare clonă:
+
+  ```bash
+  git config core.hooksPath .githooks
+  ```
+
+  Pentru un commit fără regenerare: `git commit --no-verify`.
 
 ## Imagini
 
@@ -70,7 +77,7 @@ Totul se generează la `python3 _src/build.py`, din aceleași date (`assets/js/d
 - **Conținut în HTML, nu doar în JavaScript**: albumele, prețurile, serviciile, promoțiile și recomandările sunt scrise direct în pagină (crawlerele AI de regulă nu rulează JavaScript).
 - **Pe fiecare pagină**: titlu ≤ 60 caractere, descriere ≤ 160, `canonical`, Open Graph / Twitter, date structurate JSON-LD (Organization, BreadcrumbList, Product/Offer în lei, Service, FAQPage) și o secțiune vizibilă „Întrebări frecvente”.
 - **`sitemap.xml`**, **`robots.txt`** (permite explicit GPTBot, ClaudeBot, PerplexityBot, Google-Extended etc.) și **`llms.txt`** (rezumatul site-ului cu prețuri și răspunsuri, pentru asistenții AI; linkurile duc la versiunile Markdown).
-- **Versiuni Markdown**: fiecare pagină indexabilă are o copie `<pagina>.md` (ex. `albume.md`, `index.md`), generată de `_src/md.py` din conținutul paginii, fără meniuri și controale interactive. E legată din `<head>` (`<link rel="alternate" type="text/markdown">`) și din `llms.txt`. Nu se editează manual.
+- **Versiuni Markdown**: fiecare pagină are o copie `<pagina>.md` (ex. `albume.md`, `index.md`), generată din conținutul paginii (`_src/md.py`), fără meniuri și controale interactive. E legată din `<head>` (`<link rel="alternate" type="text/markdown">`) și din `llms.txt`. Fișierele `.md` se generează în rădăcină, lângă paginile HTML, și se păstrează în depozit (site-ul se publică direct din ramura `main`).
 - Toate paginile sunt indexabile (inclusiv `cerere.html`), ca toate să obțină 100 la Lighthouse SEO.
 
 De verificat înainte de publicare: domeniul din `_src/seo.py` (`SITE_URL = "https://www.absolvire.ro"`). Dacă site-ul se publică pe alt domeniu, schimbă-l și rulează din nou build-ul. Când există contacte aprobate în `data.js`, ele apar automat și în datele structurate.

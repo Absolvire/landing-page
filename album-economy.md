@@ -5,7 +5,7 @@
 Pagina: https://www.absolvire.ro/album-economy.html  
 Actualizat: 2026-11-26
 
-![Album Economy](https://www.absolvire.ro/assets/img/economy-cover.webp)
+![Album Economy — Coperta](https://www.absolvire.ro/assets/img/economy-cover.webp)
 
 Album de absolvire
 

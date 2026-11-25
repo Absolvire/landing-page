@@ -5,7 +5,7 @@
 Pagina: https://www.absolvire.ro/album-velvet.html  
 Actualizat: 2026-11-26
 
-![Album Velvet](https://www.absolvire.ro/assets/img/velvet-cover.webp)
+![Album Velvet — Coperta](https://www.absolvire.ro/assets/img/velvet-cover.webp)
 
 Album de absolvire
 

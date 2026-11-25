@@ -8,8 +8,9 @@
   re-randează identic și adaugă interactivitatea.
 - SEO / GEO: titluri, descrieri, canonical, Open Graph, date structurate (JSON-LD), întrebări
   frecvente, sitemap.xml, robots.txt și llms.txt — configurate în _src/seo.py.
-- Fiecare pagină indexabilă are și o versiune Markdown (<pagina>.md, din _src/md.py), legată
-  din <head> (rel=alternate) și din llms.txt, pentru asistenții AI.
+- Fiecare pagină are și o versiune Markdown (<pagina>.md, din _src/md.py), legată din <head>
+  (rel=alternate) și din llms.txt. Se scrie lângă pagina HTML, în rădăcină: site-ul se publică direct
+  din ramura main (GitHub Pages, „Deploy from a branch”), deci fișierele generate se păstrează în depozit.
 
 Rulare (din folderul landing-page):  python3 _src/build.py
 """
@@ -407,9 +408,17 @@ def page_graph(page, url, meta, qa, album=None):
     return '<script type="application/ld+json">\n' + doc.replace("</", "<\\/") + "\n</script>"
 
 
+BASE_SCRIPT = ('<script>(function(){var p=location.pathname.split("/"),b=document.createElement("base");'
+               'b.href=/\\.github\\.io$/.test(location.hostname)&&p.length>2?"/"+p[1]+"/":"/";'
+               'document.head.appendChild(b)})();</script>')
+
+
 def seo_head(page_key, url, meta, title, desc, robots_noindex):
     img = f"{seo.SITE_URL}/{meta['img']}"
-    tags = [
+    # 404.html poate fi afișată la orice adresă (și în subfoldere): <base> spre rădăcina site-ului,
+    # calculată în browser — pe github.io e /<depozit>/, pe domeniul propriu e /.
+    tags = [BASE_SCRIPT] if meta.get("base") else []
+    tags += [
         f'<link rel="canonical" href="{e(absu(url))}">',
         f'<meta name="robots" content="{"noindex, follow" if robots_noindex else "index, follow, max-image-preview:large"}">',
         f'<meta property="og:type" content="{"product" if page_key in ("album", "palarie", "esarfa") else "website"}">',
@@ -424,7 +433,7 @@ def seo_head(page_key, url, meta, title, desc, robots_noindex):
         f'<meta name="twitter:description" content="{e(desc)}">',
         f'<meta name="twitter:image" content="{e(img)}">',
     ]
-    if not robots_noindex:
+    if not robots_noindex and not meta.get("unlisted"):
         tags.append(f'<link rel="alternate" type="text/markdown" href="{e(md_name(url))}" title="Versiunea Markdown">')
     if page_key == "index":
         hero = "assets/img/photo-wall.webp"
@@ -492,8 +501,9 @@ def render(front, body, values, page_name, album=None):
 
 
 def write_md(html, url, title, desc, smeta):
+    """Versiunea Markdown, doar pentru paginile listate (nu și 404.html)."""
     target = ROOT / md_name(url)
-    if smeta.get("noindex"):
+    if smeta.get("noindex") or smeta.get("unlisted"):
         target.unlink(missing_ok=True)
         return
     target.write_text(page_markdown(html, absu(url), title, desc, TODAY), encoding="utf8")
@@ -510,6 +520,8 @@ for path in sorted((SRC / "pages").glob("*.html")):
                 "album_binding": e(a["binding"]), "album_photos": e(a["photos"]),
                 "album_layout": e(a["layout"]), "album_tagline": e(a["tagline"]),
                 "album_img": a["img"], "min_qty": C["albumMinQty"],
+                # imaginea cu care pornește studioul (prima opțiune de copertă), aceeași ca în app.js
+                "studio_img": (a["options"][0].get("img") if a["options"] else None) or a["img"],
             }
             fm = {k: fill(v, values) for k, v in front.items()}
             html, url, title, desc, smeta, qa = render(fm, fill(body, values), values, "album", a)
@@ -530,7 +542,7 @@ order = ["index.html", "albume.html"] + [f"album-{a['id']}.html" for a in data["
     "vestimentatie.html", "palarie.html", "esarfa.html", "insigna-cocarda.html", "pachete.html",
     "foto-video.html", "festivitati.html", "banchete.html", "premiere.html", "parade.html", "promotii.html",
     "termeni-si-conditii.html", "politica-de-confidentialitate.html"]
-indexable = {u: (t, d, m, q) for u, t, d, m, q in index_entries if not m.get("noindex")}
+indexable = {u: (t, d, m, q) for u, t, d, m, q in index_entries if not m.get("noindex") and not m.get("unlisted")}
 urls = [u for u in order if u in indexable] + sorted(u for u in indexable if u not in order)
 
 (ROOT / "sitemap.xml").write_text(

@@ -36,6 +36,10 @@ PAGES = {
     "termeni-si-conditii": {"title": "Termeni și condiții | Absolvire.ro", "img": "assets/img/photo-wall.webp", "crumbs": [("Termeni și condiții", "termeni-si-conditii.html")]},
     "politica-de-confidentialitate": {"title": "Politica de confidențialitate | Absolvire.ro", "img": "assets/img/photo-wall.webp", "crumbs": [("Politica de confidențialitate", "politica-de-confidentialitate.html")]},
     "cerere": {"title": "Cererea mea | Absolvire.ro", "img": "assets/img/photo-wall.webp", "crumbs": [("Cererea mea", "cerere.html")]},
+    # GitHub Pages o afișează pentru orice adresă inexistentă, inclusiv în subfoldere: <base> ține
+    # linkurile și resursele relative la rădăcina site-ului. Nu apare în sitemap, llms.txt sau Markdown.
+    "404": {"title": "Pagina nu a fost găsită | Absolvire.ro", "img": "assets/img/photo-wall.webp",
+            "crumbs": [("Pagina nu a fost găsită", "404.html")], "unlisted": True, "base": True},
 }
 
 

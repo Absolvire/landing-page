@@ -5,7 +5,7 @@
 Pagina: https://www.absolvire.ro/album-deluxe.html  
 Actualizat: 2026-11-26
 
-![Album Deluxe](https://www.absolvire.ro/assets/img/deluxe-visiniu.webp)
+![Album Deluxe — Coperta](https://www.absolvire.ro/assets/img/deluxe-negru.webp)
 
 Album de absolvire
 

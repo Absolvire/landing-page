@@ -51,15 +51,18 @@ def check():
         assert canonical == [page_url(name)], (f, canonical, page_url(name))
         if not indexable:
             assert name == 'cerere.html', (f, 'noindex permis doar pe cerere.html')
+        listed = indexable and name != '404.html'  # 404.html: fără sitemap, llms.txt și Markdown
+        if name == '404.html':
+            assert 'document.createElement("base")' in s, (f, '404.html trebuie să își calculeze <base> spre rădăcina site-ului')
         md = f.with_suffix('.md')
         alternate = [a.get('href') for t, a in p.tags if t == 'link' and a.get('type') == 'text/markdown']
-        if indexable:
+        if listed:
             assert alternate == [md.name] and md.is_file(), (f, 'lipsește versiunea Markdown')
             text = md.read_text(encoding='utf8')
             assert text.startswith('# ') and f'Pagina: {page_url(name)}' in text, (md, 'Markdown invalid')
             assert len(text) > 400, (md, 'Markdown prea scurt')
         else:
-            assert not alternate and not md.exists(), (f, 'pagina noindex nu are versiune Markdown')
+            assert not alternate and not md.exists(), (f, 'pagina nelistată nu are versiune Markdown')
         for key in ('og:title', 'og:description', 'og:url', 'og:image'):
             values = meta(p, 'property', key)
             assert len(values) == 1 and values[0], (f, key)
@@ -95,12 +98,12 @@ def check():
 
     assert len(set(titles)) == len(site) and len(set(descriptions)) == len(site), 'titluri sau descrieri duplicate'
     urls = [x.text for x in ET.parse(DIST / 'sitemap.xml').findall('.//{*}loc')]
-    assert set(urls) == {page_url(name) for name, _, idx in site if idx}, 'sitemap.xml nu corespunde paginilor indexabile'
+    assert set(urls) == {page_url(name) for name, _, idx in site if idx and name != '404.html'}, 'sitemap.xml nu corespunde paginilor indexabile'
     robots = (DIST / 'robots.txt').read_text(encoding='utf8')
     assert 'Allow: /' in robots and 'Sitemap: ' + BASE + 'sitemap.xml' in robots, 'robots.txt'
     llms = (DIST / 'llms.txt').read_text(encoding='utf8')
     for name, _, idx in site:
-        if idx and name != 'index.html' and not name.startswith(('termeni', 'politica')):
+        if idx and name not in ('index.html', '404.html') and not name.startswith(('termeni', 'politica')):
             assert f'({BASE}{name[:-5]}.md)' in llms, (name, 'lipsește din llms.txt')
     print(f'SEO checks passed: {len(site)} pages, unique metadata, canonical/Open Graph, schema, links, images, sitemap, robots, llms.txt and Markdown pages.')
 
