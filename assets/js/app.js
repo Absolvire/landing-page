@@ -176,7 +176,7 @@
       art.dataset.slide = "";
       art.setAttribute("aria-roledescription", "slide");
       art.innerHTML = `
-        <div class="slide-media"><img src="${esc(c.img)}" alt="" loading="lazy"></div>
+        <div class="slide-media"><img data-src="${esc(c.img)}" alt=""></div>
         <div class="wrap slide-body">
           <p class="eyebrow">Promoție · ${esc(c.categories.map(cap).join(" · "))}</p>
           <h2 class="slide-title">${esc(c.title)}<em>${esc(c.slogan)}</em></h2>
@@ -197,8 +197,10 @@
       dots.appendChild(d);
     });
     let idx = 0, timer = null, userPaused = reduceMotion, hoverPaused = false;
+    const reveal = (s) => { const img = s && $("img[data-src]", s); if (img) { img.src = img.dataset.src; img.removeAttribute("data-src"); } };
     function go(i) {
       idx = (i + slides.length) % slides.length;
+      reveal(slides[idx]); if (document.readyState === "complete") reveal(slides[(idx + 1) % slides.length]); // curent + următorul
       slides.forEach((s, k) => { s.classList.toggle("is-active", k === idx); s.setAttribute("aria-hidden", String(k !== idx)); s.inert = k !== idx; });
       $$("button", dots).forEach((d, k) => d.setAttribute("aria-selected", String(k === idx)));
       count.textContent = `${String(idx + 1).padStart(2, "0")} / ${String(slides.length).padStart(2, "0")}`;
@@ -221,6 +223,8 @@
       if (Math.abs(dx) > 45) { go(idx + (dx < 0 ? 1 : -1)); restart(); }
     });
     go(0); setPaused(userPaused);
+    // după încărcarea paginii: imaginea slide-ului următor, ca să fie gata la prima rotație
+    if (document.readyState === "complete") reveal(slides[1]); else window.addEventListener("load", () => reveal(slides[1]), { once: true });
   })();
 
   /* ================= „Toca ta. Designul tău.” (prima pagină) ================= */
@@ -229,8 +233,9 @@
     if (!box || !visual) return;
     const KEY = { none: "hat", common: "hatPers", individual: "hatIndividual" };
     const LABEL = { none: "fără personalizare", common: "cu design comun al clasei", individual: "cu design individual (exemplu)" };
-    // Preîncarc variantele, ca schimbarea să fie instantanee.
-    O.robes.forEach((r) => Object.values(KEY).forEach((k) => { if (r[k]) new Image().src = r[k]; }));
+    // Preîncarc variantele când vizitatorul ajunge la carduri (nu la încărcarea paginii), ca schimbarea să fie instantanee.
+    const preload = () => O.robes.forEach((r) => Object.values(KEY).forEach((k) => { if (r[k]) new Image().src = r[k]; }));
+    ["pointerenter", "focusin", "touchstart"].forEach((ev) => box.addEventListener(ev, preload, { once: true, passive: true }));
     function set(mode) {
       $$("[data-cap-mode]", box).forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.capMode === mode)));
       $$("[data-cap-robe]", visual).forEach((img) => {
@@ -363,7 +368,7 @@
     if (!root) return;
     const st = { robe: O.robes.find((r) => r.id === "visiniu") || O.robes[0], scarf: scarfById("bej") || O.scarves[0], badge: "insigna", rosette: null, rosetteManual: false, cap: "none", diploma: "a4" };
     const yearIn = $("[data-o-year]"); yearIn.value = C.promoYear;
-    $("[data-o-robes]").innerHTML = O.robes.map((r) => `<button type="button" class="robe-pick" data-robe="${esc(r.id)}" aria-pressed="false"><img src="${esc(r.img)}" alt=""><span>${esc(r.name)}</span></button>`).join("");
+    $("[data-o-robes]").innerHTML = O.robes.map((r) => `<button type="button" class="robe-pick" data-robe="${esc(r.id)}" aria-pressed="false"><img src="${esc(r.img)}" alt="" loading="lazy"><span>${esc(r.name)}</span></button>`).join("");
     $("[data-o-scarves]").innerHTML = O.scarves.map((s) => swatchHtml(s, false, "scarf")).join("");
     $("[data-o-rosettes]").innerHTML = rosettes.map((s) => swatchHtml(s, false, "rosette")).join("");
 
@@ -457,7 +462,7 @@
     if (!root) return;
     const st = { color: O.robes.find((r) => r.id === "visiniu") || O.robes[0], ribbon: scarfById("bej") || O.scarves[0], cap: "none" };
     const yearIn = $("[data-h-year]"); yearIn.value = C.promoYear;
-    $("[data-h-colors]").innerHTML = O.robes.map((r) => `<button type="button" class="robe-pick" data-hcolor="${esc(r.id)}" aria-pressed="false"><img src="${esc(r.hat)}" alt=""><span>${esc(r.name)}</span></button>`).join("");
+    $("[data-h-colors]").innerHTML = O.robes.map((r) => `<button type="button" class="robe-pick" data-hcolor="${esc(r.id)}" aria-pressed="false"><img src="${esc(r.hat)}" alt="" loading="lazy"><span>${esc(r.name)}</span></button>`).join("");
     $("[data-h-ribbons]").innerHTML = O.scarves.map((s) => swatchHtml(s, false, "ribbon")).join("");
     function render() {
       $$("[data-hcolor]", root).forEach((b) => { const on = b.dataset.hcolor === st.color.id; b.classList.toggle("is-on", on); b.setAttribute("aria-pressed", String(on)); });

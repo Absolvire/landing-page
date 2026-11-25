@@ -444,6 +444,19 @@ def seo_head(page_key, url, meta, title, desc, robots_noindex):
 
 
 # ------------------------------------------------------------------ randare pagini
+def inline_css():
+    """assets/css/style.css, fără comentarii și spații de început de rând, cu căile relative la pagină."""
+    css = (ROOT / "assets/css/style.css").read_text(encoding="utf8")
+    css = re.sub(r"/\*.*?\*/", "", css, flags=re.S)
+    css = re.sub(r'url\((["\']?)\.\./', r'url(\1assets/', css)  # ../img/x → assets/img/x
+    css = " ".join(line.strip() for line in css.splitlines() if line.strip())
+    assert "</style" not in css
+    return css
+
+
+INLINE_CSS = inline_css()
+
+
 def parse(text):
     meta = {}
     m = META_RE.match(text)
@@ -492,6 +505,8 @@ def render(front, body, values, page_name, album=None):
     if nav:
         header = header.replace(f'data-nav="{nav}"', f'data-nav="{nav}" aria-current="page"')
     page = partials["layout"].replace("{{header}}", header).replace("{{footer}}", partials["footer"])
+    # CSS-ul e scris direct în pagină: prima afișare nu mai așteaptă o cerere separată pentru style.css
+    page = page.replace('<link rel="stylesheet" href="assets/css/style.css">', f"<style>{INLINE_CSS}</style>")
     page = page.replace("{{body}}", body + faq_section(qa))
     for name, html in partials.items():
         if name not in ("layout", "header", "footer"):
