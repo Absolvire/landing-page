@@ -24,8 +24,6 @@
   $$("[data-year]").forEach((el) => (el.textContent = C.promoYear));
   $$("[data-now-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
   $$("[data-album-min]").forEach((el) => (el.textContent = C.albumMinQty));
-  $$("[data-photo-platform]").forEach((a) => (a.href = C.photoPlatformUrl));
-  $$("[data-diploma-platform]").forEach((a) => (a.href = C.diplomaPlatformUrl));
 
   const contactEl = $("[data-contact]");
   if (contactEl && (C.contact.phone || C.contact.email)) {
@@ -213,6 +211,28 @@
       if (Math.abs(dx) > 45) { go(idx + (dx < 0 ? 1 : -1)); restart(); }
     });
     go(0); setPaused(userPaused);
+  })();
+
+  /* ================= „Toca ta. Designul tău.” (prima pagină) ================= */
+  (function initCapModes() {
+    const box = $("[data-cap-modes]"), visual = $("[data-cap-visual]");
+    if (!box || !visual) return;
+    const KEY = { none: "hat", common: "hatPers", individual: "hatIndividual" };
+    const LABEL = { none: "fără personalizare", common: "cu design comun al clasei", individual: "cu design individual (exemplu)" };
+    // Preîncarc variantele, ca schimbarea să fie instantanee.
+    O.robes.forEach((r) => Object.values(KEY).forEach((k) => { if (r[k]) new Image().src = r[k]; }));
+    function set(mode) {
+      $$("[data-cap-mode]", box).forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.capMode === mode)));
+      $$("[data-cap-robe]", visual).forEach((img) => {
+        const r = O.robes.find((x) => x.id === img.dataset.capRobe);
+        if (!r || !r[KEY[mode]]) return;
+        img.src = r[KEY[mode]];
+        img.alt = `Pălărie ${r.name.toLowerCase()} ${LABEL[mode]}`;
+      });
+      $("[data-cap-note]", visual).hidden = mode !== "individual";
+      visual.dataset.mode = mode;
+    }
+    box.addEventListener("click", (e) => { const b = e.target.closest("[data-cap-mode]"); if (b) set(b.dataset.capMode); });
   })();
 
   /* ================= Albume ================= */

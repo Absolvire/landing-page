@@ -254,8 +254,14 @@ input.is-invalid, textarea.is-invalid { border-color: #b3261e; background: #fff6
 /* ===== Toca (prima pagină) ===== */
 .cap-section { background: linear-gradient(180deg, var(--cream), var(--sand)); overflow: hidden; }
 .cap-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 40px; align-items: center; }
-.cap-modes { list-style: none; padding: 0; margin: 1.4rem 0 1.8rem; display: grid; gap: 12px; }
-.cap-modes li { background: rgba(255,255,255,.7); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; display: grid; gap: 2px; }
+.cap-modes { margin: 1.4rem 0 1.8rem; display: grid; gap: 12px; }
+.cap-modes button { width: 100%; text-align: left; font: inherit; color: inherit; background: rgba(255,255,255,.7); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px 12px 46px; display: grid; gap: 2px; position: relative; transition: border-color .2s, background .2s, box-shadow .2s; }
+.cap-modes button::before { content: ""; position: absolute; left: 16px; top: 16px; width: 18px; height: 18px; border-radius: 50%; border: 1.5px solid #cbbfa9; background: #fff; }
+.cap-modes button:hover { border-color: var(--gold-soft); background: #fff; }
+.cap-modes button[aria-pressed="true"] { border-color: var(--wine); background: #fff; box-shadow: 0 0 0 2px rgba(110,17,41,.12); }
+.cap-modes button[aria-pressed="true"]::before { border-color: var(--wine); box-shadow: inset 0 0 0 4px #fff; background: var(--wine); }
+.cap-visual .cap { transition: transform .5s, opacity .25s; }
+.cap-note { position: absolute; left: 0; right: 0; top: 100%; margin: 4px 0 0; text-align: center; font-size: .75rem; color: var(--muted); }
 .cap-modes strong { font-family: var(--serif); font-size: 1.05rem; }
 .cap-modes span { font-size: .9rem; color: var(--muted); }
 .cap-modes b { color: var(--wine); }

@@ -260,18 +260,19 @@
       <p class="eyebrow">Personalizare tocă</p>
       <h2>Toca ta. Designul tău.</h2>
       <p class="lead">Un design comun pentru întreaga clasă sau o creație diferită pentru fiecare elev. Încarcă propriul design în platforma online și personalizează-ți toca de absolvire.</p>
-      <ul class="cap-modes">
-        <li><strong>Fără personalizare</strong><span>Panglica, ciucurele și medalionul anului rămân cele ale pălăriei alese.</span></li>
-        <li><strong>Design comun al clasei</strong><span>Aceeași grafică pentru tot grupul — <b>+20 lei / pălărie</b>.</span></li>
-        <li><strong>Design individual</strong><span>Fiecare elev își încarcă fișierul în platformă — <b>preț de confirmat</b>.</span></li>
-      </ul>
+      <div class="cap-modes" role="group" aria-label="Alege tipul de personalizare" data-cap-modes>
+        <button type="button" data-cap-mode="none" aria-pressed="false"><strong>Fără personalizare</strong><span>Panglica, ciucurele și medalionul anului rămân cele ale pălăriei alese.</span></button>
+        <button type="button" data-cap-mode="common" aria-pressed="true"><strong>Design comun al clasei</strong><span>Aceeași grafică pentru tot grupul — <b>+20 lei / pălărie</b>.</span></button>
+        <button type="button" data-cap-mode="individual" aria-pressed="false"><strong>Design individual</strong><span>Fiecare elev își încarcă fișierul în platformă — <b>preț de confirmat</b>.</span></button>
+      </div>
       <a class="btn btn-primary" href="palarie.html">Descoperă personalizarea <span aria-hidden="true">→</span></a>
     </div>
-    <div class="cap-visual" aria-hidden="true">
-      <img class="cap a" src="assets/img/palarie-negru-pers.webp" alt="" loading="lazy" width="900" height="638">
-      <img class="cap b" src="assets/img/palarie-albastru-pers.webp" alt="" loading="lazy" width="900" height="638">
-      <img class="cap c" src="assets/img/palarie-visiniu-pers.webp" alt="" loading="lazy" width="900" height="638">
-      <div class="upload-chip"><svg viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M5 20h14"/></svg> Designul tău</div>
+    <div class="cap-visual" data-cap-visual>
+      <img class="cap a" data-cap-robe="negru" src="assets/img/palarie-negru-pers.webp" alt="Pălărie neagră cu design comun al clasei" loading="lazy" width="900" height="638">
+      <img class="cap b" data-cap-robe="albastru" src="assets/img/palarie-albastru-pers.webp" alt="Pălărie albastră cu design comun al clasei" loading="lazy" width="900" height="638">
+      <img class="cap c" data-cap-robe="visiniu" src="assets/img/palarie-visiniu-pers.webp" alt="Pălărie vișinie cu design comun al clasei" loading="lazy" width="900" height="638">
+      <div class="upload-chip" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M5 20h14"/></svg> Designul tău</div>
+      <p class="cap-note" data-cap-note hidden>Exemple ilustrative de design individual; mărcile aparțin proprietarilor lor.</p>
     </div>
   </div>
 </section>
@@ -289,7 +290,7 @@
         <li><span>3</span><div><strong>Albumul fizic + varianta PDF</strong> — același conținut pentru toată clasa.</div></li>
       </ol>
       <p class="micro">Numărul fotografiilor incluse în album este o caracteristică a modelului, nu numărul total de cadre realizate.</p>
-      <a class="link-arrow" data-photo-platform href="#">Intră în platforma foto <span aria-hidden="true">→</span></a>
+      <p class="micro">Linkul către platforma foto și datele de acces le primiți după ședința foto.</p>
     </div>
     <div class="photo-visual">
       <div class="laptop">

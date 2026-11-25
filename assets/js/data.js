@@ -19,9 +19,6 @@ window.ABS = {
     // Cheia de acces Web3Forms este publică prin design (se pune în pagină). Gol = doar local.
     submitEndpoint: "https://api.web3forms.com/submit",
     submitAccessKey: "fd100f23-ff5f-41d0-a3c7-1ac12db99bd4",
-    // Linkuri către platformele existente (de completat de Absolvire.ro).
-    photoPlatformUrl: "#",
-    diplomaPlatformUrl: "#",
     // Contacte aprobate — de completat înainte de publicare (secțiunea 26).
     contact: { phone: "+40 723 882 511", email: "comenzi.scoli@gmail.com", whatsapp: "" },
     // Datele firmei — apar în subsol, în paginile legale și în datele structurate.
@@ -191,10 +188,12 @@ window.ABS = {
     basePriceCocarda: 110, // robă + tocă + eșarfă + cocardă + diplomă A4
     capCommonDesign: 20, // +20 lei / bucată
     diplomaVelvetUpgrade: 25, // diplomă pe catifea în locul celei simple
+    // hat = pălăria simplă, hatPers = design comun al clasei,
+    // hatIndividual = exemplu de design individual (prima pagină, „Toca ta. Designul tău.”)
     robes: [
-      { id: "negru", name: "Negru", hex: "#151515", img: "assets/img/roba-negru.webp", hat: "assets/img/palarie-negru.webp", hatPers: "assets/img/palarie-negru-pers.webp", band: "assets/img/bentita-negru.webp" },
-      { id: "albastru", name: "Albastru", hex: "#1c3fa8", img: "assets/img/roba-albastru.webp", hat: "assets/img/palarie-albastru.webp", hatPers: "assets/img/palarie-albastru-pers.webp", band: "assets/img/bentita-albastru.webp" },
-      { id: "visiniu", name: "Vișiniu", hex: "#8a1638", img: "assets/img/roba-visiniu.webp", hat: "assets/img/palarie-visiniu.webp", hatPers: "assets/img/palarie-visiniu-pers.webp", band: "assets/img/bentita-visiniu.webp" },
+      { id: "negru", name: "Negru", hex: "#151515", img: "assets/img/roba-negru.webp", hat: "assets/img/palarie-negru.webp", hatPers: "assets/img/palarie-negru-pers.webp", hatIndividual: "assets/img/palarie-negru-ai.webp", band: "assets/img/bentita-negru.webp" },
+      { id: "albastru", name: "Albastru", hex: "#1c3fa8", img: "assets/img/roba-albastru.webp", hat: "assets/img/palarie-albastru.webp", hatPers: "assets/img/palarie-albastru-pers.webp", hatIndividual: "assets/img/palarie-albastru-ai.webp", band: "assets/img/bentita-albastru.webp" },
+      { id: "visiniu", name: "Vișiniu", hex: "#8a1638", img: "assets/img/roba-visiniu.webp", hat: "assets/img/palarie-visiniu.webp", hatPers: "assets/img/palarie-visiniu-pers.webp", hatIndividual: "assets/img/palarie-visiniu-ai.webp", band: "assets/img/bentita-visiniu.webp" },
     ],
     // Paleta de eșarfe din macheta Absolvire.ro. Imprimarea (albă / neagră) este
     // definită explicit pe fiecare nuanță — fără algoritm care ghicește contrastul.
