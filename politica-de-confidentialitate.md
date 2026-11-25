@@ -9,7 +9,7 @@ Informații legale
 
 Politica privind prelucrarea datelor cu caracter personal și confidențialitatea acestora.
 
-Ultima actualizare: 25 noiembrie 2026
+Ultima actualizare: 26 noiembrie 2026
 
 ## 1. Cine prelucrează datele
 
@@ -40,7 +40,13 @@ Cererea de ofertă este transmisă pe email echipei Absolvire.ro prin serviciul 
 
 Selecțiile din „Cererea mea” și o copie a cererilor trimise sunt păstrate **doar în browserul dumneavoastră** (stocare locală), ca să nu se piardă când navigați între pagini. Aceste date nu ne sunt transmise decât atunci când trimiteți cererea și le puteți șterge oricând ștergând datele site-ului din setările browserului.
 
-Site-ul nu folosește cookie-uri de publicitate sau de analiză. Fonturile site-ului sunt încărcate de pe serverele Google Fonts, care primesc adresa IP a dispozitivului pentru a le livra.
+Fonturile site-ului sunt găzduite pe serverul nostru; nu sunt încărcate de la terți.
+
+### Cookie-uri de analiză (Google Analytics)
+
+Numai dacă alegeți **„Accept”** în fereastra despre cookie-uri, site-ul încarcă **Google Tag Manager** și **Google Analytics** (Google Ireland Limited), care plasează cookie-uri (_ga, _ga_*) ca să măsoare, în mod agregat, paginile vizitate, durata vizitei, tipul de dispozitiv și sursa vizitei. Folosim aceste date doar ca să înțelegem cum este folosit site-ul și să-l îmbunătățim, pe baza consimțământului dumneavoastră (art. 6 alin. (1) lit. a GDPR). Cookie-urile Google Analytics expiră după cel mult 2 ani.
+
+Dacă alegeți **„Refuz”** sau nu alegeți nimic, aceste scripturi nu sunt încărcate și nu se plasează cookie-uri de analiză. Nu folosim cookie-uri de publicitate. Alegerea dumneavoastră este reținută în browser timp de 12 luni și o puteți schimba oricând din linkul **„Setări cookie”** din subsolul fiecărei pagini; la retragerea acordului ștergem cookie-urile de analiză.
 
 ## 6. Cât timp păstrăm datele
 
@@ -53,6 +59,7 @@ Site-ul nu folosește cookie-uri de publicitate sau de analiză. Fonturile site-
 
 - **Web3Forms** — pentru transmiterea cererii de ofertă pe email.
 - **Furnizorul serviciului de email** folosit de echipă — pentru primirea și gestionarea corespondenței.
+- **Google** (Google Tag Manager și Google Analytics) — doar dacă ați acceptat cookie-urile de analiză.
 - **Autorități publice** (ANAF, organe de cercetare, instanțe, executori judecătorești și alte instituții) — numai atunci când legea ne obligă.
 
 Unii dintre acești furnizori pot prelucra date și în afara Spațiului Economic European, conform propriilor politici de confidențialitate.

@@ -9,7 +9,7 @@ Informații legale
 
 Condițiile de utilizare a site-ului absolvire.ro și regulile pentru cererile de ofertă transmise prin site.
 
-Ultima actualizare: 25 noiembrie 2026
+Ultima actualizare: 26 noiembrie 2026
 
 ## 1. Cine suntem
 

@@ -2,6 +2,28 @@
 <html lang="ro">
 <head>
   <meta charset="utf-8">
+  <script>
+    /* Google Tag Manager, doar cu acordul vizitatorului (banner-ul de cookie-uri din app.js).
+       Implicit totul e refuzat; gtm.js se încarcă abia după „Accept”. Alegerea e ținută 12 luni. */
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied'});
+    window.absLoadGTM = function () {
+      gtag('consent', 'update', {analytics_storage: 'granted'});
+      if (window.absGTMLoaded) return;
+      window.absGTMLoaded = true;
+      gtag('js', new Date());
+      dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-PLP5SH8C';
+      document.head.appendChild(s);
+    };
+    try {
+      var c = JSON.parse(localStorage.getItem('absolvire-consent') || 'null');
+      if (c && c.v === 'granted' && Date.now() - c.t < 365 * 864e5) window.absLoadGTM();
+    } catch (e) {}
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{title}}</title>
   <meta name="description" content="{{description}}">
@@ -23,6 +45,14 @@
 </main>
 {{footer}}
 <div class="toast" data-toast role="status" aria-live="polite" hidden></div>
+<section class="consent" data-consent aria-labelledby="consent-title" hidden>
+  <p class="consent-title" id="consent-title">Cookie-uri de analiză</p>
+  <p>Cu acordul dumneavoastră folosim Google Analytics ca să vedem cum este folosit site-ul și să-l îmbunătățim. Puteți schimba alegerea oricând din „Setări cookie”, în subsolul paginii. <a href="politica-de-confidentialitate.html#cookie">Detalii</a></p>
+  <div class="consent-actions">
+    <button class="btn btn-sm btn-primary" type="button" data-consent-choice="denied">Refuz</button>
+    <button class="btn btn-sm btn-primary" type="button" data-consent-choice="granted">Accept</button>
+  </div>
+</section>
 <script src="assets/js/data.js"></script>
 <script src="assets/js/app.js"></script>
 </body>

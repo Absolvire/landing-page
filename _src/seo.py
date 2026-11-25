@@ -14,7 +14,7 @@ import os
 SITE_URL = (os.environ.get("SITE_URL") or "https://www.absolvire.ro").rstrip("/")
 SITE_NAME = "Absolvire.ro"
 LOCALE = "ro_RO"
-LEGAL_UPDATED = "25 noiembrie 2026"  # data afișată pe paginile legale; schimb-o când modifici textele
+LEGAL_UPDATED = "26 noiembrie 2026"  # data afișată pe paginile legale; schimb-o când modifici textele
 
 HOME = ("Acasă", "index.html")
 VEST = ("Vestimentație", "vestimentatie.html")

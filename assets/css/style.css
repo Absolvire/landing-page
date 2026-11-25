@@ -589,6 +589,12 @@ body[data-page="cerere"] .cta-band { display: none; }
 .toast { position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 20px); z-index: 70; background: var(--ink); color: #fff; padding: 12px 14px 12px 18px; border-radius: 12px; display: flex; gap: 14px; align-items: center; font-size: .9rem; opacity: 0; transition: opacity .25s, transform .25s; max-width: calc(100% - 32px); box-shadow: 0 14px 30px -12px rgba(0,0,0,.5); }
 .toast.is-on { opacity: 1; transform: translate(-50%, 0); }
 .toast a { background: var(--gold); color: #fff; border-radius: 8px; padding: 8px 12px; font-weight: 600; white-space: nowrap; text-decoration: none; }
+.consent { position: fixed; left: 16px; bottom: 16px; z-index: 60; width: min(420px, calc(100% - 32px)); background: var(--ivory); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 18px 40px -16px rgba(60, 40, 20, .45); padding: 18px 20px; font-size: .88rem; }
+.consent p { margin: 0 0 .9rem; }
+.consent .consent-title { font: 600 1.15rem/1.25 var(--serif); color: var(--wine-ink); margin-bottom: .45rem; }
+.consent-actions { display: flex; gap: 10px; justify-content: flex-end; }
+.consent-actions .btn { flex: 1; }
+.link-button { display: inline-block; min-height: 24px; background: none; border: 0; padding: 0; font: inherit; color: inherit; text-decoration: underline; cursor: pointer; }
 
 /* ===== Responsive ===== */
 @media (max-width: 1180px) {
@@ -747,3 +753,25 @@ div.cap-detail label.file { margin-top: 0; }
 .studio-stage.is-spread .recolor-layer { display: none; }
 .studio-thumbs button { position: relative; }
 .studio-thumbs .recolor-layer { inset: 3px; }
+
+/* Configuratoare pe ecrane înguste (ținută, pălărie, eșarfă, insignă, albume): previzualizarea rămâne
+   lipită sub antet cât timp derulezi prin opțiuni, ca să vezi fiecare alegere. Restul coloanei din stânga
+   (listă „include”, rezumat, link) trece după opțiuni. Dezactivat pe ecrane joase (telefon pe orizontală). */
+@media (max-width: 1020px) and (min-height: 561px) {
+  :root { --pv-h: 40svh; }
+  .config, .album-studio { display: flex; flex-direction: column; }
+  .config-preview, .studio-gallery { display: contents; }
+  .config-preview > .mannequin, .config-preview > .stage, .studio-stage {
+    position: sticky; top: calc(var(--header-h) + 8px); z-index: 20; align-self: center; margin-inline: auto; max-width: 100%;
+    width: min(100%, calc(var(--pv-h) * var(--pv-ratio, 1)));
+    /* bandă crem pe toată lățimea, ca opțiunile să nu se vadă pe lângă previzualizare */
+    box-shadow: 0 0 0 100vmax var(--cream); clip-path: inset(-8px -100vmax -12px -100vmax);
+  }
+  .config-preview > .mannequin { --pv-ratio: .9; }
+  .config-preview > .stage-tall { --pv-ratio: .86; }
+  .config-panel, .studio-panel { order: 1; }
+  .config-preview > :not(.mannequin):not(.stage) { order: 2; }
+  .config-preview > .link-arrow { align-self: flex-start; }
+  /* câmpurile focalizate nu ajung sub previzualizarea lipită */
+  html:has(.config, .album-studio) { scroll-padding-top: calc(var(--header-h) + var(--pv-h) + 28px); }
+}

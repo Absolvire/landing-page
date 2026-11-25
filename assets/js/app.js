@@ -166,6 +166,45 @@
   }
   updateBadge();
 
+  /* ================= Acord cookie-uri (Google Analytics prin GTM) =================
+     Încărcarea GTM e în <head> (layout.html): window.absLoadGTM. Aici doar banner-ul și „Setări cookie”. */
+  (function initConsent() {
+    const box = $("[data-consent]");
+    if (!box) return;
+    const CKEY = "absolvire-consent";
+    const MAX_AGE = 365 * 864e5; // alegerea e cerută din nou după 12 luni
+    let stored = null;
+    try { stored = JSON.parse(localStorage.getItem(CKEY) || "null"); } catch (_) {}
+    const decided = stored && (stored.v === "granted" || stored.v === "denied") && Date.now() - stored.t < MAX_AGE;
+    const open = (focus) => { box.hidden = false; if (focus) $("[data-consent-choice]", box).focus(); };
+    if (!decided) open(false);
+
+    // Șterge cookie-urile Google Analytics (_ga, _ga_XXXX, _gid) de pe domeniul curent și de pe domeniul părinte.
+    function clearGaCookies() {
+      const host = location.hostname;
+      const domains = ["", host, "." + host.replace(/^www\./, "")];
+      document.cookie.split(";").map((c) => c.split("=")[0].trim())
+        .filter((n) => /^(_ga|_gid|_gat)/.test(n))
+        .forEach((n) => domains.forEach((d) => {
+          document.cookie = `${n}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/${d ? `; domain=${d}` : ""}`;
+        }));
+    }
+
+    $$("[data-consent-choice]", box).forEach((b) => b.addEventListener("click", () => {
+      const v = b.dataset.consentChoice;
+      try { localStorage.setItem(CKEY, JSON.stringify({ v, t: Date.now() })); } catch (_) {}
+      if (v === "granted") {
+        if (window.absLoadGTM) window.absLoadGTM();
+      } else {
+        if (window.gtag) window.gtag("consent", "update", { analytics_storage: "denied" });
+        clearGaCookies();
+      }
+      box.hidden = true;
+      toast(v === "granted" ? "Mulțumim! Am activat cookie-urile de analiză." : "Am reținut: fără cookie-uri de analiză.");
+    }));
+    $$("[data-consent-open]").forEach((b) => b.addEventListener("click", () => open(true)));
+  })();
+
   /* ================= Carusel (prima pagină) ================= */
   (function initHero() {
     const track = $("[data-hero-track]");
