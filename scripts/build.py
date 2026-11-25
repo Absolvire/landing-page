@@ -12,6 +12,8 @@ for name in ['index.html','styles.css','script.js','robots.txt','sitemap.xml','i
 shutil.copytree(root / 'assets', out / 'assets', dirs_exist_ok=True)
 for name, *_ in PAGES[1:]:
     shutil.copytree(root / name, out / name, dirs_exist_ok=True)
+shutil.copytree(root / 'esarfe', out / 'esarfe', dirs_exist_ok=True)
+shutil.copytree(root / 'toci', out / 'toci', dirs_exist_ok=True)
 print('Site static pregătit în dist/')
 
 (out / ".nojekyll").touch()

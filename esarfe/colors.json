@@ -1,0 +1,170 @@
+[
+  {
+    "id": "bej",
+    "label": "Bej",
+    "color": "#ead3a8",
+    "file": "bej.png",
+    "source": "https://www.absolvire.ro/esarfe/bej.png",
+    "code": 21
+  },
+  {
+    "id": "alb",
+    "label": "Alb",
+    "color": "#ffffff",
+    "file": "alb.png",
+    "source": "https://www.absolvire.ro/esarfe/alb.png",
+    "code": 1
+  },
+  {
+    "id": "roz",
+    "label": "Roz",
+    "color": "#ff9cca",
+    "file": "roz.png",
+    "source": "https://www.absolvire.ro/esarfe/roz.png",
+    "code": 10
+  },
+  {
+    "id": "rosu",
+    "label": "Roșu",
+    "color": "#e51c23",
+    "file": "rosu.png",
+    "source": "https://www.absolvire.ro/esarfe/rosu.png",
+    "code": 3
+  },
+  {
+    "id": "visiniu",
+    "label": "Vișiniu",
+    "color": "#b00b35",
+    "file": "visiniu.png",
+    "source": "https://www.absolvire.ro/esarfe/visiniu.png",
+    "code": 12
+  },
+  {
+    "id": "portocaliu",
+    "label": "Portocaliu",
+    "color": "#ff7900",
+    "file": "portocaliu.png",
+    "source": "https://www.absolvire.ro/esarfe/portocaliu.png",
+    "code": 15
+  },
+  {
+    "id": "galben",
+    "label": "Galben",
+    "color": "#ffe600",
+    "file": "galben.png",
+    "source": "https://www.absolvire.ro/esarfe/galben.png",
+    "code": 6
+  },
+  {
+    "id": "verde",
+    "label": "Verde",
+    "color": "#00bd45",
+    "file": "verde.png",
+    "source": "https://www.absolvire.ro/esarfe/verde.png",
+    "code": 19
+  },
+  {
+    "id": "caraibe",
+    "label": "Caraibe",
+    "color": "#00a4ed",
+    "file": "caraibe.png",
+    "source": "https://www.absolvire.ro/esarfe/caraibe.png",
+    "code": 30
+  },
+  {
+    "id": "sky",
+    "label": "Sky",
+    "color": "#65b9ff",
+    "file": "sky.png",
+    "source": "https://www.absolvire.ro/esarfe/sky.png",
+    "code": 24
+  },
+  {
+    "id": "albastru",
+    "label": "Albastru",
+    "color": "#064bdc",
+    "file": "albastru.png",
+    "source": "https://www.absolvire.ro/esarfe/albastru.png",
+    "code": 2
+  },
+  {
+    "id": "mov",
+    "label": "Mov",
+    "color": "#7428bd",
+    "file": "mov.png",
+    "source": "https://www.absolvire.ro/esarfe/mov.png",
+    "code": 29
+  },
+  {
+    "id": "auriu",
+    "label": "Auriu",
+    "color": "#edae28",
+    "file": "auriu.png",
+    "source": "https://www.absolvire.ro/esarfe/auriu.png",
+    "code": null
+  },
+  {
+    "id": "caramiziu",
+    "label": "Cărămiziu",
+    "color": "#c34b22",
+    "file": "caramiziu.png",
+    "source": "https://www.absolvire.ro/esarfe/caramiziu.png",
+    "code": null
+  },
+  {
+    "id": "gri-inchis",
+    "label": "Gri închis",
+    "color": "#555963",
+    "file": "gri-inchis.png",
+    "source": "https://www.absolvire.ro/esarfe/gri%20inchis.png",
+    "code": null
+  },
+  {
+    "id": "vernil-deschis",
+    "label": "Vernil deschis",
+    "color": "#52cdb5",
+    "file": "vernil-deschis.png",
+    "source": "https://www.absolvire.ro/esarfe/vernil%20deschis.png",
+    "code": null
+  },
+  {
+    "id": "ciclam",
+    "label": "Ciclam",
+    "color": "#f00091",
+    "file": "ciclam.png",
+    "source": "https://www.absolvire.ro/esarfe/ciclam.png",
+    "code": null
+  },
+  {
+    "id": "lila",
+    "label": "Lila",
+    "color": "#b182e5",
+    "file": "lila.png",
+    "source": "https://www.absolvire.ro/esarfe/lila.png",
+    "code": null
+  },
+  {
+    "id": "menta",
+    "label": "Mentă",
+    "color": "#00a68c",
+    "file": "menta.png",
+    "source": "https://www.absolvire.ro/esarfe/menta.png",
+    "code": null
+  },
+  {
+    "id": "olive",
+    "label": "Olive",
+    "color": "#b9b91b",
+    "file": "olive.png",
+    "source": "https://www.absolvire.ro/esarfe/olive.png",
+    "code": null
+  },
+  {
+    "id": "somon",
+    "label": "Somon",
+    "color": "#ffae8a",
+    "file": "somon.png",
+    "source": "https://www.absolvire.ro/esarfe/somon.png",
+    "code": null
+  }
+]

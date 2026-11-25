@@ -66,3 +66,9 @@ Build-ul recreează `dist/` de la zero și include doar fișierele statice publi
 Documentație: https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages
 
 AI discovery: `/llms.txt` și `/llms-full.txt` sunt generate la fiecare build și incluse în `dist/`.
+
+## Configurator de toci — /toci/
+
+Pagina reutilizează selecția de culori și panglici din `script.js`, cu fotografiile reale din `pictures/poze reale`. Extensia pentru fotografii este activată numai prin `data-real-photos`; vizualizatorul existent păstrează modelele Perfect Fit și Clasică. Pagina include trei culori, 21 de panglici, detaliu medalion, anul promoției, cantitate, 50 lei/bucată și suplimentul de 20 lei/bucată pentru design comun. Designul individual are preț la cerere. Prețurile sunt estimative, după macheta furnizată. Anii diferiți de 2027 sunt simulați în previzualizare; fotografiile originale prezintă 2027.
+
+Personalizarea este primul pas și conține numai trei opțiuni radio, fără încărcare de imagini. Cererea se pregătește prin e-mail, iar fișierele și detaliile personalizării se stabilesc ulterior cu echipa. Buildul include pagina și fotografiile sale.

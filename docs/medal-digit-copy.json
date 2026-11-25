@@ -1,0 +1,102 @@
+[
+  {
+    "name": "negru",
+    "source": "albastru.png",
+    "sourceBox": {
+      "left": 1324,
+      "top": 505,
+      "right": 1371,
+      "bottom": 559
+    },
+    "targetBox": {
+      "left": 1329,
+      "top": 506,
+      "right": 1375,
+      "bottom": 563
+    },
+    "roi": {
+      "left": 1321,
+      "top": 502,
+      "right": 1378,
+      "bottom": 567
+    },
+    "copiedPixels": 2198,
+    "changedPixels": 2193,
+    "changesOutsideDigit": 0
+  },
+  {
+    "name": "visiniu",
+    "source": "albastru.png",
+    "sourceBox": {
+      "left": 1324,
+      "top": 505,
+      "right": 1371,
+      "bottom": 559
+    },
+    "targetBox": {
+      "left": 1329,
+      "top": 504,
+      "right": 1374,
+      "bottom": 560
+    },
+    "roi": {
+      "left": 1321,
+      "top": 500,
+      "right": 1377,
+      "bottom": 564
+    },
+    "copiedPixels": 2097,
+    "changedPixels": 2090,
+    "changesOutsideDigit": 0
+  },
+  {
+    "name": "negru-personalizata",
+    "source": "albastru.png",
+    "sourceBox": {
+      "left": 1324,
+      "top": 505,
+      "right": 1371,
+      "bottom": 559
+    },
+    "targetBox": {
+      "left": 1326,
+      "top": 505,
+      "right": 1370,
+      "bottom": 560
+    },
+    "roi": {
+      "left": 1318,
+      "top": 501,
+      "right": 1373,
+      "bottom": 564
+    },
+    "copiedPixels": 2022,
+    "changedPixels": 2020,
+    "changesOutsideDigit": 0
+  },
+  {
+    "name": "visiniu-personalizata",
+    "source": "albastru.png",
+    "sourceBox": {
+      "left": 1324,
+      "top": 505,
+      "right": 1371,
+      "bottom": 559
+    },
+    "targetBox": {
+      "left": 1321,
+      "top": 504,
+      "right": 1365,
+      "bottom": 560
+    },
+    "roi": {
+      "left": 1313,
+      "top": 500,
+      "right": 1368,
+      "bottom": 564
+    },
+    "copiedPixels": 2051,
+    "changedPixels": 2047,
+    "changesOutsideDigit": 0
+  }
+]

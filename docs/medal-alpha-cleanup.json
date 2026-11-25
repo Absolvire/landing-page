@@ -1,0 +1,50 @@
+[
+  {
+    "name": "negru",
+    "changedAlphaPixels": 11728,
+    "rgbChanges": 0,
+    "changesOutsideMedal": 0,
+    "roi": {
+      "left": 1300,
+      "top": 480,
+      "width": 180,
+      "height": 112
+    }
+  },
+  {
+    "name": "visiniu",
+    "changedAlphaPixels": 11391,
+    "rgbChanges": 0,
+    "changesOutsideMedal": 0,
+    "roi": {
+      "left": 1300,
+      "top": 480,
+      "width": 180,
+      "height": 112
+    }
+  },
+  {
+    "name": "negru-personalizata",
+    "changedAlphaPixels": 11327,
+    "rgbChanges": 0,
+    "changesOutsideMedal": 0,
+    "roi": {
+      "left": 1300,
+      "top": 480,
+      "width": 180,
+      "height": 112
+    }
+  },
+  {
+    "name": "visiniu-personalizata",
+    "changedAlphaPixels": 11387,
+    "rgbChanges": 0,
+    "changesOutsideMedal": 0,
+    "roi": {
+      "left": 1300,
+      "top": 480,
+      "width": 180,
+      "height": 112
+    }
+  }
+]

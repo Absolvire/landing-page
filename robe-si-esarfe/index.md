@@ -26,11 +26,15 @@ Robele cu fermoar sunt disponibile în negru, albastru și vișiniu, în cinci m
 
 ## Toca de absolvire
 
+Configurează toca de absolvire →
+
 Modelul clasic completează ținuta cu o bentiță colorată și un medalion auriu. Stabiliți detaliile împreună cu echipa, pentru o imagine unitară a promoției.
 
 03
 
 ## Eșarfa care rămâne amintire
+
+Configurează eșarfa de absolvire →
 
 Eșarfe duble, personalizate cu numele instituției și promoția. Paleta include tonuri de albastru, verde, roșu, auriu și nuanțe pastelate.
 
