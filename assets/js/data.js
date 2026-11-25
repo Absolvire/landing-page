@@ -71,9 +71,10 @@ window.ABS = {
       layout: "O pagină pentru fiecare elev: portret, fotografie cu prietenii și mesaj.",
       short: "Catifea elegantă, disponibilă în mai multe culori, cu fundă din satin.",
       img: "assets/img/velvet-cover.webp",
-      // O singură fotografie reală (catifea neagră + fundă smarald): previzualizarea
-      // arată mostra aleasă și identifică exemplarul fotografiat.
+      // O singură fotografie reală (catifea neagră + fundă smarald). Catifeaua și fundița sunt
+      // extrase din ea ca straturi și colorate în nuanța aleasă (opt1 = catifeaua, opt2 = fundița).
       photographed: "catifea neagră cu fundă smarald",
+      recolor: { opt1: "assets/img/velvet-catifea.webp", opt2: "assets/img/velvet-funda.webp" },
       optionLabel: "Culoarea catifelei",
       options: [
         { id: "negru", name: "Negru", hex: "#151515" },

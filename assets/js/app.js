@@ -258,18 +258,28 @@
     $("[data-interior]").innerHTML = m.interior.map((it, i) => `<li><button type="button" data-view="${i}"><img src="${esc(it.img)}" alt="${esc(m.name)} — ${esc(it.title)}" loading="lazy"></button><span>${esc(it.title)}</span></li>`).join("");
     promoLines($("[data-album-promos]"), liveCampaigns.filter((c) => (c.albums || []).includes(m.id)));
 
+    // Modele cu o singură fotografie (Velvet): straturile extrase din fotografie (catifea, fundiță)
+    // se colorează în nuanțele alese — atât în imaginea mare, cât și în miniatura copertei.
+    const recolor = m.recolor ? Object.entries(m.recolor) : [];
+    const layersHtml = () => recolor.map(([opt, img]) => `<span class="recolor-layer" data-recolor="${esc(opt)}" style="--c:${esc(st[opt] ? st[opt].hex : "transparent")};-webkit-mask-image:url('${esc(new URL(img, location.href).href)}');mask-image:url('${esc(new URL(img, location.href).href)}')"><img src="${esc(img)}" alt=""></span>`).join("");
+    if (recolor.length) $("[data-studio-img]").insertAdjacentHTML("afterend", layersHtml());
+
     function render() {
       if (st.opt1) { $("[data-opt1-name]").textContent = st.opt1.name; markSwatches(root, "opt1", st.opt1.id); }
       if (st.opt2) { $("[data-opt2-name]").textContent = st.opt2.name; markSwatches(root, "opt2", st.opt2.id); }
       const coverImg = (st.opt1 && st.opt1.img) || m.img;
       const thumbs = [{ img: coverImg, title: "Coperta" }].concat(m.interior);
-      $("[data-studio-thumbs]").innerHTML = thumbs.map((t, i) => `<button type="button" class="${i - 1 === st.view ? "is-on" : ""}" data-view="${i - 1}" aria-label="${esc(t.title)}"><img src="${esc(t.img)}" alt=""></button>`).join("");
+      $("[data-studio-thumbs]").innerHTML = thumbs.map((t, i) => `<button type="button" class="${i - 1 === st.view ? "is-on" : ""}" data-view="${i - 1}" aria-label="${esc(t.title)}"><img src="${esc(t.img)}" alt="">${i === 0 ? layersHtml() : ""}</button>`).join("");
       const cur = st.view < 0 ? { img: coverImg, title: "Coperta" } : m.interior[st.view];
       const stage = $("[data-studio-img]");
       stage.src = cur.img; stage.alt = `Album ${m.name} — ${cur.title}`;
       stage.parentElement.classList.toggle("is-spread", st.view >= 0);
+      $$(".studio-stage [data-recolor]", root).forEach((el) => { el.hidden = st.view >= 0; el.style.setProperty("--c", st[el.dataset.recolor].hex); });
       const badge = $("[data-studio-badge]"), capEl = $("[data-studio-caption]");
-      if (st.view < 0 && m.photographed && st.opt1) {
+      if (st.view < 0 && recolor.length) {
+        badge.hidden = true;
+        capEl.textContent = `Previzualizare orientativă pe fotografia reală a albumului: ${m.optionLabel.toLowerCase()} ${st.opt1.name.toLowerCase()}${st.opt2 ? `, ${m.option2Label.toLowerCase()} ${st.opt2.name.toLowerCase()}` : ""}. Nuanța finală se confirmă pe mostra de material.`;
+      } else if (st.view < 0 && m.photographed && st.opt1) {
         const sel = `catifea ${st.opt1.name.toLowerCase()}${st.opt2 ? ` cu fundă ${st.opt2.name.toLowerCase()}` : ""}`;
         badge.hidden = false;
         badge.innerHTML = `<i style="--a:${esc(st.opt1.hex)};--b:${esc(st.opt2 ? st.opt2.hex : st.opt1.hex)}"></i>Selecția ta: ${esc(sel)}`;

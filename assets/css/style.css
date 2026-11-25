@@ -717,3 +717,11 @@ div.cap-detail label.file { margin-top: 0; }
   .consumer-links { justify-content: flex-start; }
   .consumer-links img { width: 110px; }
 }
+
+/* Velvet: catifeaua și fundița recolorate peste fotografia reală (mască + umbrirea reală, multiply) */
+.recolor-layer { position: absolute; background-color: var(--c); -webkit-mask-size: contain; mask-size: contain; -webkit-mask-position: center; mask-position: center; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; pointer-events: none; }
+.recolor-layer img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; object-fit: contain; filter: none; mix-blend-mode: multiply; }
+.studio-stage .recolor-layer { inset: 7%; }
+.studio-stage.is-spread .recolor-layer { display: none; }
+.studio-thumbs button { position: relative; }
+.studio-thumbs .recolor-layer { inset: 3px; }
