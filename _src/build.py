@@ -246,7 +246,10 @@ def promo_list():
     out = []
     for c in items:
         cats = " · ".join(x.capitalize() for x in c["categories"])
-        btns = "".join(f'<a class="btn {"btn-outline" if i else "btn-primary"} btn-sm" href="{e(b["href"])}">{e(b["label"])} →</a>' for i, b in enumerate(c["buttons"]))
+        if c in ended:  # ofertă expirată: butoanele rămân vizibile, dar fără link
+            btns = "".join(f'<span class="btn {"btn-outline" if i else "btn-primary"} btn-sm" aria-disabled="true">{e(b["label"])} →</span>' for i, b in enumerate(c["buttons"]))
+        else:
+            btns = "".join(f'<a class="btn {"btn-outline" if i else "btn-primary"} btn-sm" href="{e(b["href"])}">{e(b["label"])} →</a>' for i, b in enumerate(c["buttons"]))
         out.append(f"""
         <article class="promo{' is-ended' if c in ended else ''}" id="promo-{e(c['id'])}">
           {ENDED_BADGE if c in ended else ''}

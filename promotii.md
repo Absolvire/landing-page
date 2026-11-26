@@ -34,7 +34,7 @@ Rezervați din toamnă, pozați de două ori.
 - Programare comună într-un spațiu interior confirmat.
 - Beneficiile se acordă claselor eligibile participante, după confirmarea echipei.
 
-[Vezi albumele →](https://www.absolvire.ro/albume)
+Vezi albumele →
 
 Oferta a expirat
 
@@ -53,7 +53,7 @@ Toată promoția, un singur gând pentru profesori.
 - Unanimitate: toate clasele promoției comandă albume — fie 2, fie 8 clase.
 - Componența promoției și îndeplinirea condiției sunt validate de echipă.
 
-[Vezi albumele →](https://www.absolvire.ro/albume)
+Vezi albumele →
 
 Oferta a expirat
 
@@ -73,8 +73,7 @@ Cine alege ambele, primește mai mult.
 - Exemplu: din 25 de elevi cu vestimentație, 20 comandă și album → 20 de seturi bonus.
 - Numărul elevilor comuni se înregistrează explicit și se verifică de echipă.
 
-[Vezi albumele →](https://www.absolvire.ro/albume)  
-[Vezi robele →](https://www.absolvire.ro/vestimentatie)
+Vezi albumele → Vezi robele →
 
 Site-ul afișează beneficiul posibil pe baza informațiilor introduse. Eligibilitatea și beneficiul final se confirmă de echipa Absolvire.ro în oferta transmisă.
 

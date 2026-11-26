@@ -698,7 +698,9 @@
               <div><h3>Beneficii</h3><ul>${c.benefits.map((b) => `<li>${esc(b)}</li>`).join("")}</ul></div>
               <div><h3>Condiții</h3><ul>${c.conditions.map((b) => `<li>${esc(b)}</li>`).join("")}</ul></div>
             </div>
-            <div class="promo-btns">${c.buttons.map((b, i) => `<a class="btn ${i ? "btn-outline" : "btn-primary"} btn-sm" href="${esc(b.href)}">${esc(b.label)} →</a>`).join("")}</div>
+            <div class="promo-btns">${c.buttons.map((b, i) => isEnded(c)
+              ? `<span class="btn ${i ? "btn-outline" : "btn-primary"} btn-sm" aria-disabled="true">${esc(b.label)} →</span>` // ofertă expirată: fără link
+              : `<a class="btn ${i ? "btn-outline" : "btn-primary"} btn-sm" href="${esc(b.href)}">${esc(b.label)} →</a>`).join("")}</div>
           </div>
         </article>`).join("") : `<p class="empty">Momentan nu sunt promoții active în această categorie.</p>`);
     }

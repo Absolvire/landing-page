@@ -520,7 +520,7 @@ input.is-invalid, textarea.is-invalid { border-color: #b3261e; background: #fff6
 /* Promoție expirată: card estompat, tăiat cu două linii în X și mesajul „Oferta a expirat” deasupra */
 .promo { position: relative; }
 .promo.is-ended > :not(.promo-expired) { opacity: .4; }
-.promo-expired { position: absolute; inset: 0; z-index: 2; display: grid; place-items: center; pointer-events: none;
+.promo-expired { position: absolute; inset: 0; z-index: 2; display: grid; place-items: center; cursor: not-allowed; /* acoperă cardul și blochează click-urile */
   background:
     linear-gradient(to top right, transparent calc(50% - 1.5px), var(--wine) calc(50% - 1.5px) calc(50% + 1.5px), transparent calc(50% + 1.5px)),
     linear-gradient(to bottom right, transparent calc(50% - 1.5px), var(--wine) calc(50% - 1.5px) calc(50% + 1.5px), transparent calc(50% + 1.5px)); }
