@@ -293,6 +293,7 @@ window.ABS = {
      Pentru demonstrație, câteva sunt activate mai jos — pune
      `active: false` pentru a le ascunde (dispar din carusel, din
      pagina de promoții și din mențiunile de pe produse).
+     `showBeforeStart: true` afișează campania și înainte de `start`.
      Datele sunt în fusul Europe/Bucharest.                             */
   campaigns: [
     {
@@ -301,6 +302,7 @@ window.ABS = {
       homepage: true,
       priority: 1,
       start: "2027-09-01T00:00:00+03:00",
+      showBeforeStart: true, // vizibilă de acum, cu perioada promoției 2027-2028
       end: "2028-01-31T23:59:00+02:00",
       categories: ["albume"],
       albums: ["velvet", "deluxe", "class", "elite"],
@@ -325,6 +327,7 @@ window.ABS = {
       homepage: true,
       priority: 2,
       start: "2027-09-01T00:00:00+03:00",
+      showBeforeStart: true, // vizibilă de acum, cu perioada promoției 2027-2028
       end: "2028-04-30T23:59:00+03:00",
       categories: ["albume"],
       albums: ["economy", "velvet", "deluxe", "class", "elite"],
@@ -345,6 +348,7 @@ window.ABS = {
       homepage: true,
       priority: 3,
       start: "2027-09-01T00:00:00+03:00",
+      showBeforeStart: true, // vizibilă de acum, cu perioada promoției 2027-2028
       end: "2028-05-31T23:59:00+03:00",
       categories: ["albume", "festivitate"],
       albums: ["economy", "velvet", "deluxe", "class", "elite"],

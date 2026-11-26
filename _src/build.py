@@ -211,7 +211,7 @@ def live_campaigns():
     def live(c):
         if not c.get("active"):
             return False
-        if c.get("start") and dt.datetime.fromisoformat(c["start"]) > NOW:
+        if c.get("start") and not c.get("showBeforeStart") and dt.datetime.fromisoformat(c["start"]) > NOW:
             return False
         if c.get("end") and dt.datetime.fromisoformat(c["end"]) < NOW:
             return False

@@ -108,7 +108,8 @@
 
   /* ---------- Campanii active (datele includ offset-ul Europe/Bucharest) ---------- */
   const now = Date.now();
-  const isLive = (c) => c.active && (!c.start || Date.parse(c.start) <= now) && (!c.end || Date.parse(c.end) >= now);
+  // showBeforeStart: campania apare (anunțată) și înainte de data de start, până la data de final.
+  const isLive = (c) => c.active && (!c.start || c.showBeforeStart || Date.parse(c.start) <= now) && (!c.end || Date.parse(c.end) >= now);
   const liveCampaigns = D.campaigns.filter(isLive).sort((a, b) => (a.priority || 99) - (b.priority || 99));
   const period = (c) => {
     const f = (d) => new Date(d).toLocaleDateString("ro-RO", { day: "numeric", month: "long", year: "numeric", timeZone: "Europe/Bucharest" });
