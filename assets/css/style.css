@@ -611,7 +611,8 @@ body[data-page="cerere"] .cta-band { display: none; }
   .main-nav a { padding: 13px 0; border-bottom: 1px solid var(--line); font-size: 1rem; }
   .main-nav a[aria-current] { border-bottom-color: var(--line); }
   .cart-btn { margin-left: auto; }
-  .album-studio, .config, .cap-grid, .photo-grid, .bundle-inner, .event-hero, .awards, .parade, .media-band, .print-banner, .request-grid { grid-template-columns: 1fr; }
+  /* minmax(0, 1fr): o coloană nu se lățește peste ecran din cauza conținutului (ex. buton cu text lung) */
+  .album-studio, .config, .cap-grid, .photo-grid, .bundle-inner, .event-hero, .awards, .parade, .media-band, .print-banner, .request-grid { grid-template-columns: minmax(0, 1fr); }
   .studio-gallery, .config-preview, .request-side { position: static; }
   .config-preview { justify-items: stretch; }
   .config-preview > .link-arrow { justify-self: start; }
@@ -626,6 +627,8 @@ body[data-page="cerere"] .cta-band { display: none; }
   .logo img { width: 132px; }
   .cart-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; } /* ascuns vizual, citit de cititoarele de ecran */
   .cart-btn { padding-inline: .8em; }
+  /* butoanele cu text lung se rup pe două rânduri în loc să împingă pagina peste marginea din dreapta */
+  .btn:not(.cart-btn) { white-space: normal; text-align: center; max-width: 100%; }
   .hero-track { height: 800px; }
   .slide { flex-direction: column; align-items: stretch; }
   .slide-media, .slide-promo .slide-media { position: relative; inset: auto; height: 260px; flex: none; }
@@ -646,7 +649,9 @@ body[data-page="cerere"] .cta-band { display: none; }
   .album-card .btn { align-self: stretch; }
   .model-tabs { width: 100%; }
   .model-tabs a { flex: 1; text-align: center; padding-inline: 8px; }
-  .qty-row { grid-template-columns: 1fr 1fr; }
+  .qty-row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .qty-row .stepper { width: 100%; } /* butoanele +/− rămân fixe, câmpul se adaptează la lățimea coloanei */
+  .qty-row .stepper input { flex: 1; width: 0; min-width: 0; }
   .qty-class { grid-column: 1 / -1; }
   .studio-thumbs { grid-template-columns: repeat(5, 1fr); }
   .specs { grid-template-columns: 1fr; }
@@ -664,7 +669,7 @@ body[data-page="cerere"] .cta-band { display: none; }
   .footer-grid { grid-template-columns: 1fr; }
   .pl { flex-direction: column; align-items: stretch; gap: 8px; }
   .pl-act { justify-content: flex-end; }
-  .photo-visual { padding-right: 20px; }
+  .photo-visual { padding: 10px 6% 50px; } /* laptopul centrat: baza (margin -6%) ajunge exact la marginile coloanei */
   .radio-list label { flex-wrap: wrap; }
   .radio-list em { margin-left: 28px; width: 100%; }
   .award-imgs img:last-child { margin-top: 20px; }
@@ -760,7 +765,7 @@ div.cap-detail label.file { margin-top: 0; }
    (listă „include”, rezumat, link) trece după opțiuni. Dezactivat pe ecrane joase (telefon pe orizontală). */
 @media (max-width: 1020px) and (min-height: 561px) {
   :root { --pv-h: 40svh; }
-  .config, .album-studio { display: flex; flex-direction: column; }
+  .config, .album-studio { display: flex; flex-direction: column; align-items: stretch; } /* panoul ocupă toată lățimea (align-items: start din grid l-ar strânge spre stânga) */
   .config-preview, .studio-gallery { display: contents; }
   .config-preview > .mannequin, .config-preview > .stage, .studio-stage {
     position: sticky; top: calc(var(--header-h) + 8px); z-index: 20; align-self: center; margin-inline: auto; max-width: 100%;
