@@ -15,7 +15,9 @@ Promoții
 
 - Banchet
 
-Albume · 1 septembrie 2027 – 31 ianuarie 2028
+Oferta a expirat
+
+Albume · Anul școlar 2026 – 2027
 
 ## Early Booking Albume
 
@@ -34,7 +36,9 @@ Rezervați din toamnă, pozați de două ori.
 
 [Vezi albumele →](https://www.absolvire.ro/albume)
 
-Albume · 1 septembrie 2027 – 30 aprilie 2028
+Oferta a expirat
+
+Albume · Anul școlar 2026 – 2027
 
 ## Împreună în album
 
@@ -51,7 +55,9 @@ Toată promoția, un singur gând pentru profesori.
 
 [Vezi albumele →](https://www.absolvire.ro/albume)
 
-Albume · Festivitate · 1 septembrie 2027 – 31 mai 2028
+Oferta a expirat
+
+Albume · Festivitate · Anul școlar 2026 – 2027
 
 ## Avantaj de fidelitate — Album + robe
 

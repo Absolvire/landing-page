@@ -293,7 +293,9 @@ window.ABS = {
      Pentru demonstrație, câteva sunt activate mai jos — pune
      `active: false` pentru a le ascunde (dispar din carusel, din
      pagina de promoții și din mențiunile de pe produse).
-     `showBeforeStart: true` afișează campania și înainte de `start`.
+     `showEnded: true` păstrează campania încheiată pe pagina de promoții,
+     cu mențiunea „s-a încheiat” (nu mai apare în carusel sau pe produse).
+     `schoolYear` înlocuiește perioada afișată cu „Anul școlar …”.
      Datele sunt în fusul Europe/Bucharest.                             */
   campaigns: [
     {
@@ -301,9 +303,10 @@ window.ABS = {
       active: true,
       homepage: true,
       priority: 1,
-      start: "2027-09-01T00:00:00+03:00",
-      showBeforeStart: true, // vizibilă de acum, cu perioada promoției 2027-2028
-      end: "2028-01-31T23:59:00+02:00",
+      start: "2026-09-01T00:00:00+03:00",
+      end: "2026-10-30T23:59:00+02:00",
+      schoolYear: "2026 – 2027",
+      showEnded: true,
       categories: ["albume"],
       albums: ["velvet", "deluxe", "class", "elite"],
       title: "Early Booking Albume",
@@ -326,9 +329,10 @@ window.ABS = {
       active: true,
       homepage: true,
       priority: 2,
-      start: "2027-09-01T00:00:00+03:00",
-      showBeforeStart: true, // vizibilă de acum, cu perioada promoției 2027-2028
-      end: "2028-04-30T23:59:00+03:00",
+      start: "2026-09-01T00:00:00+03:00",
+      end: "2026-10-30T23:59:00+02:00",
+      schoolYear: "2026 – 2027",
+      showEnded: true,
       categories: ["albume"],
       albums: ["economy", "velvet", "deluxe", "class", "elite"],
       title: "Împreună în album",
@@ -347,9 +351,10 @@ window.ABS = {
       active: true,
       homepage: true,
       priority: 3,
-      start: "2027-09-01T00:00:00+03:00",
-      showBeforeStart: true, // vizibilă de acum, cu perioada promoției 2027-2028
-      end: "2028-05-31T23:59:00+03:00",
+      start: "2026-09-01T00:00:00+03:00",
+      end: "2026-10-30T23:59:00+02:00",
+      schoolYear: "2026 – 2027",
+      showEnded: true,
       categories: ["albume", "festivitate"],
       albums: ["economy", "velvet", "deluxe", "class", "elite"],
       title: "Avantaj de fidelitate — Album + robe",

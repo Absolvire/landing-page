@@ -211,7 +211,7 @@ def live_campaigns():
     def live(c):
         if not c.get("active"):
             return False
-        if c.get("start") and not c.get("showBeforeStart") and dt.datetime.fromisoformat(c["start"]) > NOW:
+        if c.get("start") and dt.datetime.fromisoformat(c["start"]) > NOW:
             return False
         if c.get("end") and dt.datetime.fromisoformat(c["end"]) < NOW:
             return False
@@ -219,7 +219,18 @@ def live_campaigns():
     return sorted([c for c in data["campaigns"] if live(c)], key=lambda c: c.get("priority", 99))
 
 
+def ended_campaigns():
+    """Campanii încheiate păstrate pe pagina de promoții (showEnded), cu mențiunea „s-a încheiat”."""
+    return sorted([c for c in data["campaigns"] if c.get("active") and c.get("showEnded") and c.get("end")
+                   and dt.datetime.fromisoformat(c["end"]) < NOW], key=lambda c: c.get("priority", 99))
+
+
+ENDED_BADGE = '<div class="promo-expired"><span>Oferta a expirat</span></div>'
+
+
 def period(c):
+    if c.get("schoolYear"):
+        return f"Anul școlar {c['schoolYear']}"
     if c.get("start") and c.get("end"):
         return f"{ro_date(c['start'])} – {ro_date(c['end'])}"
     if c.get("end"):
@@ -228,7 +239,8 @@ def period(c):
 
 
 def promo_list():
-    items = live_campaigns()
+    ended = ended_campaigns()
+    items = live_campaigns() + ended
     if not items:
         return '<p class="empty">Momentan nu sunt promoții active în această categorie.</p>'
     out = []
@@ -236,7 +248,8 @@ def promo_list():
         cats = " · ".join(x.capitalize() for x in c["categories"])
         btns = "".join(f'<a class="btn {"btn-outline" if i else "btn-primary"} btn-sm" href="{e(b["href"])}">{e(b["label"])} →</a>' for i, b in enumerate(c["buttons"]))
         out.append(f"""
-        <article class="promo" id="promo-{e(c['id'])}">
+        <article class="promo{' is-ended' if c in ended else ''}" id="promo-{e(c['id'])}">
+          {ENDED_BADGE if c in ended else ''}
           <div class="promo-img"><img src="{e(c['img'])}" alt="" loading="lazy"></div>
           <div class="promo-body">
             <p class="eyebrow">{e(cats)} · {e(period(c))}</p>

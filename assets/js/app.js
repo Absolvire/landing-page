@@ -108,11 +108,15 @@
 
   /* ---------- Campanii active (datele includ offset-ul Europe/Bucharest) ---------- */
   const now = Date.now();
-  // showBeforeStart: campania apare (anunțată) și înainte de data de start, până la data de final.
-  const isLive = (c) => c.active && (!c.start || c.showBeforeStart || Date.parse(c.start) <= now) && (!c.end || Date.parse(c.end) >= now);
-  const liveCampaigns = D.campaigns.filter(isLive).sort((a, b) => (a.priority || 99) - (b.priority || 99));
+  const isLive = (c) => c.active && (!c.start || Date.parse(c.start) <= now) && (!c.end || Date.parse(c.end) >= now);
+  const byPriority = (a, b) => (a.priority || 99) - (b.priority || 99);
+  const liveCampaigns = D.campaigns.filter(isLive).sort(byPriority);
+  // Campanii încheiate păstrate doar pe pagina de promoții, cu mențiunea „s-a încheiat”.
+  const endedCampaigns = D.campaigns.filter((c) => c.active && c.showEnded && c.end && Date.parse(c.end) < now).sort(byPriority);
+  const fmtDate = (d) => new Date(d).toLocaleDateString("ro-RO", { day: "numeric", month: "long", year: "numeric", timeZone: "Europe/Bucharest" });
   const period = (c) => {
-    const f = (d) => new Date(d).toLocaleDateString("ro-RO", { day: "numeric", month: "long", year: "numeric", timeZone: "Europe/Bucharest" });
+    const f = fmtDate;
+    if (c.schoolYear) return `Anul școlar ${c.schoolYear}`;
     if (c.start && c.end) return `${f(c.start)} – ${f(c.end)}`;
     if (c.end) return `până la ${f(c.end)}`;
     return "Perioadă de confirmat";
@@ -674,13 +678,17 @@
   (function initPromos() {
     const list = $("[data-promo-list]");
     if (!list) return;
+    const shown = [...liveCampaigns, ...endedCampaigns];
+    const isEnded = (c) => endedCampaigns.includes(c);
+    const endedBadge = `<div class="promo-expired"><span>Oferta a expirat</span></div>`;
     function render(filter) {
-      const items = liveCampaigns.filter((c) => filter === "all" || c.categories.includes(filter));
+      const items = shown.filter((c) => filter === "all" || c.categories.includes(filter));
       const hashId = location.hash.startsWith("#promo-") ? location.hash.slice(7) : "";
-      const ended = hashId && !liveCampaigns.some((c) => c.id === hashId) ? D.campaigns.find((c) => c.id === hashId) : null;
+      const ended = hashId && !shown.some((c) => c.id === hashId) ? D.campaigns.find((c) => c.id === hashId) : null;
       list.innerHTML = (ended ? `<div class="promo-ended" role="status"><b>Oferta „${esc(ended.title)}” s-a încheiat.</b> Mai jos găsiți ofertele active.</div>` : "")
         + (items.length ? items.map((c) => `
-        <article class="promo" id="promo-${esc(c.id)}">
+        <article class="promo${isEnded(c) ? " is-ended" : ""}" id="promo-${esc(c.id)}">
+          ${isEnded(c) ? endedBadge : ""}
           <div class="promo-img"><img src="${esc(c.img)}" alt="" loading="lazy"></div>
           <div class="promo-body">
             <p class="eyebrow">${esc(c.categories.map(cap).join(" · "))} · ${esc(period(c))}</p>
@@ -700,8 +708,8 @@
       render(b.dataset.filter);
     });
     const hashId = location.hash.startsWith("#promo-") ? location.hash.slice(7) : "";
-    const sameAsHtml = $$(".promo", list).map((x) => x.id).join() === liveCampaigns.map((c) => "promo-" + c.id).join();
-    if (!sameAsHtml || (hashId && !liveCampaigns.some((c) => c.id === hashId))) render("all");
+    const sameAsHtml = $$(".promo", list).map((x) => x.id).join() === shown.map((c) => "promo-" + c.id).join();
+    if (!sameAsHtml || (hashId && !shown.some((c) => c.id === hashId))) render("all");
     const jump = () => { if (location.hash.startsWith("#promo-")) { const el = document.getElementById(location.hash.slice(1)); if (el) el.scrollIntoView(); } };
     window.addEventListener("hashchange", () => { render("all"); jump(); });
     jump();
