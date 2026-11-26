@@ -745,7 +745,7 @@
       $("[data-cart-summary]").innerHTML = `
         <div class="sum-row main"><span>Subtotal produse calculabile</span><b>${lei(subtotal)}</b></div>
         ${freebies.length ? `<div class="sum-block"><h3>Gratuități (evidențiate separat)</h3><ul>${freebies.map((f) => `<li>${esc(f)} · 0 lei</li>`).join("")}</ul></div>` : ""}
-        ${toConfirm.length ? `<div class="sum-block"><h3>Poziții cu preț de confirmat</h3><ul>${toConfirm.map((f) => `<li>${esc(f)}</li>`).join("")}</ul></div>` : ""}
+        ${toConfirm.length ? `<div class="sum-block"><h3>Poziții cu disponibilitate de confirmat</h3><ul>${toConfirm.map((f) => `<li>${esc(f)}</li>`).join("")}</ul></div>` : ""}
         <div class="sum-row"><span>Transport</span><span>Se confirmă în oferta personalizată</span></div>
         <div class="sum-row"><span>Disponibilitate, programare și condiții finale</span><span>Se confirmă de echipa Absolvire.ro</span></div>`;
     };
@@ -805,7 +805,7 @@
       });
       f["Subtotal produse calculabile"] = lei(subtotal);
       if (freebies.length) f["Gratuități (0 lei)"] = freebies.map((x) => `• ${x}`).join("\n");
-      if (toConfirm.length) f["Poziții cu preț de confirmat"] = toConfirm.map((x) => `• ${x}`).join("\n");
+      if (toConfirm.length) f["Poziții cu disponibilitate de confirmat"] = toConfirm.map((x) => `• ${x}`).join("\n");
       f["Transport"] = "Se confirmă în oferta personalizată";
       f["Disponibilitate și programare"] = "Se confirmă de echipa Absolvire.ro";
       f["Notă"] = "Solicitarea este estimativă și nu constituie comandă fermă sau rezervare.";
