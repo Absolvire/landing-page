@@ -296,7 +296,9 @@ def faq_section(qa):
 ORG = {
     "@type": "Organization", "@id": f"{seo.SITE_URL}/#org", "name": seo.SITE_NAME, "url": f"{seo.SITE_URL}/",
     "logo": f"{seo.SITE_URL}/assets/img/logo-black.webp",
-    "description": "Albume de absolvire, vestimentație și servicii pentru festivitatea și balul de absolvire.",
+    "foundingDate": str(seo.FOUNDED),
+    "areaServed": {"@type": "Country", "name": "România"},
+    "description": f"Din {seo.FOUNDED}: albume de absolvire, vestimentație și servicii pentru festivitatea și balul de absolvire.",
 }
 def tel(p):
     return re.sub(r"[^\d+]", "", p or "")
@@ -578,7 +580,7 @@ o = data["outfit"]
 llms = [
     f"# {seo.SITE_NAME}",
     "",
-    "> Albume de absolvire cu selecție online a fotografiilor, vestimentație de absolvire (robă închiriată, pălărie, eșarfă, insignă sau cocardă, diplomă A4), fotografii pentru diplomă, servicii pentru festivitate și bal, diplome, medalii și decoruri. Clienții configurează produsele pe site și trimit o cerere de ofertă și disponibilitate; echipa confirmă oferta finală.",
+    f"> Absolvire.ro activează din {seo.FOUNDED}. Albume de absolvire cu selecție online a fotografiilor, vestimentație de absolvire (robă închiriată, pălărie, eșarfă, insignă sau cocardă, diplomă A4), fotografii pentru diplomă, servicii pentru festivitate și bal, diplome, medalii și decoruri. Clienții configurează produsele pe site și trimit o cerere de ofertă și disponibilitate; echipa confirmă oferta finală.",
     "",
     "Toate prețurile sunt în lei (RON) și sunt prețuri de referință; transportul, disponibilitatea și programarea se confirmă în oferta personalizată. Trimiterea cererii nu este comandă fermă.",
     "",

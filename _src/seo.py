@@ -14,6 +14,7 @@ import os
 SITE_URL = (os.environ.get("SITE_URL") or "https://www.absolvire.ro").rstrip("/")
 SITE_NAME = "Absolvire.ro"
 LOCALE = "ro_RO"
+FOUNDED = 2002  # anul de la care activează Absolvire.ro (foundingDate în JSON-LD, texte, llms.txt)
 LEGAL_UPDATED = "26 noiembrie 2026"  # data afișată pe paginile legale; schimb-o când modifici textele
 
 HOME = ("Acasă", "index.html")
@@ -74,6 +75,8 @@ def faq(page, data, album=None):
 
     if page == "index":
         return [
+            ("De când activează Absolvire.ro?",
+             f"Absolvire.ro activează din {FOUNDED}. De peste 20 de ani pregătim albume, vestimentație și evenimente de absolvire pentru promoțiile de absolvenți din România."),
             ("Ce oferă Absolvire.ro?",
              "Albume de absolvire cu selecție online a fotografiilor, vestimentație de absolvire (robă închiriată, pălărie, eșarfă, insignă sau cocardă, diplomă), fotografii pentru diplomă, servicii pentru festivitate și bal, diplome, medalii și decoruri pentru parade — toate într-o singură cerere de ofertă."),
             ("Cât costă un album de absolvire?",

@@ -1,6 +1,6 @@
 # Ani de povești. *Amintiri în culorile voastre.*
 
-> Albume de absolvire cu selecție online a fotografiilor, robe și pălării personalizate, festivități și baluri. Configurează și cere oferta clasei.
+> Din 2002, albume de absolvire cu selecție online a fotografiilor, robe și pălării personalizate, festivități și baluri. Cere oferta clasei.
 
 Pagina: https://www.absolvire.ro/  
 Actualizat: 2026-11-26
@@ -9,7 +9,7 @@ Actualizat: 2026-11-26
 
 Promoția 2027
 
-Albume de absolvire, vestimentație și evenimente pentru generația voastră — într-o singură cerere de ofertă.
+Din 2002, albume de absolvire, vestimentație și evenimente pentru generația voastră — într-o singură cerere de ofertă.
 
 [Descoperă albumele](https://www.absolvire.ro/albume)  
 [Configurează vestimentația](https://www.absolvire.ro/vestimentatie)
@@ -141,6 +141,10 @@ Studioul mobil se organizează într-un spațiu interior potrivit, cu mai multe 
 Întrebări frecvente
 
 ## Pe scurt, ce trebuie să știți
+
+### De când activează Absolvire.ro?
+
+Absolvire.ro activează din 2002. De peste 20 de ani pregătim albume, vestimentație și evenimente de absolvire pentru promoțiile de absolvenți din România.
 
 ### Ce oferă Absolvire.ro?
 
