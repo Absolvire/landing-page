@@ -224,6 +224,7 @@ main > section ~ section, .cta-band { content-visibility: auto; contain-intrinsi
 .swatches-sm { grid-template-columns: repeat(auto-fill, minmax(54px, 1fr)); }
 .swatches-sm .sw-chip { width: 34px; height: 34px; }
 .qty-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; align-items: end; }
+.qty-row-2 { grid-template-columns: 1fr 1fr; }
 label { display: flex; flex-direction: column; gap: 6px; font-size: .82rem; font-weight: 500; color: #4a4139; }
 input[type=text], input[type=email], input[type=tel], input[type=number], input:not([type]), select, textarea { width: 100%; min-height: 44px; border: 1px solid #d8ccb6; border-radius: 8px; background: #fff; padding: .55em .75em; font-size: .95rem; }
 input[type=file] { font-size: .85rem; max-width: 100%; }
@@ -246,6 +247,7 @@ input.is-invalid, textarea.is-invalid { border-color: #b3261e; background: #fff6
 .est-row.quote b { font: 600 .95rem var(--sans); color: var(--gold-text); }
 .est-row.free { margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--line); }
 .est-row.free b { font-size: 1.05rem; color: var(--ok); }
+.est-hint { margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--line); }
 .promo-lines { margin-top: 24px; border-top: 1px solid var(--line); padding-top: 16px; }
 .promo-lines h2 { font-size: 1.05rem; margin-bottom: .6rem; }
 .promo-lines ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }

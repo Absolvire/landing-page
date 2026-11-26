@@ -140,7 +140,8 @@
   function lineState(it) {
     if (it.mode === "album") {
       const ok = it.qty >= it.threshold;
-      return { calc: ok ? it.qty * it.unitPrice : null, free: it.free || 0, label: ok ? lei(it.qty * it.unitPrice) : "Ofertă personalizată pentru această cantitate" };
+      const free = it.qty >= (it.bonusMin || C.albumBonusMinQty) ? 1 : 0; // 1 exemplar gratuit, calculat din cantitatea plătită
+      return { calc: ok ? it.qty * it.unitPrice : null, free, label: ok ? lei(it.qty * it.unitPrice) : "Ofertă personalizată pentru această cantitate" };
     }
     if (it.mode === "fixed") {
       const free = it.bonusMin && it.qty >= it.bonusMin ? 1 : 0;
@@ -379,24 +380,26 @@
       st.view = parseInt(v.dataset.view, 10); render();
       root.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
     });
-    const qtyIn = $("[data-album-qty]"), freeIn = $("[data-album-free]");
-    [qtyIn, freeIn].forEach((i) => i.addEventListener("input", renderEstimate));
+    const qtyIn = $("[data-album-qty]");
+    qtyIn.addEventListener("input", renderEstimate);
     function renderEstimate() {
-      const qty = clampInt(qtyIn.value, 1), free = clampInt(freeIn.value, 0);
+      const qty = clampInt(qtyIn.value, 1), free = qty >= C.albumBonusMinQty ? 1 : 0;
       const ok = qty >= C.albumMinQty;
       $("[data-album-estimate]").innerHTML = (ok
         ? `<div class="est-row"><span>${qty} albume × ${lei(m.price)}</span><b>${lei(qty * m.price)}</b></div><p class="micro">Valoare estimată, cu ședința foto aferentă modelului inclusă.</p>`
         : `<div class="est-row quote"><span>Ofertă personalizată pentru această cantitate</span><b>Preț de confirmat</b></div><p class="micro">Modelul și opțiunile se păstrează; cererea se trimite normal.</p>`)
-        + (free ? `<div class="est-row free"><span>+ ${free} ${free === 1 ? "exemplar gratuit" : "exemplare gratuite"}</span><b>0 lei</b></div><p class="micro">Exemplarele gratuite nu contribuie la pragul de ${C.albumMinQty} albume contra cost.</p>` : "");
+        + (free
+          ? `<div class="est-row free"><span>+ 1 exemplar gratuit</span><b>0 lei</b></div><p class="micro">Bonus acordat de la ${C.albumBonusMinQty} albume contra cost; nu contribuie la prag.</p>`
+          : `<p class="micro est-hint">De la ${C.albumBonusMinQty} albume contra cost, clasa primește 1 exemplar gratuit.</p>`);
     }
     $("[data-album-add]").addEventListener("click", () => {
-      const qty = clampInt(qtyIn.value, 1), free = clampInt(freeIn.value, 0);
+      const qty = clampInt(qtyIn.value, 1);
       const cls = $("[data-album-class]").value.trim();
       const details = [`${m.size} · ${m.cover.toLowerCase()} · ${m.photos}`];
       if (st.opt1) details.push(`${m.optionLabel}: ${st.opt1.name}${st.opt1.code ? " (cod " + st.opt1.code + ")" : ""}`);
       if (st.opt2) details.push(`${m.option2Label}: ${st.opt2.name}`);
       if (cls) details.push(`Clasa: ${cls}`);
-      addToCart({ kind: "album", cat: "Albume", title: `Album ${m.name}`, details, qty, free, unitPrice: m.price, unit: "album", mode: "album", threshold: C.albumMinQty });
+      addToCart({ kind: "album", cat: "Albume", title: `Album ${m.name}`, details, qty, unitPrice: m.price, unit: "album", mode: "album", threshold: C.albumMinQty, bonusMin: C.albumBonusMinQty });
     });
     render();
   })();

@@ -125,9 +125,9 @@ Prețurile de referință per elev sunt: Economy 120 lei, Velvet 200 lei, Deluxe
 
 Modelul și opțiunile alese se păstrează, iar cererea se trimite normal; prețul se stabilește printr-o ofertă personalizată pentru cantitatea respectivă.
 
-### Exemplarele gratuite intră în pragul minim?
+### Primim exemplare gratuite?
 
-Nu. Exemplarele gratuite apar separat și nu contribuie la pragul de 15 albume contra cost.
+Da, un singur exemplar gratuit, de la 15 albume contra cost. Exemplarul gratuit apare separat și nu contribuie la pragul de 15 albume contra cost.
 
 ### Fiecare elev are un album diferit?
 

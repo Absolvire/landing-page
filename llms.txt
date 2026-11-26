@@ -7,7 +7,7 @@ Toate prețurile sunt în lei (RON) și sunt prețuri de referință; transportu
 Linkurile de mai jos duc la versiunea Markdown a fiecărei pagini; pagina HTML are aceeași adresă fără „.md” (ex. https://www.absolvire.ro/albume; prima pagină: https://www.absolvire.ro/).
 
 ## Albume de absolvire
-Prețuri per elev pentru minimum 15 albume contra cost, cu ședința foto inclusă; sub prag, ofertă personalizată.
+Prețuri per elev pentru minimum 15 albume contra cost, cu ședința foto inclusă; sub prag, ofertă personalizată. De la 15 albume contra cost, 1 exemplar gratuit.
 - [Economy](https://www.absolvire.ro/album-economy.md): 120 lei/elev — A4, copertă tip revistă, pagini flexibile capsate, 1 fotografie / elev.
 - [Velvet](https://www.absolvire.ro/album-velvet.md): 200 lei/elev — 20 × 20 cm, copertă de catifea cu fundă, pagini flexibile broșate, 2 fotografii / elev.
 - [Deluxe](https://www.absolvire.ro/album-deluxe.md): 230 lei/elev — A4, copertă rigidă din catifea, pagini flexibile broșate, portret și semigrup.
@@ -44,7 +44,7 @@ Cererile de ofertă se trimit din site (pagina [Cererea mea](https://www.absolvi
 - **Cum își aleg elevii fotografiile pentru album?** După ședința foto, fiecare elev primește acces individual la platforma online cu fotografiile sale și își alege imaginile pentru pagina sa din album, de pe telefon sau calculator.
 - **Trimiterea cererii este o comandă fermă?** Nu. Cererea de ofertă și disponibilitate nu constituie comandă fermă sau rezervare. Echipa Absolvire.ro analizează solicitarea și confirmă oferta, disponibilitatea, programarea și livrarea.
 - **Ce se întâmplă dacă clasa comandă mai puțin de 15 albume?** Modelul și opțiunile alese se păstrează, iar cererea se trimite normal; prețul se stabilește printr-o ofertă personalizată pentru cantitatea respectivă.
-- **Exemplarele gratuite intră în pragul minim?** Nu. Exemplarele gratuite apar separat și nu contribuie la pragul de 15 albume contra cost.
+- **Primim exemplare gratuite?** Da, un singur exemplar gratuit, de la 15 albume contra cost. Exemplarul gratuit apare separat și nu contribuie la pragul de 15 albume contra cost.
 - **Fiecare elev are un album diferit?** Nu. Toate exemplarele albumului clasei au același conținut; fiecare elev își alege fotografiile pentru pagina sa, iar paginile tuturor elevilor sunt reunite în albumul comun.
 - **Primim și o variantă electronică a albumului?** Da. Pe lângă albumul fizic, prezentarea ofertei include și varianta electronică (PDF) a albumului.
 - **Cât costă albumul Economy?** Prețul de referință este 120 lei per elev, pentru minimum 15 albume contra cost, cu ședința foto aferentă modelului inclusă. Sub prag, oferta se personalizează.
