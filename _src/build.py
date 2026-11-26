@@ -587,7 +587,7 @@ llms = [
     f"Linkurile de mai jos duc la versiunea Markdown a fiecărei pagini; pagina HTML are aceeași adresă fără „.md” (ex. {absu('albume.html')}; prima pagină: {absu('index.html')}).",
     "",
     "## Albume de absolvire",
-    f"Prețuri per elev pentru minimum {C['albumMinQty']} albume contra cost, cu ședința foto inclusă; sub prag, ofertă personalizată. De la {C['albumBonusMinQty']} albume contra cost, 1 exemplar gratuit.",
+    f"Prețuri per elev pentru minimum {C['albumMinQty']} albume contra cost, cu ședința foto inclusă; sub prag, ofertă personalizată. De la {C['albumBonusMinQty']} albume plătite, 1 album gratuit pentru diriginte.",
 ]
 for a in data["albums"]:
     llms.append(f"- [{a['name']}]({mdu('album-' + a['id'] + '.html')}): {lei(a['price'])}/elev — {a['size']}, {a['cover'].lower()}, {a['binding'].lower()}, {a['photos'].lower()}.")

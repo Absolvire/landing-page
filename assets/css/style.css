@@ -247,7 +247,6 @@ input.is-invalid, textarea.is-invalid { border-color: #b3261e; background: #fff6
 .est-row.quote b { font: 600 .95rem var(--sans); color: var(--gold-text); }
 .est-row.free { margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--line); }
 .est-row.free b { font-size: 1.05rem; color: var(--ok); }
-.est-hint { margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--line); }
 .promo-lines { margin-top: 24px; border-top: 1px solid var(--line); padding-top: 16px; }
 .promo-lines h2 { font-size: 1.05rem; margin-bottom: .6rem; }
 .promo-lines ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }

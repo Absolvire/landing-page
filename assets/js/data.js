@@ -13,7 +13,7 @@ window.ABS = {
   config: {
     promoYear: 2027, // anul promoției afișat implicit (nu e constantă în cod)
     albumMinQty: 15, // pragul de albume contra cost pentru estimare (secțiunea 4)
-    albumBonusMinQty: 15, // albume plătite de la care clasa primește 1 exemplar gratuit
+    albumBonusMinQty: 15, // albume plătite de la care clasa primește 1 album gratuit pentru diriginte
     outfitBonusMinQty: 15, // pachete plătite pentru bonusul dirigintelui (secțiunile 5, 21)
     carouselInterval: 6500, // rotația caruselului (ms)
     // Trimiterea cererii: Web3Forms (formularul trimite pe email un tabel ASCII cu comanda).

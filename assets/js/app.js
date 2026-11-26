@@ -140,7 +140,7 @@
   function lineState(it) {
     if (it.mode === "album") {
       const ok = it.qty >= it.threshold;
-      const free = it.qty >= (it.bonusMin || C.albumBonusMinQty) ? 1 : 0; // 1 exemplar gratuit, calculat din cantitatea plătită
+      const free = it.qty >= (it.bonusMin || C.albumBonusMinQty) ? 1 : 0; // 1 album gratuit pentru diriginte, calculat din cantitatea plătită
       return { calc: ok ? it.qty * it.unitPrice : null, free, label: ok ? lei(it.qty * it.unitPrice) : "Ofertă personalizată pentru această cantitate" };
     }
     if (it.mode === "fixed") {
@@ -151,8 +151,10 @@
     if (it.mode === "estimate") return { calc: null, label: `estimativ ${lei(it.unitPrice)} / ${it.unit} (≈ ${lei(it.unitPrice * it.qty)})` };
     return { calc: null, label: "Preț de confirmat" };
   }
+  // Caseta „Bonus pentru diriginte” (ținută și albume): 1 bucată gratuită de la pragul de bucăți plătite.
+  const bonusBox = (title, sub) => `<div class="pb-bonus"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11h16v9H4zM3 7h18v4H3zM12 7v13M12 7c-2-4-6-4-6-1s6 1 6 1Zm0 0c2-4 6-4 6-1s-6 1-6 1Z"/></svg><div><b>${title}</b><small>${sub}</small></div><span>0 lei</span></div>`;
   function freeLabel(it, n) {
-    if (it.kind === "album") return n === 1 ? "exemplar gratuit" : "exemplare gratuite";
+    if (it.kind === "album") return "album pentru diriginte";
     return it.freeLabel || "gratuit";
   }
 
@@ -389,8 +391,8 @@
         ? `<div class="est-row"><span>${qty} albume × ${lei(m.price)}</span><b>${lei(qty * m.price)}</b></div><p class="micro">Valoare estimată, cu ședința foto aferentă modelului inclusă.</p>`
         : `<div class="est-row quote"><span>Ofertă personalizată pentru această cantitate</span><b>Preț de confirmat</b></div><p class="micro">Modelul și opțiunile se păstrează; cererea se trimite normal.</p>`)
         + (free
-          ? `<div class="est-row free"><span>+ 1 exemplar gratuit</span><b>0 lei</b></div><p class="micro">Bonus acordat de la ${C.albumBonusMinQty} albume contra cost; nu contribuie la prag.</p>`
-          : `<p class="micro est-hint">De la ${C.albumBonusMinQty} albume contra cost, clasa primește 1 exemplar gratuit.</p>`);
+          ? bonusBox("Bonus: 1 album pentru diriginte", `${qty} albume plătite + 1 album gratuit`)
+          : `<p class="pb-hint">Bonus pentru diriginte de la ${C.albumBonusMinQty} albume plătite.</p>`);
     }
     $("[data-album-add]").addEventListener("click", () => {
       const qty = clampInt(qtyIn.value, 1);
@@ -458,7 +460,7 @@
       $("[data-o-price]").innerHTML = priceBox(lines, st.cap === "individual" ? "Subtotal cunoscut" : "Total estimat", `${qty} pachete plătite`, `${unit} lei / pachet`, lei(unit * qty))
         + (st.cap === "individual" ? `<p class="pb-pending">Design individual pe pălărie: <b>preț de confirmat</b> — se adaugă separat în ofertă.</p>` : "")
         + `<p class="pb-dip">Diploma A4 este inclusă în preț.</p>`
-        + (bonus ? `<div class="pb-bonus"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11h16v9H4zM3 7h18v4H3zM12 7v13M12 7c-2-4-6-4-6-1s6 1 6 1Zm0 0c2-4 6-4 6-1s-6 1-6 1Z"/></svg><div><b>Bonus: 1 pachet pentru diriginte</b><small>${qty} pachete plătite + 1 pachet gratuit</small></div><span>0 lei</span></div>`
+        + (bonus ? bonusBox("Bonus: 1 pachet pentru diriginte", `${qty} pachete plătite + 1 pachet gratuit`)
           : `<p class="pb-hint">Bonus pentru diriginte de la ${C.outfitBonusMinQty} pachete plătite.</p>`);
       $("[data-o-summary]").innerHTML = `<b>Alegerea voastră:</b> Robă ${esc(st.robe.name.toLowerCase())} · Eșarfă ${esc(st.scarf.name.toLowerCase())} (imprimare ${printWord(st.scarf)}) · ${st.badge === "cocarda" ? `Cocardă cu rozetă ${esc(st.rosette.name.toLowerCase())}` : "Insignă"} · Pălărie ${esc(st.robe.name.toLowerCase())} cu panglică ${esc(st.scarf.name.toLowerCase())}${st.cap === "common" ? ", design comun" : st.cap === "individual" ? ", design individual" : ""} · ${st.diploma === "catifea" ? "Diplomă pe catifea" : "Diplomă A4 inclusă"}`;
       return { qty, unit };
