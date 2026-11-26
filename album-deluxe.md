@@ -2,7 +2,7 @@
 
 > Albumul Deluxe: Copertă rigidă din catifea, Pagini flexibile broșate, Portret și semigrup. Configurează coperta și cere oferta pentru clasa ta.
 
-Pagina: https://www.absolvire.ro/album-deluxe.html  
+Pagina: https://www.absolvire.ro/album-deluxe  
 Actualizat: 2026-11-26
 
 ![Album Deluxe — Coperta](https://www.absolvire.ro/assets/img/deluxe-negru.webp)
@@ -55,7 +55,7 @@ Linkul către platforma foto și datele de acces le primiți după ședința fot
 
 Studioul mobil se organizează într-un spațiu interior potrivit, cu mai multe clase programate consecutiv, fundaluri și accesorii tematice. Ședința de primăvară completează experiența cu alte cadre și locații convenite — inclusiv fotografii de grup în robe.
 
-[Vezi promoțiile](https://www.absolvire.ro/promotii.html)
+[Vezi promoțiile](https://www.absolvire.ro/promotii)
 
 Întrebări frecvente
 

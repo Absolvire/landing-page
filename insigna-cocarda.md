@@ -2,14 +2,14 @@
 
 > Insignă personalizată (5 lei/buc.) sau cocardă cu rozetă textilă (15 lei/buc.), cu denumirea, sigla instituției și anul promoției.
 
-Pagina: https://www.absolvire.ro/insigna-cocarda.html  
+Pagina: https://www.absolvire.ro/insigna-cocarda  
 Actualizat: 2026-11-26
 
 Un detaliu de distincție pentru fiecare absolvent.
 
 Insigna centrală este aceeași; cocarda o decorează cu rozetă și panglici textile.
 
-[Vezi ținuta completă](https://www.absolvire.ro/vestimentatie.html)
+[Vezi ținuta completă](https://www.absolvire.ro/vestimentatie)
 
 ## Completează alegerea voastră
 
@@ -19,7 +19,7 @@ Insigna centrală este aceeași; cocarda o decorează cu rozetă și panglici te
 
 Medalii aurii de 7 cm, inscripționate, cu șnur.
 
-[Vezi produsul](https://www.absolvire.ro/premiere.html)
+[Vezi produsul](https://www.absolvire.ro/premiere)
 
 ![Diplomă cu suport de catifea](https://www.absolvire.ro/assets/img/diploma-mapa.webp)
 
@@ -27,7 +27,7 @@ Medalii aurii de 7 cm, inscripționate, cu șnur.
 
 Varianta festivă a diplomei de absolvire.
 
-[Vezi produsul](https://www.absolvire.ro/premiere.html)
+[Vezi produsul](https://www.absolvire.ro/premiere)
 
 ![Plachetă pentru diriginte](https://www.absolvire.ro/assets/img/diploma-prof.webp)
 
@@ -35,7 +35,7 @@ Varianta festivă a diplomei de absolvire.
 
 Un gest de apreciere pentru cei care v-au îndrumat.
 
-[Vezi produsul](https://www.absolvire.ro/premiere.html)
+[Vezi produsul](https://www.absolvire.ro/premiere)
 
 Întrebări frecvente
 

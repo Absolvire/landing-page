@@ -2,7 +2,7 @@
 
 > Seturi de fotografii tip ID pentru diplomă (20 și 30 lei/set) și fotografiere și filmare pentru festivitatea de absolvire, de la 1.500 lei/eveniment.
 
-Pagina: https://www.absolvire.ro/foto-video.html  
+Pagina: https://www.absolvire.ro/foto-video  
 Actualizat: 2026-11-26
 
 Foto și video
@@ -23,7 +23,7 @@ Fotograf și cameraman pentru festivitate, cu livrabile digitale. Prețul se con
 - Fotografiere festivitate — de la 1.500 lei / eveniment
 - Filmarea festivității — de la 1.500 lei / eveniment
 
-[Foto și video pentru banchet](https://www.absolvire.ro/banchete.html)
+[Foto și video pentru banchet](https://www.absolvire.ro/banchete)
 
 ![Absolvenți fotografiați la photo wall-ul Absolvire.ro](https://www.absolvire.ro/assets/img/photo-wall.webp)
 
@@ -33,7 +33,7 @@ Fotograf și cameraman pentru festivitate, cu livrabile digitale. Prețul se con
 
 Ședința foto aferentă albumului este inclusă în prețul modelului. După ședință, fiecare elev își alege fotografiile online, pentru pagina sa.
 
-[Vezi albumele](https://www.absolvire.ro/albume.html)
+[Vezi albumele](https://www.absolvire.ro/albume)
 
 Întrebări frecvente
 

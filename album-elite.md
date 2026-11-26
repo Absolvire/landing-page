@@ -2,7 +2,7 @@
 
 > Albumul Elite: Catifea cu inserție personalizată, Pagini lay-flat, Pagină proprie cu 3 fotografii. Configurează coperta și cere oferta pentru clasa ta.
 
-Pagina: https://www.absolvire.ro/album-elite.html  
+Pagina: https://www.absolvire.ro/album-elite  
 Actualizat: 2026-11-26
 
 ![Album Elite — Coperta](https://www.absolvire.ro/assets/img/elite-bej.webp)
@@ -54,7 +54,7 @@ Linkul către platforma foto și datele de acces le primiți după ședința fot
 
 Studioul mobil se organizează într-un spațiu interior potrivit, cu mai multe clase programate consecutiv, fundaluri și accesorii tematice. Ședința de primăvară completează experiența cu alte cadre și locații convenite — inclusiv fotografii de grup în robe.
 
-[Vezi promoțiile](https://www.absolvire.ro/promotii.html)
+[Vezi promoțiile](https://www.absolvire.ro/promotii)
 
 Întrebări frecvente
 

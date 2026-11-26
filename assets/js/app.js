@@ -119,7 +119,7 @@
   function promoLines(box, list) {
     if (!box) return;
     box.hidden = !list.length;
-    $("ul", box).innerHTML = list.map((c) => `<li><strong>${esc(c.title)}</strong> — ${esc(c.short)} <a href="promotii.html#promo-${esc(c.id)}">Vezi detalii →</a></li>`).join("");
+    $("ul", box).innerHTML = list.map((c) => `<li><strong>${esc(c.title)}</strong> — ${esc(c.short)} <a href="promotii#promo-${esc(c.id)}">Vezi detalii →</a></li>`).join("");
   }
   $$("[data-promo-lines]").forEach((box) => promoLines(box, liveCampaigns.filter((c) => c.categories.includes(box.dataset.promoLines))));
 
@@ -158,7 +158,7 @@
   const toastEl = $("[data-toast]");
   let toastT;
   function toast(msg, withLink) {
-    toastEl.innerHTML = `<span>${esc(msg)}</span>${withLink ? `<a href="cerere.html">Vezi cererea</a>` : ""}`;
+    toastEl.innerHTML = `<span>${esc(msg)}</span>${withLink ? `<a href="cerere">Vezi cererea</a>` : ""}`;
     toastEl.hidden = false;
     requestAnimationFrame(() => toastEl.classList.add("is-on"));
     clearTimeout(toastT);
@@ -220,7 +220,7 @@
           <p class="eyebrow">Promoție · ${esc(c.categories.map(cap).join(" · "))}</p>
           <h2 class="slide-title">${esc(c.title)}<em>${esc(c.slogan)}</em></h2>
           <p class="slide-lead">${esc(c.short)}</p>
-          <div class="slide-cta"><a class="btn btn-primary" href="promotii.html#promo-${esc(c.id)}">Descoperă promoția <span aria-hidden="true">→</span></a></div>
+          <div class="slide-cta"><a class="btn btn-primary" href="promotii#promo-${esc(c.id)}">Descoperă promoția <span aria-hidden="true">→</span></a></div>
         </div>`;
       track.appendChild(art);
     });
@@ -708,7 +708,7 @@
     const box = $("[data-cart-items]"), form = $("[data-request-form]"), grid = $(".request-grid", root);
     renderCart = function () {
       if (!cart.length) {
-        if (!$(".cart-empty", box)) box.innerHTML = `<div class="cart-empty card"><img src="assets/img/lauri.webp" alt=""><h2>Cererea ta este goală.</h2><p>Adaugă albume, vestimentație sau servicii — selecțiile se păstrează în acest browser, fără cont.</p><div class="btn-row center"><a class="btn btn-primary" href="albume.html">Vezi albumele</a><a class="btn btn-outline" href="vestimentatie.html">Configurează vestimentația</a></div></div>`;
+        if (!$(".cart-empty", box)) box.innerHTML = `<div class="cart-empty card"><img src="assets/img/lauri.webp" alt=""><h2>Cererea ta este goală.</h2><p>Adaugă albume, vestimentație sau servicii — selecțiile se păstrează în acest browser, fără cont.</p><div class="btn-row center"><a class="btn btn-primary" href="albume">Vezi albumele</a><a class="btn btn-outline" href="vestimentatie">Configurează vestimentația</a></div></div>`;
         $(".request-side", root).hidden = true;
         grid.classList.add("is-empty");
         return;
@@ -856,7 +856,7 @@
         <p>${delivered ? "Echipa Absolvire.ro analizează solicitarea și revine cu oferta, disponibilitatea, programarea și livrarea." : "Cererea a fost salvată, dar notificarea nu a putut fi transmisă. Poți încerca din nou."}</p>
         ${C.submitEndpoint ? "" : `<p class="micro demo">Versiune statică: cererea este salvată în acest browser. Setează <code>submitEndpoint</code> în <code>data.js</code> pentru trimitere reală.</p>`}
         ${!delivered ? `<button class="btn btn-primary" type="button" data-retry>Retrimite cererea</button>` : ""}</div>
-        <h2 class="h3-serif">Recapitulare</h2><div class="request-grid"><div><div class="recap">${recap}</div></div><aside class="request-side"><div class="cart-summary">${summary}</div><a class="btn btn-outline btn-block" href="index.html">Înapoi la prima pagină</a></aside></div>`;
+        <h2 class="h3-serif">Recapitulare</h2><div class="request-grid"><div><div class="recap">${recap}</div></div><aside class="request-side"><div class="cart-summary">${summary}</div><a class="btn btn-outline btn-block" href="/">Înapoi la prima pagină</a></aside></div>`;
       $$(".ci-actions", sent).forEach((x) => x.remove());
       $("[data-cart-view]").hidden = true; sent.hidden = false;
       window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });

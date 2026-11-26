@@ -4,7 +4,7 @@
 
 Toate prețurile sunt în lei (RON) și sunt prețuri de referință; transportul, disponibilitatea și programarea se confirmă în oferta personalizată. Trimiterea cererii nu este comandă fermă.
 
-Linkurile de mai jos duc la versiunea Markdown a fiecărei pagini; pagina HTML are aceeași adresă cu „.html” în loc de „.md” (prima pagină: https://www.absolvire.ro/).
+Linkurile de mai jos duc la versiunea Markdown a fiecărei pagini; pagina HTML are aceeași adresă fără „.md” (ex. https://www.absolvire.ro/albume; prima pagină: https://www.absolvire.ro/).
 
 ## Albume de absolvire
 Prețuri per elev pentru minimum 15 albume contra cost, cu ședința foto inclusă; sub prag, ofertă personalizată.

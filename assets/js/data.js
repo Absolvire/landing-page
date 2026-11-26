@@ -222,13 +222,13 @@ window.ABS = {
 
   /* ---------------- Recomandări (secțiunea 23) ---------------- */
   recos: {
-    "palarie": { title: "Pălărie cu panglică asortată", text: "În culorile eșarfei, cu ciucure și medalionul anului.", img: "assets/img/palarie-visiniu.webp", href: "palarie.html", cta: "Configurează" },
-    "esarfa": { title: "Eșarfă asortată", text: "Personalizată cu instituția și promoția.", img: "assets/img/esarfa-alba.webp", tint: true, href: "esarfa.html", cta: "Configurează" },
-    "insigna": { title: "Insignă sau cocardă", text: "Un detaliu de distincție pentru fiecare absolvent.", img: "assets/img/cocarda-visiniu.webp", href: "insigna-cocarda.html", cta: "Configurează" },
-    "diploma-a4": { title: "Diplomă standard A4", text: "Model clasic, personalizat cu numele elevului.", img: "assets/img/diploma-a4.webp", href: "premiere.html", cta: "Vezi produsul" },
-    "diploma-catifea": { title: "Diplomă cu suport de catifea", text: "Varianta festivă a diplomei de absolvire.", img: "assets/img/diploma-mapa.webp", href: "premiere.html", cta: "Vezi produsul" },
-    "medalii": { title: "Medalii pentru premiere", text: "Medalii aurii de 7 cm, inscripționate, cu șnur.", img: "assets/img/lauri.webp", href: "premiere.html", cta: "Vezi produsul" },
-    "placheta": { title: "Plachetă pentru diriginte", text: "Un gest de apreciere pentru cei care v-au îndrumat.", img: "assets/img/diploma-prof.webp", href: "premiere.html", cta: "Vezi produsul" },
+    "palarie": { title: "Pălărie cu panglică asortată", text: "În culorile eșarfei, cu ciucure și medalionul anului.", img: "assets/img/palarie-visiniu.webp", href: "palarie", cta: "Configurează" },
+    "esarfa": { title: "Eșarfă asortată", text: "Personalizată cu instituția și promoția.", img: "assets/img/esarfa-alba.webp", tint: true, href: "esarfa", cta: "Configurează" },
+    "insigna": { title: "Insignă sau cocardă", text: "Un detaliu de distincție pentru fiecare absolvent.", img: "assets/img/cocarda-visiniu.webp", href: "insigna-cocarda", cta: "Configurează" },
+    "diploma-a4": { title: "Diplomă standard A4", text: "Model clasic, personalizat cu numele elevului.", img: "assets/img/diploma-a4.webp", href: "premiere", cta: "Vezi produsul" },
+    "diploma-catifea": { title: "Diplomă cu suport de catifea", text: "Varianta festivă a diplomei de absolvire.", img: "assets/img/diploma-mapa.webp", href: "premiere", cta: "Vezi produsul" },
+    "medalii": { title: "Medalii pentru premiere", text: "Medalii aurii de 7 cm, inscripționate, cu șnur.", img: "assets/img/lauri.webp", href: "premiere", cta: "Vezi produsul" },
+    "placheta": { title: "Plachetă pentru diriginte", text: "Un gest de apreciere pentru cei care v-au îndrumat.", img: "assets/img/diploma-prof.webp", href: "premiere", cta: "Vezi produsul" },
   },
   recoSets: {
     outfit: ["medalii", "diploma-catifea", "placheta"],
@@ -316,7 +316,7 @@ window.ABS = {
         "Programare comună într-un spațiu interior confirmat.",
         "Beneficiile se acordă claselor eligibile participante, după confirmarea echipei.",
       ],
-      buttons: [{ label: "Vezi albumele", href: "albume.html" }],
+      buttons: [{ label: "Vezi albumele", href: "albume" }],
     },
     {
       id: "impreuna-in-album",
@@ -336,7 +336,7 @@ window.ABS = {
         "Unanimitate: toate clasele promoției comandă albume — fie 2, fie 8 clase.",
         "Componența promoției și îndeplinirea condiției sunt validate de echipă.",
       ],
-      buttons: [{ label: "Vezi albumele", href: "albume.html" }],
+      buttons: [{ label: "Vezi albumele", href: "albume" }],
     },
     {
       id: "fidelitate",
@@ -358,8 +358,8 @@ window.ABS = {
         "Numărul elevilor comuni se înregistrează explicit și se verifică de echipă.",
       ],
       buttons: [
-        { label: "Vezi albumele", href: "albume.html" },
-        { label: "Vezi robele", href: "vestimentatie.html" },
+        { label: "Vezi albumele", href: "albume" },
+        { label: "Vezi robele", href: "vestimentatie" },
       ],
     },
     {
@@ -374,7 +374,7 @@ window.ABS = {
       img: "assets/img/palarie-visiniu-pers.webp",
       benefits: ["Personalizarea tocii sau o altă variantă aleasă de clasă."],
       conditions: ["Condițiile se stabilesc de echipa Absolvire.ro la activare."],
-      buttons: [{ label: "Vezi robele", href: "vestimentatie.html" }],
+      buttons: [{ label: "Vezi robele", href: "vestimentatie" }],
     },
     {
       id: "impreuna-la-festivitate",
@@ -388,7 +388,7 @@ window.ABS = {
       img: "assets/img/diploma-prof.webp",
       benefits: ["Set colectiv de premiere; poate exista alegere între două sau mai multe seturi."],
       conditions: ["Conținutul și cantitățile sunt definite de Absolvire.ro."],
-      buttons: [{ label: "Vezi premierea", href: "premiere.html" }],
+      buttons: [{ label: "Vezi premierea", href: "premiere" }],
     },
   ],
 };

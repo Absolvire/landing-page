@@ -6,11 +6,23 @@ HTML + CSS + JavaScript simplu, fără framework.
 ## Rulare locală
 
 ```bash
-python3 -m http.server 8765 --directory landing-page
+python3 scripts/serve.py
 ```
 
-Apoi deschide http://localhost:8765. Rulează site-ul prin server, nu prin dublu-click pe fișier:
-eșarfa colorată folosește o mască CSS, iar browserele nu o încarcă de pe `file://`.
+Apoi deschide http://127.0.0.1:4174. Rulează site-ul prin acest server, nu prin dublu-click pe fișier
+și nici cu `python3 -m http.server`: linkurile site-ului nu au „.html” (`/albume`, nu `/albume.html`),
+iar `scripts/serve.py` le rezolvă la fel ca GitHub Pages (`/albume` → `albume.html`, `/` → `index.html`,
+adresele inexistente → `404.html`). În plus, eșarfa colorată folosește o mască CSS, pe care browserele
+nu o încarcă de pe `file://`.
+
+## Adrese (URL-uri)
+
+Fișierele rămân `<pagina>.html` în rădăcină, dar toate linkurile, adresele canonice, `sitemap.xml`,
+Open Graph, datele structurate și `llms.txt` folosesc adresa fără extensie: `https://www.absolvire.ro/albume`;
+prima pagină e `/`. GitHub Pages servește `/albume` din `albume.html`; vechea adresă `/albume.html`
+funcționează în continuare și are `canonical` spre `/albume`. În șabloane scrie linkurile fără „.html”
+(`href="albume"`, `href="promotii#promo-x"`, `href="/"`); `scripts/check_seo.py` oprește publicarea dacă
+un link intern are „.html”.
 
 ## Pagini
 

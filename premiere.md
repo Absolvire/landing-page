@@ -2,7 +2,7 @@
 
 > Diplome personalizate A4 și pe suport de catifea, diplome tip mapă cu fotografie, medalii, trofee, plachete și Cheia Succesului.
 
-Pagina: https://www.absolvire.ro/premiere.html  
+Pagina: https://www.absolvire.ro/premiere  
 Actualizat: 2026-11-26
 
 Premiere și diplome
@@ -36,7 +36,7 @@ Pentru profesori și diriginte
 
 Placheta în mapă de catifea se oferă inițial în negru, vișiniu și albastru, cu plachetă interioară personalizată și bănuț metalic exterior. Diploma de excelență în mapă de catifea are paleta proprie produsului.
 
-[Parade și decoruri](https://www.absolvire.ro/parade.html)
+[Parade și decoruri](https://www.absolvire.ro/parade)
 
 Întrebări frecvente
 

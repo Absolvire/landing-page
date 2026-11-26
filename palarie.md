@@ -2,7 +2,7 @@
 
 > Pălărie de absolvire cu bentiță colorată și ciucure cu anul promoției, 50 lei. Alege culoarea, panglica și designul capacului: comun +20 lei sau individual.
 
-Pagina: https://www.absolvire.ro/palarie.html  
+Pagina: https://www.absolvire.ro/palarie  
 Actualizat: 2026-11-26
 
 Toca ta. Designul tău.
@@ -12,7 +12,7 @@ Toca ta. Designul tău.
 - Bentiță satinată colorată și ciucure cu medalionul auriu al anului
 - Pălăria se cumpără separat, fără obligația de a alege robă sau eșarfă
 
-[Vezi ținuta completă](https://www.absolvire.ro/vestimentatie.html)
+[Vezi ținuta completă](https://www.absolvire.ro/vestimentatie)
 
 ## Completează alegerea voastră
 
@@ -22,7 +22,7 @@ Toca ta. Designul tău.
 
 Personalizată cu instituția și promoția.
 
-[Configurează](https://www.absolvire.ro/esarfa.html)
+[Configurează](https://www.absolvire.ro/esarfa)
 
 ![Medalii pentru premiere](https://www.absolvire.ro/assets/img/lauri.webp)
 
@@ -30,7 +30,7 @@ Personalizată cu instituția și promoția.
 
 Medalii aurii de 7 cm, inscripționate, cu șnur.
 
-[Vezi produsul](https://www.absolvire.ro/premiere.html)
+[Vezi produsul](https://www.absolvire.ro/premiere)
 
 ![Diplomă standard A4](https://www.absolvire.ro/assets/img/diploma-a4.webp)
 
@@ -38,7 +38,7 @@ Medalii aurii de 7 cm, inscripționate, cu șnur.
 
 Model clasic, personalizat cu numele elevului.
 
-[Vezi produsul](https://www.absolvire.ro/premiere.html)
+[Vezi produsul](https://www.absolvire.ro/premiere)
 
 ![Diplomă cu suport de catifea](https://www.absolvire.ro/assets/img/diploma-mapa.webp)
 
@@ -46,7 +46,7 @@ Model clasic, personalizat cu numele elevului.
 
 Varianta festivă a diplomei de absolvire.
 
-[Vezi produsul](https://www.absolvire.ro/premiere.html)
+[Vezi produsul](https://www.absolvire.ro/premiere)
 
 Întrebări frecvente
 

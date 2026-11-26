@@ -11,8 +11,8 @@ Promoția 2027
 
 Albume de absolvire, vestimentație și evenimente pentru generația voastră — într-o singură cerere de ofertă.
 
-[Descoperă albumele](https://www.absolvire.ro/albume.html)  
-[Configurează vestimentația](https://www.absolvire.ro/vestimentatie.html)
+[Descoperă albumele](https://www.absolvire.ro/albume)  
+[Configurează vestimentația](https://www.absolvire.ro/vestimentatie)
 
 ## Avantaje pe scurt
 
@@ -32,9 +32,9 @@ Albume de absolvire
 
 ## Albumul vostru începe cu o alegere.
 
-[Compară toate modelele](https://www.absolvire.ro/albume.html#compara)
+[Compară toate modelele](https://www.absolvire.ro/albume#compara)
 
-### [Economy](https://www.absolvire.ro/album-economy.html)
+### [Economy](https://www.absolvire.ro/album-economy)
 
 **120** lei / elev
 
@@ -42,9 +42,9 @@ Revista clasei: format A4, ușor de răsfoit, la cel mai bun preț.
 
 A4 · 1 fotografie / elev
 
-[Vezi detalii](https://www.absolvire.ro/album-economy.html)
+[Vezi detalii](https://www.absolvire.ro/album-economy)
 
-### [Velvet](https://www.absolvire.ro/album-velvet.html)
+### [Velvet](https://www.absolvire.ro/album-velvet)
 
 **200** lei / elev
 
@@ -52,9 +52,9 @@ Catifea elegantă, disponibilă în mai multe culori, cu fundă din satin.
 
 20 × 20 cm · 2 fotografii / elev
 
-[Vezi detalii](https://www.absolvire.ro/album-velvet.html)
+[Vezi detalii](https://www.absolvire.ro/album-velvet)
 
-### [Deluxe](https://www.absolvire.ro/album-deluxe.html)
+### [Deluxe](https://www.absolvire.ro/album-deluxe)
 
 **230** lei / elev
 
@@ -62,9 +62,9 @@ Catifea în cinci nuanțe, cu anul promoției imprimat auriu.
 
 A4 · Portret și semigrup
 
-[Vezi detalii](https://www.absolvire.ro/album-deluxe.html)
+[Vezi detalii](https://www.absolvire.ro/album-deluxe)
 
-### [Class](https://www.absolvire.ro/album-class.html)
+### [Class](https://www.absolvire.ro/album-class)
 
 **260** lei / elev
 
@@ -72,9 +72,9 @@ Copertă personalizată cu fotografia clasei și designul vostru.
 
 20 × 20 cm · 2 elevi / pagină
 
-[Vezi detalii](https://www.absolvire.ro/album-class.html)
+[Vezi detalii](https://www.absolvire.ro/album-class)
 
-### [Elite](https://www.absolvire.ro/album-elite.html)
+### [Elite](https://www.absolvire.ro/album-elite)
 
 **320** lei / elev
 
@@ -82,7 +82,7 @@ Catifea neagră și bandă marmorată în culoarea clasei.
 
 25 × 25 cm · Pagină proprie cu 3 fotografii
 
-[Vezi detalii](https://www.absolvire.ro/album-elite.html)
+[Vezi detalii](https://www.absolvire.ro/album-elite)
 
 Prețuri de referință pentru minimum **15** albume contra cost, cu ședința foto aferentă modelului inclusă.
 
@@ -98,7 +98,7 @@ Un design comun pentru întreaga clasă sau o creație diferită pentru fiecare 
 
 - **Design individual** Fiecare elev își încarcă fișierul în platformă — **preț de confirmat**.
 
-[Descoperă personalizarea](https://www.absolvire.ro/palarie.html)
+[Descoperă personalizarea](https://www.absolvire.ro/palarie)
 
 ![Pălărie neagră cu design comun al clasei](https://www.absolvire.ro/assets/img/palarie-negru-pers.webp)
 
@@ -130,13 +130,13 @@ Linkul către platforma foto și datele de acces le primiți după ședința fot
 
 Studioul mobil se organizează într-un spațiu interior potrivit, cu mai multe clase programate consecutiv, fundaluri și accesorii tematice. Ședința de primăvară completează experiența cu alte cadre și locații convenite — inclusiv fotografii de grup în robe.
 
-[Vezi promoțiile](https://www.absolvire.ro/promotii.html)
+[Vezi promoțiile](https://www.absolvire.ro/promotii)
 
-[Vestimentație în culorile clasei](https://www.absolvire.ro/vestimentatie.html)
+[Vestimentație în culorile clasei](https://www.absolvire.ro/vestimentatie)
 
-[Festivitatea de absolvire](https://www.absolvire.ro/festivitati.html)
+[Festivitatea de absolvire](https://www.absolvire.ro/festivitati)
 
-[Banchetul vostru](https://www.absolvire.ro/banchete.html)
+[Banchetul vostru](https://www.absolvire.ro/banchete)
 
 Întrebări frecvente
 

@@ -2,7 +2,7 @@
 
 > Servicii pentru festivitatea de absolvire: fotografie și filmare, decor cu baloane, sonorizare, scenă, scaune, photo wall, show de fumigene și prezentator.
 
-Pagina: https://www.absolvire.ro/festivitati.html  
+Pagina: https://www.absolvire.ro/festivitati  
 Actualizat: 2026-11-26
 
 ![Amenajare de festivitate cu photo wall Absolvire.ro, covor roșu și baloane](https://www.absolvire.ro/assets/img/photo-wall-2.webp)
@@ -30,9 +30,9 @@ Serviciile fără tarif automat apar cu „Preț la cerere”. Orașul și dispo
 - Scaune de închiriat pentru festivitate — Preț la cerere
 - Photo wall / photo corner tematic — Preț la cerere
 
-[**Vestimentație**Robe, pălării, eșarfe și cocarde în culorile clasei](https://www.absolvire.ro/vestimentatie.html)
+[**Vestimentație**Robe, pălării, eșarfe și cocarde în culorile clasei](https://www.absolvire.ro/vestimentatie)
 
-[**Premiere și diplome**Diplome, medalii, plachete și trofee](https://www.absolvire.ro/premiere.html)
+[**Premiere și diplome**Diplome, medalii, plachete și trofee](https://www.absolvire.ro/premiere)
 
 Întrebări frecvente
 

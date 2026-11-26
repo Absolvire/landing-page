@@ -2,7 +2,7 @@
 
 > Configurează ținuta clasei: robă închiriată, pălărie, eșarfă personalizată, insignă sau cocardă și diplomă A4 inclusă. 100 lei / pachet, bonus pentru diriginte.
 
-Pagina: https://www.absolvire.ro/vestimentatie.html  
+Pagina: https://www.absolvire.ro/vestimentatie  
 Actualizat: 2026-11-26
 
 Robă închiriată + pălărie + eșarfă + insignă + **diplomă A4**
@@ -27,7 +27,7 @@ Diploma A4 este inclusă în preț
 
 Medalii aurii de 7 cm, inscripționate, cu șnur.
 
-[Vezi produsul](https://www.absolvire.ro/premiere.html)
+[Vezi produsul](https://www.absolvire.ro/premiere)
 
 ![Diplomă cu suport de catifea](https://www.absolvire.ro/assets/img/diploma-mapa.webp)
 
@@ -35,7 +35,7 @@ Medalii aurii de 7 cm, inscripționate, cu șnur.
 
 Varianta festivă a diplomei de absolvire.
 
-[Vezi produsul](https://www.absolvire.ro/premiere.html)
+[Vezi produsul](https://www.absolvire.ro/premiere)
 
 ![Plachetă pentru diriginte](https://www.absolvire.ro/assets/img/diploma-prof.webp)
 
@@ -43,7 +43,7 @@ Varianta festivă a diplomei de absolvire.
 
 Un gest de apreciere pentru cei care v-au îndrumat.
 
-[Vezi produsul](https://www.absolvire.ro/premiere.html)
+[Vezi produsul](https://www.absolvire.ro/premiere)
 
 ## Ce include ținuta
 

@@ -2,7 +2,7 @@
 
 > Cum prelucrează Absolvire.ro datele transmise prin cererea de ofertă: ce date colectăm, de ce, cât timp le păstrăm, cui le transmitem și ce drepturi aveți.
 
-Pagina: https://www.absolvire.ro/politica-de-confidentialitate.html  
+Pagina: https://www.absolvire.ro/politica-de-confidentialitate  
 Actualizat: 2026-11-26
 
 Informații legale

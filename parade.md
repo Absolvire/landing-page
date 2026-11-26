@@ -2,7 +2,7 @@
 
 > Steaguri personalizate, pancarte, mini-bannere cu suport de lemn, panouri de promoție, litere și cifre luminoase și proiecte speciale de decor.
 
-Pagina: https://www.absolvire.ro/parade.html  
+Pagina: https://www.absolvire.ro/parade  
 Actualizat: 2026-11-26
 
 Parade și decoruri

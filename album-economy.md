@@ -2,7 +2,7 @@
 
 > Albumul Economy: Copertă tip revistă, Pagini flexibile capsate, 1 fotografie / elev. Configurează coperta și cere oferta pentru clasa ta.
 
-Pagina: https://www.absolvire.ro/album-economy.html  
+Pagina: https://www.absolvire.ro/album-economy  
 Actualizat: 2026-11-26
 
 ![Album Economy — Coperta](https://www.absolvire.ro/assets/img/economy-cover.webp)
@@ -53,7 +53,7 @@ Linkul către platforma foto și datele de acces le primiți după ședința fot
 
 Studioul mobil se organizează într-un spațiu interior potrivit, cu mai multe clase programate consecutiv, fundaluri și accesorii tematice. Ședința de primăvară completează experiența cu alte cadre și locații convenite — inclusiv fotografii de grup în robe.
 
-[Vezi promoțiile](https://www.absolvire.ro/promotii.html)
+[Vezi promoțiile](https://www.absolvire.ro/promotii)
 
 Întrebări frecvente
 

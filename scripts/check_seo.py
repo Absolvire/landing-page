@@ -91,7 +91,21 @@ def check():
                 u = urlsplit(a.get(k, ''))
                 if not a.get(k) or u.scheme or u.netloc:
                     continue
-                target = (f.parent / unquote(u.path)).resolve() if u.path else f
+                path = unquote(u.path)
+                if t == 'a':
+                    assert not path.endswith('.html'), (f, a[k], 'link intern cu .html: folosește adresa fără extensie')
+                # adrese ca pe GitHub Pages: / → index.html, /albume sau albume → albume.html, fișierele rămân fișiere
+                base = DIST if path.startswith('/') else f.parent
+                rel = path.lstrip('/')
+                if not path:
+                    target = f
+                elif not rel or rel.endswith('/'):
+                    target = base / rel / 'index.html'
+                elif '.' in rel.rsplit('/', 1)[-1]:
+                    target = base / rel
+                else:
+                    target = base / (rel + '.html')
+                target = target.resolve()
                 assert target.exists(), (f, a[k])
                 if u.fragment and target in parsed and not u.fragment.startswith('promo-'):
                     assert u.fragment in parsed[target].ids, (f, a[k])

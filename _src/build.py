@@ -105,7 +105,9 @@ def lei(n):
 
 
 def absu(path):
-    return f"{seo.SITE_URL}/{'' if path == 'index.html' else path}"
+    """Adresa publică a unei pagini, fără „.html” (GitHub Pages servește /albume din albume.html):
+    index.html → /, albume.html → /albume."""
+    return f"{seo.SITE_URL}/{'' if path == 'index.html' else path.removesuffix('.html')}"
 
 
 def md_name(path):
@@ -122,13 +124,13 @@ def mdu(path):
 def album_cards():
     return "".join(f"""
       <article class="album-card">
-        <a class="album-card-img" href="album-{e(a['id'])}.html" tabindex="-1" aria-hidden="true"><img src="{e(a['img'])}" alt="Album de absolvire {e(a['name'])}" loading="lazy"></a>
+        <a class="album-card-img" href="album-{e(a['id'])}" tabindex="-1" aria-hidden="true"><img src="{e(a['img'])}" alt="Album de absolvire {e(a['name'])}" loading="lazy"></a>
         <div class="album-card-body">
-          <h3><a href="album-{e(a['id'])}.html">{e(a['name'])}</a></h3>
+          <h3><a href="album-{e(a['id'])}">{e(a['name'])}</a></h3>
           <p class="price"><b>{fmt(a['price'])}</b> lei / elev</p>
           <p class="album-card-text">{e(a['short'])}</p>
           <p class="spec-line">{e(a['size'])} · {e(a['photos'])}</p>
-          <a class="btn btn-primary btn-sm" href="album-{e(a['id'])}.html">Vezi detalii <span aria-hidden="true">→</span></a>
+          <a class="btn btn-primary btn-sm" href="album-{e(a['id'])}">Vezi detalii <span aria-hidden="true">→</span></a>
         </div>
       </article>""" for a in data["albums"])
 
@@ -140,7 +142,7 @@ def compare_table():
         ("Dimensiune", lambda a: e(a["size"])), ("Copertă", lambda a: e(a["cover"])),
         ("Pagini", lambda a: e(a["binding"])), ("Fotografii", lambda a: e(a["photos"])),
         ("Distribuția elevilor", lambda a: e(a["layout"])),
-        ("", lambda a: f'<a class="btn btn-outline btn-sm" href="album-{e(a["id"])}.html">Configurează</a>'),
+        ("", lambda a: f'<a class="btn btn-outline btn-sm" href="album-{e(a["id"])}">Configurează</a>'),
     ]
     head = "<tr><th scope=\"col\"><span class=\"sr\">Caracteristică</span></th>" + "".join(
         f'<th scope="col"><img src="{e((a["options"][0].get("img") if a["options"] else None) or a["img"])}" alt="" loading="lazy">{e(a["name"])}</th>'
@@ -252,7 +254,7 @@ def promo_list():
 
 def model_tabs(current):
     on = ' aria-current="page" class="is-on"'
-    return "".join(f'<a href="album-{e(a["id"])}.html"{on if a["id"] == current else ""}>{e(a["name"])}</a>' for a in data["albums"])
+    return "".join(f'<a href="album-{e(a["id"])}"{on if a["id"] == current else ""}>{e(a["name"])}</a>' for a in data["albums"])
 
 
 def interior(a):
@@ -580,7 +582,7 @@ llms = [
     "",
     "Toate prețurile sunt în lei (RON) și sunt prețuri de referință; transportul, disponibilitatea și programarea se confirmă în oferta personalizată. Trimiterea cererii nu este comandă fermă.",
     "",
-    f"Linkurile de mai jos duc la versiunea Markdown a fiecărei pagini; pagina HTML are aceeași adresă cu „.html” în loc de „.md” (prima pagină: {absu('index.html')}).",
+    f"Linkurile de mai jos duc la versiunea Markdown a fiecărei pagini; pagina HTML are aceeași adresă fără „.md” (ex. {absu('albume.html')}; prima pagină: {absu('index.html')}).",
     "",
     "## Albume de absolvire",
     f"Prețuri per elev pentru minimum {C['albumMinQty']} albume contra cost, cu ședința foto inclusă; sub prag, ofertă personalizată.",

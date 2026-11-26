@@ -2,7 +2,7 @@
 
 > Ofertele active pentru promoția de absolvenți: beneficii, condiții și perioade, pentru albume, festivitate și banchet.
 
-Pagina: https://www.absolvire.ro/promotii.html  
+Pagina: https://www.absolvire.ro/promotii  
 Actualizat: 2026-11-26
 
 Promoții
@@ -32,7 +32,7 @@ Rezervați din toamnă, pozați de două ori.
 - Programare comună într-un spațiu interior confirmat.
 - Beneficiile se acordă claselor eligibile participante, după confirmarea echipei.
 
-[Vezi albumele →](https://www.absolvire.ro/albume.html)
+[Vezi albumele →](https://www.absolvire.ro/albume)
 
 Albume · 1 septembrie 2026 – 30 aprilie 2027
 
@@ -49,7 +49,7 @@ Toată promoția, un singur gând pentru profesori.
 - Unanimitate: toate clasele promoției comandă albume — fie 2, fie 8 clase.
 - Componența promoției și îndeplinirea condiției sunt validate de echipă.
 
-[Vezi albumele →](https://www.absolvire.ro/albume.html)
+[Vezi albumele →](https://www.absolvire.ro/albume)
 
 Albume · Festivitate · 1 septembrie 2026 – 31 mai 2027
 
@@ -67,8 +67,8 @@ Cine alege ambele, primește mai mult.
 - Exemplu: din 25 de elevi cu vestimentație, 20 comandă și album → 20 de seturi bonus.
 - Numărul elevilor comuni se înregistrează explicit și se verifică de echipă.
 
-[Vezi albumele →](https://www.absolvire.ro/albume.html)  
-[Vezi robele →](https://www.absolvire.ro/vestimentatie.html)
+[Vezi albumele →](https://www.absolvire.ro/albume)  
+[Vezi robele →](https://www.absolvire.ro/vestimentatie)
 
 Site-ul afișează beneficiul posibil pe baza informațiilor introduse. Eligibilitatea și beneficiul final se confirmă de echipa Absolvire.ro în oferta transmisă.
 

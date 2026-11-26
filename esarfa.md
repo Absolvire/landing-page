@@ -2,12 +2,12 @@
 
 > Eșarfă de absolvire personalizată cu denumirea instituției și anul promoției, în culorile clasei. Imprimare albă sau neagră, stabilită pentru fiecare nuanță.
 
-Pagina: https://www.absolvire.ro/esarfa.html  
+Pagina: https://www.absolvire.ro/esarfa  
 Actualizat: 2026-11-26
 
 Culorile clasei, într-o amintire de păstrat.
 
-[Vezi ținuta completă](https://www.absolvire.ro/vestimentatie.html)
+[Vezi ținuta completă](https://www.absolvire.ro/vestimentatie)
 
 ## Personalizare potrivită fiecărei nuanțe.
 
@@ -21,7 +21,7 @@ Culoarea imprimării este stabilită pentru fiecare eșarfă, conform modelelor 
 
 În culorile eșarfei, cu ciucure și medalionul anului.
 
-[Configurează](https://www.absolvire.ro/palarie.html)
+[Configurează](https://www.absolvire.ro/palarie)
 
 ![Insignă sau cocardă](https://www.absolvire.ro/assets/img/cocarda-visiniu.webp)
 
@@ -29,7 +29,7 @@ Culoarea imprimării este stabilită pentru fiecare eșarfă, conform modelelor 
 
 Un detaliu de distincție pentru fiecare absolvent.
 
-[Configurează](https://www.absolvire.ro/insigna-cocarda.html)
+[Configurează](https://www.absolvire.ro/insigna-cocarda)
 
 ![Diplomă standard A4](https://www.absolvire.ro/assets/img/diploma-a4.webp)
 
@@ -37,7 +37,7 @@ Un detaliu de distincție pentru fiecare absolvent.
 
 Model clasic, personalizat cu numele elevului.
 
-[Vezi produsul](https://www.absolvire.ro/premiere.html)
+[Vezi produsul](https://www.absolvire.ro/premiere)
 
 ![Plachetă pentru diriginte](https://www.absolvire.ro/assets/img/diploma-prof.webp)
 
@@ -45,7 +45,7 @@ Model clasic, personalizat cu numele elevului.
 
 Un gest de apreciere pentru cei care v-au îndrumat.
 
-[Vezi produsul](https://www.absolvire.ro/premiere.html)
+[Vezi produsul](https://www.absolvire.ro/premiere)
 
 Întrebări frecvente
 

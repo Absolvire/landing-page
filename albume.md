@@ -2,7 +2,7 @@
 
 > Compară modelele de albume de absolvire: dimensiune, copertă, pagini, fotografii incluse și prețuri de referință pentru minimum 15 albume.
 
-Pagina: https://www.absolvire.ro/albume.html  
+Pagina: https://www.absolvire.ro/albume  
 Actualizat: 2026-11-26
 
 Albume de absolvire
@@ -11,7 +11,7 @@ Cinci modele, de la revista clasei până la albumul lay-flat de catifea. Fiecar
 
 ## Modelele de albume
 
-### [Economy](https://www.absolvire.ro/album-economy.html)
+### [Economy](https://www.absolvire.ro/album-economy)
 
 **120** lei / elev
 
@@ -19,9 +19,9 @@ Revista clasei: format A4, ușor de răsfoit, la cel mai bun preț.
 
 A4 · 1 fotografie / elev
 
-[Vezi detalii](https://www.absolvire.ro/album-economy.html)
+[Vezi detalii](https://www.absolvire.ro/album-economy)
 
-### [Velvet](https://www.absolvire.ro/album-velvet.html)
+### [Velvet](https://www.absolvire.ro/album-velvet)
 
 **200** lei / elev
 
@@ -29,9 +29,9 @@ Catifea elegantă, disponibilă în mai multe culori, cu fundă din satin.
 
 20 × 20 cm · 2 fotografii / elev
 
-[Vezi detalii](https://www.absolvire.ro/album-velvet.html)
+[Vezi detalii](https://www.absolvire.ro/album-velvet)
 
-### [Deluxe](https://www.absolvire.ro/album-deluxe.html)
+### [Deluxe](https://www.absolvire.ro/album-deluxe)
 
 **230** lei / elev
 
@@ -39,9 +39,9 @@ Catifea în cinci nuanțe, cu anul promoției imprimat auriu.
 
 A4 · Portret și semigrup
 
-[Vezi detalii](https://www.absolvire.ro/album-deluxe.html)
+[Vezi detalii](https://www.absolvire.ro/album-deluxe)
 
-### [Class](https://www.absolvire.ro/album-class.html)
+### [Class](https://www.absolvire.ro/album-class)
 
 **260** lei / elev
 
@@ -49,9 +49,9 @@ Copertă personalizată cu fotografia clasei și designul vostru.
 
 20 × 20 cm · 2 elevi / pagină
 
-[Vezi detalii](https://www.absolvire.ro/album-class.html)
+[Vezi detalii](https://www.absolvire.ro/album-class)
 
-### [Elite](https://www.absolvire.ro/album-elite.html)
+### [Elite](https://www.absolvire.ro/album-elite)
 
 **320** lei / elev
 
@@ -59,7 +59,7 @@ Catifea neagră și bandă marmorată în culoarea clasei.
 
 25 × 25 cm · Pagină proprie cu 3 fotografii
 
-[Vezi detalii](https://www.absolvire.ro/album-elite.html)
+[Vezi detalii](https://www.absolvire.ro/album-elite)
 
 Prețuri de referință pentru minimum **15** albume contra cost, cu ședința foto aferentă modelului inclusă.
 
@@ -75,7 +75,7 @@ Comparație
 | Pagini | Pagini flexibile capsate | Pagini flexibile broșate | Pagini flexibile broșate | Pagini groase lay-flat | Pagini lay-flat |
 | Fotografii | 1 fotografie / elev | 2 fotografii / elev | Portret și semigrup | 2 elevi / pagină | Pagină proprie cu 3 fotografii |
 | Distribuția elevilor | Elevii sunt prezentați în pagini comune, cu câte un portret. | O pagină pentru fiecare elev: portret, fotografie cu prietenii și mesaj. | Fiecare elev are portretul său, plus fotografii pe semigrupuri. | Paginile se deschid complet plat; câte doi elevi pe pagină. | Fiecare elev are pagina lui, cu trei fotografii. |
-|  | [Configurează](https://www.absolvire.ro/album-economy.html) | [Configurează](https://www.absolvire.ro/album-velvet.html) | [Configurează](https://www.absolvire.ro/album-deluxe.html) | [Configurează](https://www.absolvire.ro/album-class.html) | [Configurează](https://www.absolvire.ro/album-elite.html) |
+|  | [Configurează](https://www.absolvire.ro/album-economy) | [Configurează](https://www.absolvire.ro/album-velvet) | [Configurează](https://www.absolvire.ro/album-deluxe) | [Configurează](https://www.absolvire.ro/album-class) | [Configurează](https://www.absolvire.ro/album-elite) |
 
 * Pentru minimum 15 albume contra cost. Sub prag, oferta se personalizează pentru cantitatea cerută.
 
@@ -103,7 +103,7 @@ Linkul către platforma foto și datele de acces le primiți după ședința fot
 
 Studioul mobil se organizează într-un spațiu interior potrivit, cu mai multe clase programate consecutiv, fundaluri și accesorii tematice. Ședința de primăvară completează experiența cu alte cadre și locații convenite — inclusiv fotografii de grup în robe.
 
-[Vezi promoțiile](https://www.absolvire.ro/promotii.html)
+[Vezi promoțiile](https://www.absolvire.ro/promotii)
 
 Pachete vestimentație + album
 
@@ -111,7 +111,7 @@ Pachete vestimentație + album
 
 Combinați albumul ales cu ținuta completă și primiți o ofertă personalizată pentru clasă.
 
-[Vezi pachetele](https://www.absolvire.ro/pachete.html)
+[Vezi pachetele](https://www.absolvire.ro/pachete)
 
 Întrebări frecvente
 

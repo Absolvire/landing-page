@@ -2,7 +2,7 @@
 
 > Servicii pentru banchetul de absolvire: foto și video, DJ/MC, manager de eveniment, cabină foto, video 360, decor și lumini, meniu și momente speciale.
 
-Pagina: https://www.absolvire.ro/banchete.html  
+Pagina: https://www.absolvire.ro/banchete  
 Actualizat: 2026-11-26
 
 Balul de absolvire

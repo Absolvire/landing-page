@@ -2,7 +2,7 @@
 
 > Termenii și condițiile de utilizare a site-ului Absolvire.ro: cereri de ofertă, prețuri de referință, promoții, materiale transmise și soluționarea litigiilor.
 
-Pagina: https://www.absolvire.ro/termeni-si-conditii.html  
+Pagina: https://www.absolvire.ro/termeni-si-conditii  
 Actualizat: 2026-11-26
 
 Informații legale
@@ -78,7 +78,7 @@ Consumatorii pot apela și la procedurile de soluționare alternativă a litigii
 
 ## 13. Date cu caracter personal
 
-Modul în care prelucrăm datele transmise prin site este descris în [Politica de confidențialitate](https://www.absolvire.ro/politica-de-confidentialitate.html).
+Modul în care prelucrăm datele transmise prin site este descris în [Politica de confidențialitate](https://www.absolvire.ro/politica-de-confidentialitate).
 
 ## 14. Modificarea termenilor
 

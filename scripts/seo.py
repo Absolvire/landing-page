@@ -19,8 +19,8 @@ PUBLIC_FILES = ['sitemap.xml', 'robots.txt', 'llms.txt']
 
 
 def page_url(name):
-    """Adresa canonică a unei pagini (index.html → rădăcina site-ului)."""
-    return BASE if name == 'index.html' else BASE + name
+    """Adresa canonică a unei pagini, fără „.html” (index.html → rădăcina site-ului, albume.html → /albume)."""
+    return BASE if name == 'index.html' else BASE + name.removesuffix('.html')
 
 
 def pages(folder=DIST):

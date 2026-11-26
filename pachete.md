@@ -2,7 +2,7 @@
 
 > Combinați ținuta completă de absolvire cu albumul ales și primiți o ofertă personalizată pentru clasă.
 
-Pagina: https://www.absolvire.ro/pachete.html  
+Pagina: https://www.absolvire.ro/pachete  
 Actualizat: 2026-11-26
 
 Pachete vestimentație + album
@@ -13,7 +13,7 @@ Combinați ținuta completă cu albumul ales. Pachetele complete nu au preț pub
 - **Albumul clasei** — Economy, Velvet, Deluxe, Class sau Elite, cu ședința foto aferentă.
 - **O singură cerere** — cu toate opțiunile alese, confirmată de echipa Absolvire.ro.
 
-[Alege albumul](https://www.absolvire.ro/albume.html)
+[Alege albumul](https://www.absolvire.ro/albume)
 
 Întrebări frecvente
 
