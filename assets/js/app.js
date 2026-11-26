@@ -167,7 +167,7 @@
   updateBadge();
 
   /* ================= Acord cookie-uri (Google Analytics prin GTM) =================
-     Încărcarea GTM e în <head> (layout.html): window.absLoadGTM. Aici doar banner-ul și „Setări cookie”. */
+     GTM se încarcă mereu din <head> (layout.html), cu Consent Mode; aici doar banner-ul, „Setări cookie” și actualizarea acordului. */
   (function initConsent() {
     const box = $("[data-consent]");
     if (!box) return;
@@ -194,13 +194,13 @@
       const v = b.dataset.consentChoice;
       try { localStorage.setItem(CKEY, JSON.stringify({ v, t: Date.now() })); } catch (_) {}
       if (v === "granted") {
-        if (window.absLoadGTM) window.absLoadGTM();
+        if (window.gtag) window.gtag("consent", "update", { analytics_storage: "granted" });
       } else {
         if (window.gtag) window.gtag("consent", "update", { analytics_storage: "denied" });
         clearGaCookies();
       }
       box.hidden = true;
-      toast(v === "granted" ? "Mulțumim! Am activat cookie-urile de analiză." : "Am reținut: fără cookie-uri de analiză.");
+      toast(v === "granted" ? "Mulțumim! Am activat cookie-urile de analiză." : "Am reținut: doar cookie-urile necesare.");
     }));
     $$("[data-consent-open]").forEach((b) => b.addEventListener("click", () => open(true)));
   })();

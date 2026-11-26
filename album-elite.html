@@ -3,27 +3,21 @@
 <head>
   <meta charset="utf-8">
   <script>
-    /* Google Tag Manager, doar cu acordul vizitatorului (banner-ul de cookie-uri din app.js).
-       Implicit totul e refuzat; gtm.js se încarcă abia după „Accept”. Alegerea e ținută 12 luni. */
+    /* Google Tag Manager pe toate paginile, cu Google Consent Mode (modul avansat):
+       - implicit stocarea e refuzată: Google Analytics trimite doar semnale fără cookie-uri;
+       - după „Accept” (banner-ul din app.js) analytics_storage devine „granted” și GA folosește cookie-uri.
+       Alegerea e ținută 12 luni în localStorage și se aplică înainte de încărcarea GTM. */
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('consent', 'default', {ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied'});
-    window.absLoadGTM = function () {
-      gtag('consent', 'update', {analytics_storage: 'granted'});
-      if (window.absGTMLoaded) return;
-      window.absGTMLoaded = true;
-      gtag('js', new Date());
-      dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
-      var s = document.createElement('script');
-      s.async = true;
-      s.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-PLP5SH8C';
-      document.head.appendChild(s);
-    };
     try {
       var c = JSON.parse(localStorage.getItem('absolvire-consent') || 'null');
-      if (c && c.v === 'granted' && Date.now() - c.t < 365 * 864e5) window.absLoadGTM();
+      if (c && c.v === 'granted' && Date.now() - c.t < 365 * 864e5) gtag('consent', 'update', {analytics_storage: 'granted'});
     } catch (e) {}
+    gtag('js', new Date());
+    dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
   </script>
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-PLP5SH8C"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Album de absolvire Elite, 320 lei/elev | Absolvire.ro</title>
   <meta name="description" content="Albumul Elite: Catifea cu inserție personalizată, Pagini lay-flat, Pagină proprie cu 3 fotografii. Configurează coperta și cere oferta pentru clasa ta.">
@@ -391,10 +385,10 @@
 
 <div class="toast" data-toast role="status" aria-live="polite" hidden></div>
 <section class="consent" data-consent aria-labelledby="consent-title" hidden>
-  <p class="consent-title" id="consent-title">Cookie-uri de analiză</p>
-  <p>Cu acordul dumneavoastră folosim Google Analytics ca să vedem cum este folosit site-ul și să-l îmbunătățim. Puteți schimba alegerea oricând din „Setări cookie”, în subsolul paginii. <a href="politica-de-confidentialitate#cookie">Detalii</a></p>
+  <p class="consent-title" id="consent-title">Cookie-uri</p>
+  <p>Măsurăm vizitele ca să înțelegem cum este folosit site-ul și să-l îmbunătățim. Cu „Accept” folosim și cookie-uri de analiză; cu „Doar necesare”, măsurarea se face fără cookie-uri și fără să vă identificăm browserul. Puteți schimba alegerea oricând din „Setări cookie”, în subsolul paginii. <a href="politica-de-confidentialitate#cookie">Detalii</a></p>
   <div class="consent-actions">
-    <button class="btn btn-sm btn-primary" type="button" data-consent-choice="denied">Refuz</button>
+    <button class="btn btn-sm btn-primary" type="button" data-consent-choice="denied">Doar necesare</button>
     <button class="btn btn-sm btn-primary" type="button" data-consent-choice="granted">Accept</button>
   </div>
 </section>

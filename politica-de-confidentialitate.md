@@ -44,9 +44,12 @@ Fonturile site-ului sunt găzduite pe serverul nostru; nu sunt încărcate de la
 
 ### Cookie-uri de analiză (Google Analytics)
 
-Numai dacă alegeți **„Accept”** în fereastra despre cookie-uri, site-ul încarcă **Google Tag Manager** și **Google Analytics** (Google Ireland Limited), care plasează cookie-uri (_ga, _ga_*) ca să măsoare, în mod agregat, paginile vizitate, durata vizitei, tipul de dispozitiv și sursa vizitei. Folosim aceste date doar ca să înțelegem cum este folosit site-ul și să-l îmbunătățim, pe baza consimțământului dumneavoastră (art. 6 alin. (1) lit. a GDPR). Cookie-urile Google Analytics expiră după cel mult 2 ani.
+Site-ul folosește **Google Tag Manager** și **Google Analytics** (Google Ireland Limited) pe toate paginile, în modul de consimțământ Google („Consent Mode”), ca să măsurăm, în mod agregat, paginile vizitate, durata vizitei, tipul de dispozitiv și sursa vizitei. Folosim aceste date doar ca să înțelegem cum este folosit site-ul și să-l îmbunătățim.
 
-Dacă alegeți **„Refuz”** sau nu alegeți nimic, aceste scripturi nu sunt încărcate și nu se plasează cookie-uri de analiză. Nu folosim cookie-uri de publicitate. Alegerea dumneavoastră este reținută în browser timp de 12 luni și o puteți schimba oricând din linkul **„Setări cookie”** din subsolul fiecărei pagini; la retragerea acordului ștergem cookie-urile de analiză.
+- **„Accept”** — Google Analytics plasează cookie-uri de analiză (_ga, _ga_*), care recunosc browserul de la o vizită la alta. Temeiul este consimțământul dumneavoastră (art. 6 alin. (1) lit. a GDPR). Cookie-urile expiră după cel mult 2 ani.
+- **„Doar necesare”** sau nicio alegere — nu se plasează cookie-uri de analiză și nu se citesc cookie-uri existente. Google Analytics trimite către Google doar semnale de măsurare fără identificatori ai browserului (de exemplu, că o pagină a fost vizitată), pe care Google le folosește pentru statistici agregate și estimate. Ca la orice cerere pe internet, serverele Google primesc adresa IP a dispozitivului.
+
+Nu folosim cookie-uri de publicitate. Alegerea dumneavoastră este reținută în browser timp de 12 luni și o puteți schimba oricând din linkul **„Setări cookie”** din subsolul fiecărei pagini; la retragerea acordului ștergem cookie-urile de analiză.
 
 ## 6. Cât timp păstrăm datele
 
@@ -59,7 +62,7 @@ Dacă alegeți **„Refuz”** sau nu alegeți nimic, aceste scripturi nu sunt �
 
 - **Web3Forms** — pentru transmiterea cererii de ofertă pe email.
 - **Furnizorul serviciului de email** folosit de echipă — pentru primirea și gestionarea corespondenței.
-- **Google** (Google Tag Manager și Google Analytics) — doar dacă ați acceptat cookie-urile de analiză.
+- **Google** (Google Tag Manager și Google Analytics) — date de măsurare a vizitelor, cu cookie-uri doar dacă ați acceptat cookie-urile de analiză.
 - **Autorități publice** (ANAF, organe de cercetare, instanțe, executori judecătorești și alte instituții) — numai atunci când legea ne obligă.
 
 Unii dintre acești furnizori pot prelucra date și în afara Spațiului Economic European, conform propriilor politici de confidențialitate.

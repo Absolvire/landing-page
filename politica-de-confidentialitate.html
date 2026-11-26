@@ -3,27 +3,21 @@
 <head>
   <meta charset="utf-8">
   <script>
-    /* Google Tag Manager, doar cu acordul vizitatorului (banner-ul de cookie-uri din app.js).
-       Implicit totul e refuzat; gtm.js se încarcă abia după „Accept”. Alegerea e ținută 12 luni. */
+    /* Google Tag Manager pe toate paginile, cu Google Consent Mode (modul avansat):
+       - implicit stocarea e refuzată: Google Analytics trimite doar semnale fără cookie-uri;
+       - după „Accept” (banner-ul din app.js) analytics_storage devine „granted” și GA folosește cookie-uri.
+       Alegerea e ținută 12 luni în localStorage și se aplică înainte de încărcarea GTM. */
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('consent', 'default', {ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied'});
-    window.absLoadGTM = function () {
-      gtag('consent', 'update', {analytics_storage: 'granted'});
-      if (window.absGTMLoaded) return;
-      window.absGTMLoaded = true;
-      gtag('js', new Date());
-      dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
-      var s = document.createElement('script');
-      s.async = true;
-      s.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-PLP5SH8C';
-      document.head.appendChild(s);
-    };
     try {
       var c = JSON.parse(localStorage.getItem('absolvire-consent') || 'null');
-      if (c && c.v === 'granted' && Date.now() - c.t < 365 * 864e5) window.absLoadGTM();
+      if (c && c.v === 'granted' && Date.now() - c.t < 365 * 864e5) gtag('consent', 'update', {analytics_storage: 'granted'});
     } catch (e) {}
+    gtag('js', new Date());
+    dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
   </script>
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-PLP5SH8C"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Politica de confidențialitate | Absolvire.ro</title>
   <meta name="description" content="Cum prelucrează Absolvire.ro datele transmise prin cererea de ofertă: ce date colectăm, de ce, cât timp le păstrăm, cui le transmitem și ce drepturi aveți.">
@@ -170,8 +164,12 @@
     <p>Fonturile site-ului sunt găzduite pe serverul nostru; nu sunt încărcate de la terți.</p>
 
     <h3 id="cookie">Cookie-uri de analiză (Google Analytics)</h3>
-    <p>Numai dacă alegeți <strong>„Accept”</strong> în fereastra despre cookie-uri, site-ul încarcă <strong>Google Tag Manager</strong> și <strong>Google Analytics</strong> (Google Ireland Limited), care plasează cookie-uri (<code>_ga</code>, <code>_ga_*</code>) ca să măsoare, în mod agregat, paginile vizitate, durata vizitei, tipul de dispozitiv și sursa vizitei. Folosim aceste date doar ca să înțelegem cum este folosit site-ul și să-l îmbunătățim, pe baza consimțământului dumneavoastră (art. 6 alin. (1) lit. a GDPR). Cookie-urile Google Analytics expiră după cel mult 2 ani.</p>
-    <p>Dacă alegeți <strong>„Refuz”</strong> sau nu alegeți nimic, aceste scripturi nu sunt încărcate și nu se plasează cookie-uri de analiză. Nu folosim cookie-uri de publicitate. Alegerea dumneavoastră este reținută în browser timp de 12 luni și o puteți schimba oricând din linkul <strong>„Setări cookie”</strong> din subsolul fiecărei pagini; la retragerea acordului ștergem cookie-urile de analiză.</p>
+    <p>Site-ul folosește <strong>Google Tag Manager</strong> și <strong>Google Analytics</strong> (Google Ireland Limited) pe toate paginile, în modul de consimțământ Google („Consent Mode”), ca să măsurăm, în mod agregat, paginile vizitate, durata vizitei, tipul de dispozitiv și sursa vizitei. Folosim aceste date doar ca să înțelegem cum este folosit site-ul și să-l îmbunătățim.</p>
+    <ul>
+      <li><strong>„Accept”</strong> — Google Analytics plasează cookie-uri de analiză (<code>_ga</code>, <code>_ga_*</code>), care recunosc browserul de la o vizită la alta. Temeiul este consimțământul dumneavoastră (art. 6 alin. (1) lit. a GDPR). Cookie-urile expiră după cel mult 2 ani.</li>
+      <li><strong>„Doar necesare”</strong> sau nicio alegere — nu se plasează cookie-uri de analiză și nu se citesc cookie-uri existente. Google Analytics trimite către Google doar semnale de măsurare fără identificatori ai browserului (de exemplu, că o pagină a fost vizitată), pe care Google le folosește pentru statistici agregate și estimate. Ca la orice cerere pe internet, serverele Google primesc adresa IP a dispozitivului.</li>
+    </ul>
+    <p>Nu folosim cookie-uri de publicitate. Alegerea dumneavoastră este reținută în browser timp de 12 luni și o puteți schimba oricând din linkul <strong>„Setări cookie”</strong> din subsolul fiecărei pagini; la retragerea acordului ștergem cookie-urile de analiză.</p>
 
     <h2>6. Cât timp păstrăm datele</h2>
     <ul>
@@ -185,7 +183,7 @@
     <ul>
       <li><strong>Web3Forms</strong> — pentru transmiterea cererii de ofertă pe email.</li>
       <li><strong>Furnizorul serviciului de email</strong> folosit de echipă — pentru primirea și gestionarea corespondenței.</li>
-      <li><strong>Google</strong> (Google Tag Manager și Google Analytics) — doar dacă ați acceptat cookie-urile de analiză.</li>
+      <li><strong>Google</strong> (Google Tag Manager și Google Analytics) — date de măsurare a vizitelor, cu cookie-uri doar dacă ați acceptat cookie-urile de analiză.</li>
       <li><strong>Autorități publice</strong> (ANAF, organe de cercetare, instanțe, executori judecătorești și alte instituții) — numai atunci când legea ne obligă.</li>
     </ul>
     <p>Unii dintre acești furnizori pot prelucra date și în afara Spațiului Economic European, conform propriilor politici de confidențialitate.</p>
@@ -268,10 +266,10 @@
 
 <div class="toast" data-toast role="status" aria-live="polite" hidden></div>
 <section class="consent" data-consent aria-labelledby="consent-title" hidden>
-  <p class="consent-title" id="consent-title">Cookie-uri de analiză</p>
-  <p>Cu acordul dumneavoastră folosim Google Analytics ca să vedem cum este folosit site-ul și să-l îmbunătățim. Puteți schimba alegerea oricând din „Setări cookie”, în subsolul paginii. <a href="politica-de-confidentialitate#cookie">Detalii</a></p>
+  <p class="consent-title" id="consent-title">Cookie-uri</p>
+  <p>Măsurăm vizitele ca să înțelegem cum este folosit site-ul și să-l îmbunătățim. Cu „Accept” folosim și cookie-uri de analiză; cu „Doar necesare”, măsurarea se face fără cookie-uri și fără să vă identificăm browserul. Puteți schimba alegerea oricând din „Setări cookie”, în subsolul paginii. <a href="politica-de-confidentialitate#cookie">Detalii</a></p>
   <div class="consent-actions">
-    <button class="btn btn-sm btn-primary" type="button" data-consent-choice="denied">Refuz</button>
+    <button class="btn btn-sm btn-primary" type="button" data-consent-choice="denied">Doar necesare</button>
     <button class="btn btn-sm btn-primary" type="button" data-consent-choice="granted">Accept</button>
   </div>
 </section>
