@@ -3,7 +3,7 @@
 > Termenii și condițiile de utilizare a site-ului Absolvire.ro: cereri de ofertă, prețuri de referință, promoții, materiale transmise și soluționarea litigiilor.
 
 Pagina: https://www.absolvire.ro/termeni-si-conditii  
-Actualizat: 2026-11-26
+Actualizat: 2026-11-28
 
 Informații legale
 

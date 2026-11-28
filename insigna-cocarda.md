@@ -3,7 +3,7 @@
 > Insignă personalizată (5 lei/buc.) sau cocardă cu rozetă textilă (15 lei/buc.), cu denumirea, sigla instituției și anul promoției.
 
 Pagina: https://www.absolvire.ro/insigna-cocarda  
-Actualizat: 2026-11-26
+Actualizat: 2026-11-28
 
 Un detaliu de distincție pentru fiecare absolvent.
 

@@ -3,7 +3,7 @@
 > Albumul Velvet: Copertă de catifea cu fundă, Pagini flexibile broșate, 2 fotografii / elev. Configurează coperta și cere oferta pentru clasa ta.
 
 Pagina: https://www.absolvire.ro/album-velvet  
-Actualizat: 2026-11-26
+Actualizat: 2026-11-28
 
 ![Album Velvet — Coperta](https://www.absolvire.ro/assets/img/velvet-cover.webp)
 

@@ -3,7 +3,7 @@
 > Eșarfă de absolvire personalizată cu denumirea instituției și anul promoției, în culorile clasei. Imprimare albă sau neagră, stabilită pentru fiecare nuanță.
 
 Pagina: https://www.absolvire.ro/esarfa  
-Actualizat: 2026-11-26
+Actualizat: 2026-11-28
 
 Culorile clasei, într-o amintire de păstrat.
 

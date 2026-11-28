@@ -3,7 +3,7 @@
 > Pălărie de absolvire cu bentiță colorată și ciucure cu anul promoției, 50 lei. Alege culoarea, panglica și designul capacului: comun +20 lei sau individual.
 
 Pagina: https://www.absolvire.ro/palarie  
-Actualizat: 2026-11-26
+Actualizat: 2026-11-28
 
 Toca ta. Designul tău.
 

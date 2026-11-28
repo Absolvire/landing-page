@@ -3,7 +3,7 @@
 > Configurează ținuta clasei: robă închiriată, pălărie, eșarfă personalizată, insignă sau cocardă și diplomă A4 inclusă. 100 lei / pachet, bonus pentru diriginte.
 
 Pagina: https://www.absolvire.ro/vestimentatie  
-Actualizat: 2026-11-26
+Actualizat: 2026-11-28
 
 Robă închiriată + pălărie + eșarfă + insignă + **diplomă A4**
 

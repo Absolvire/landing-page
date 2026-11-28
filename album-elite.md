@@ -3,7 +3,7 @@
 > Albumul Elite: Catifea cu inserție personalizată, Pagini lay-flat, Pagină proprie cu 3 fotografii. Configurează coperta și cere oferta pentru clasa ta.
 
 Pagina: https://www.absolvire.ro/album-elite  
-Actualizat: 2026-11-26
+Actualizat: 2026-11-28
 
 ![Album Elite — Coperta](https://www.absolvire.ro/assets/img/elite-bej.webp)
 

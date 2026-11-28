@@ -3,7 +3,7 @@
 > Compară modelele de albume de absolvire: dimensiune, copertă, pagini, fotografii incluse și prețuri de referință pentru minimum 15 albume.
 
 Pagina: https://www.absolvire.ro/albume  
-Actualizat: 2026-11-26
+Actualizat: 2026-11-28
 
 Albume de absolvire
 

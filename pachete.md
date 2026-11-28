@@ -3,7 +3,7 @@
 > Combinați ținuta completă de absolvire cu albumul ales și primiți o ofertă personalizată pentru clasă.
 
 Pagina: https://www.absolvire.ro/pachete  
-Actualizat: 2026-11-26
+Actualizat: 2026-11-28
 
 Pachete vestimentație + album
 

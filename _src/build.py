@@ -350,8 +350,13 @@ if C["contact"].get("phone"):
     ORG["telephone"] = tel(C["contact"]["phone"])
 
 
+# Produsele se personalizează pentru fiecare promoție (nume, siglă, an), deci se fac la comandă.
+AVAILABILITY = "https://schema.org/MadeToOrder"
+
+
 def offer(price, unit=None, min_qty=None):
-    o = {"@type": "Offer", "price": price, "priceCurrency": "RON", "seller": {"@id": f"{seo.SITE_URL}/#org"}}
+    o = {"@type": "Offer", "price": price, "priceCurrency": "RON", "availability": AVAILABILITY,
+         "seller": {"@id": f"{seo.SITE_URL}/#org"}}
     if unit:
         o["priceSpecification"] = {"@type": "UnitPriceSpecification", "price": price, "priceCurrency": "RON", "unitText": unit}
     if min_qty:
@@ -393,7 +398,8 @@ def page_graph(page, url, meta, qa, album=None):
     if page == "vestimentatie":
         g.append(product("Ținuta completă de absolvire", "Robă închiriată, pălărie, eșarfă personalizată, insignă sau cocardă și diplomă A4 inclusă.",
                          "assets/img/roba-visiniu-pack.webp", url,
-                         {"@type": "AggregateOffer", "lowPrice": o["basePriceInsigna"], "highPrice": o["basePriceCocarda"], "priceCurrency": "RON", "offerCount": 2}))
+                         {"@type": "AggregateOffer", "lowPrice": o["basePriceInsigna"], "highPrice": o["basePriceCocarda"], "priceCurrency": "RON", "offerCount": 2,
+                          "availability": AVAILABILITY}))
     if page == "palarie":
         g.append(product("Pălărie de absolvire cu bentiță și ciucure cu anul", "Pălărie de absolvire; panglica și personalizarea capacului se aleg separat.",
                          "assets/img/palarie-visiniu.webp", url, offer(s["palarie"], "buc.")))

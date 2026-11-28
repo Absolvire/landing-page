@@ -3,7 +3,7 @@
 > Ofertele active pentru promoția de absolvenți: beneficii, condiții și perioade, pentru albume, festivitate și banchet.
 
 Pagina: https://www.absolvire.ro/promotii  
-Actualizat: 2026-11-26
+Actualizat: 2026-11-28
 
 Promoții
 

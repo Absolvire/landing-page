@@ -3,7 +3,7 @@
 > Albumul Economy: Copertă tip revistă, Pagini flexibile capsate, 1 fotografie / elev. Configurează coperta și cere oferta pentru clasa ta.
 
 Pagina: https://www.absolvire.ro/album-economy  
-Actualizat: 2026-11-26
+Actualizat: 2026-11-28
 
 ![Album Economy — Coperta](https://www.absolvire.ro/assets/img/economy-cover.webp)
 

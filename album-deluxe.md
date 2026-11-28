@@ -3,7 +3,7 @@
 > Albumul Deluxe: Copertă rigidă din catifea, Pagini flexibile broșate, Portret și semigrup. Configurează coperta și cere oferta pentru clasa ta.
 
 Pagina: https://www.absolvire.ro/album-deluxe  
-Actualizat: 2026-11-26
+Actualizat: 2026-11-28
 
 ![Album Deluxe — Coperta](https://www.absolvire.ro/assets/img/deluxe-negru.webp)
 

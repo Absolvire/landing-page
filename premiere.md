@@ -3,7 +3,7 @@
 > Diplome personalizate A4 și pe suport de catifea, diplome tip mapă cu fotografie, medalii, trofee, plachete și Cheia Succesului.
 
 Pagina: https://www.absolvire.ro/premiere  
-Actualizat: 2026-11-26
+Actualizat: 2026-11-28
 
 Premiere și diplome
 

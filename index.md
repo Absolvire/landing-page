@@ -3,7 +3,7 @@
 > Din 2002, albume de absolvire cu selecție online a fotografiilor, robe și pălării personalizate, festivități și baluri. Cere oferta clasei.
 
 Pagina: https://www.absolvire.ro/  
-Actualizat: 2026-11-26
+Actualizat: 2026-11-28
 
 ![Absolvenți în robe și eșarfe albastre, fotografiați la photo wall-ul Absolvire.ro](https://www.absolvire.ro/assets/img/photo-wall.webp)
 

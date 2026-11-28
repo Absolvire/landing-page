@@ -3,7 +3,7 @@
 > Albumul Class: Copertă personalizată, printată, Pagini groase lay-flat, 2 elevi / pagină. Configurează coperta și cere oferta pentru clasa ta.
 
 Pagina: https://www.absolvire.ro/album-class  
-Actualizat: 2026-11-26
+Actualizat: 2026-11-28
 
 ![Album Class — Coperta](https://www.absolvire.ro/assets/img/class-cover.webp)
 

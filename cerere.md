@@ -3,7 +3,7 @@
 > Recapitularea selecțiilor tale și formularul pentru cererea de ofertă și disponibilitate.
 
 Pagina: https://www.absolvire.ro/cerere  
-Actualizat: 2026-11-26
+Actualizat: 2026-11-28
 
 ## Cererea ta este goală.
 

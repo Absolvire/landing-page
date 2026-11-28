@@ -3,7 +3,7 @@
 > Servicii pentru festivitatea de absolvire: fotografie și filmare, decor cu baloane, sonorizare, scenă, scaune, photo wall, show de fumigene și prezentator.
 
 Pagina: https://www.absolvire.ro/festivitati  
-Actualizat: 2026-11-26
+Actualizat: 2026-11-28
 
 ![Amenajare de festivitate cu photo wall Absolvire.ro, covor roșu și baloane](https://www.absolvire.ro/assets/img/photo-wall-2.webp)
 
